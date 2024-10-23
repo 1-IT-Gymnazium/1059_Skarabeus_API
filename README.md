@@ -2,18 +2,17 @@
 ## funkční požadavky
  - ### uživatel může pokud má patřičná oprávnění
    - #### registrace (bez oprávnění)
-     - první registrovaný uživatel dostane roly super user
      - ostatní uživatelé co se sami registrují nemají žádná oprávnění
    - #### přihlášení
      - na základě uživatelského jména nebo emailu
      - obnova zapomenutého hesla
    - #### vytvářet uživatelské přihlášení pro osoby a upravovat uživatelská oprávnění (administrator)
-   - #### zobrazovat, vytvářet a upravovat osoby (read, create a update oprávnění respektivně)
+   - #### zobrazovat, vytvářet a upravovat osoby (read, create a update)
      - ##### informace o osobě
        - základní údaje - jméno, příjmení, rodné číslo...
-       - kontaktní údaje - telefon, email.... (nepoviné)
+       - kontaktní údaje - telefon, email.... (nepovinné)
        - základní a kontaktní údaje zákonných zástupců
-   - #### zobrazovat, vytvářet a upravovat akce, jídla a ingredience (read, create a update oprávnění respektivně)
+   - #### zobrazovat, vytvářet a upravovat akce, jídla a ingredience (read, create a update)
      - ##### akce
        - data trvání
        - popis, název
@@ -24,14 +23,12 @@
      - ##### ingredience
        - název
        - přibližná cena za kg/l
-   - #### předat roly superuser (superuser)
-     - aplikace má vždy pouze jednoho uživatele s touto rolí, který má oprávnění k čemukoli a ostatní uživatelé jeho oprávnění nemohou ovlivnit
 ## nefunkční požadavky
  - #### Bezpečnost:
    - Ověřování uživatelů při registraci a přihlašování.
    - Ochrana osobních údajů uživatelů (email, hash hesla).
  - #### Výkon:
-   - Všechny akce v aplikaci musí být prováděny v reálném čase do 0,5 s (přihlášení, kladení dotazů, aktualizace statusů).
+   - Všechny akce v aplikaci musí být prováděny v reálném čase do 0,5 s
    - Aplikace musí být schopna zvládnout alespoň 200 připojených uživatelů, včetně správy skupin a místností.
  - #### Dostupnost:
    - Aplikace by měla být přístupná 24/7 s minimálními výpadky v rámci dostupných nástrojů, které jsou zdarma.
