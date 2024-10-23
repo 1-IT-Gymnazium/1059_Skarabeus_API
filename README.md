@@ -1,25 +1,31 @@
 # Skarabeus
 ## funkční požadavky
- - #### registrace a přihlášení uživatelů
-   - správa oprávnění uživatelů
-      - změna oprávnění => přidání, odebrání
-      - vytvuření uživatelského přihlášení pro osobu
- - #### vytváření a správa osob 
-   - základní informace (jméno, příjmení ...)
-   - kontaktní údaje
-   - informace o zákoných zástupcích
- - #### vytváření a správa akcí
-   - datum trvání
-   - jídla
-   - účastníci
- - #### vytváření a správa jídel
-   - název
-   - ingredience
-   - popis
- - #### vytváření a správa ingrediencí
-   - název
-   - přibližnou cenu za kg/l
-
+ - ### uživatel může pokud má patřičná oprávnění
+   - #### registrace (bez oprávnění)
+     - první registrovaný uživatel dostane roly super user
+     - ostatní uživatelé co se sami registrují nemají žádná oprávnění
+   - #### přihlášení
+     - na základě uživatelského jména nebo emailu
+     - obnova zapomenutého hesla
+   - #### vytvářet uživatelské přihlášení pro osoby a upravovat uživatelská oprávnění (administrator)
+   - #### zobrazovat, vytvářet a upravovat osoby (read, create a update oprávnění respektivně)
+     - ##### informace o osobě
+       - základní údaje - jméno, příjmení, rodné číslo...
+       - kontaktní údaje - telefon, email.... (nepoviné)
+       - základní a kontaktní údaje zákonných zástupců
+   - #### zobrazovat, vytvářet a upravovat akce, jídla a ingredience (read, create a update oprávnění respektivně)
+     - ##### akce
+       - data trvání
+       - popis, název
+       - jídla
+     - ##### jídla
+       - název, postup
+       - ingredience, jejich množství
+     - ##### ingredience
+       - název
+       - přibližná cena za kg/l
+   - #### předat roly superuser (superuser)
+     - aplikace má vždy pouze jednoho uživatele s touto rolí, který má oprávnění k čemukoli a ostatní uživatelé jeho oprávnění nemohou ovlivnit
 ## nefunkční požadavky
  - #### Bezpečnost:
    - Ověřování uživatelů při registraci a přihlašování.
