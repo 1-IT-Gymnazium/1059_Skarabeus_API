@@ -18,7 +18,7 @@ namespace Skarabeus_Api
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
-                var connectionString = builder.Configuration.GetValue<string>("conection");
+                var connectionString = builder.Configuration.GetValue<string>("ConnectionStrings:DefaultConnection");
                 options.UseNpgsql(connectionString, builder =>
                 {
                     builder.UseNodaTime();
@@ -40,7 +40,7 @@ namespace Skarabeus_Api
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseAuthorization();
 

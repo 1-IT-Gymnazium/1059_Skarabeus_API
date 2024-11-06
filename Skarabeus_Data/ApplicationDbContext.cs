@@ -6,7 +6,7 @@ using Skarabeus_Data.Entities;
 namespace Skarabeus_Data;
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
 {
-
+    public DbSet<Ingredient> Ingredients { get; set; }
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }

@@ -115,3 +115,10 @@ C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\obj\Debu
 C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\obj\Debug\net8.0\Skarabeus_Api.genruntimeconfig.cache
 C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\obj\Debug\net8.0\ref\Skarabeus_Api.dll
 C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\obj\Debug\net8.0\Skarabeus_Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\System.Web.Mvc.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\System.Web.Razor.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\System.Web.Helpers.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\System.Web.WebPages.Deployment.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\System.Web.WebPages.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll

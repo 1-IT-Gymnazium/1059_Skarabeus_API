@@ -3,25 +3,29 @@
   "WorkspaceRootPath": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_api\\controllers\\ingredientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|solutionrelative:controllers\\ingredientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_api\\controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|solutionrelative:controllers\\testcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12603D4F-4C52-4F13-BDC6-7B4E42981AF1}|..\\Skarabeus_Data\\Skarabeus_Data.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{12603D4F-4C52-4F13-BDC6-7B4E42981AF1}|..\\Skarabeus_Data\\Skarabeus_Data.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_data\\interfaces\\itrackable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12603D4F-4C52-4F13-BDC6-7B4E42981AF1}|..\\Skarabeus_Data\\Skarabeus_Data.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_data\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{12603D4F-4C52-4F13-BDC6-7B4E42981AF1}|..\\Skarabeus_Data\\Skarabeus_Data.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_data\\interfaces\\itrackable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{12603D4F-4C52-4F13-BDC6-7B4E42981AF1}|..\\Skarabeus_Data\\Skarabeus_Data.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_api\\skarabeus_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{134A07D2-3EB1-4944-AB7E-5B54C925DB51}|Skarabeus_Api.csproj|solutionrelative:skarabeus_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{12603D4F-4C52-4F13-BDC6-7B4E42981AF1}|..\\Skarabeus_Data\\Skarabeus_Data.csproj|c:\\users\\1059\\source\\repos\\my\\maturita\\1059_skarabeus_api\\skarabeus_data\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -41,7 +45,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -57,46 +61,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TestController.cs",
-              "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\Controllers\\TestController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TestController.cs",
-              "ToolTip": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\Controllers\\TestController.cs",
-              "RelativeToolTip": "Controllers\\TestController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwB4AAAASAAAA",
+              "DocumentIndex": 0,
+              "Title": "IngredientController.cs",
+              "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\Controllers\\IngredientController.cs",
+              "RelativeDocumentMoniker": "Controllers\\IngredientController.cs",
+              "ToolTip": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\Controllers\\IngredientController.cs",
+              "RelativeToolTip": "Controllers\\IngredientController.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAIwEAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:36:28.776Z",
+              "WhenOpened": "2024-11-06T11:31:32.802Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "ITrackable.cs",
               "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Data\\Interfaces\\ITrackable.cs",
               "RelativeDocumentMoniker": "..\\Skarabeus_Data\\Interfaces\\ITrackable.cs",
               "ToolTip": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Data\\Interfaces\\ITrackable.cs",
               "RelativeToolTip": "..\\Skarabeus_Data\\Interfaces\\ITrackable.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAcwAAAAAAAAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAkwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T10:16:53.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "..\\Skarabeus_Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "..\\Skarabeus_Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T10:14:43.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ApplicationUser.cs",
               "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Data\\Entities\\ApplicationUser.cs",
               "RelativeDocumentMoniker": "..\\Skarabeus_Data\\Entities\\ApplicationUser.cs",
               "ToolTip": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Data\\Entities\\ApplicationUser.cs",
               "RelativeToolTip": "..\\Skarabeus_Data\\Entities\\ApplicationUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:16:32.938Z",
+              "WhenOpened": "2024-11-06T11:34:34.394Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Global.cs",
               "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Data\\Global.cs",
               "RelativeDocumentMoniker": "..\\Skarabeus_Data\\Global.cs",
@@ -104,51 +121,48 @@
               "RelativeToolTip": "..\\Skarabeus_Data\\Global.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:15:16.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:15:16.397Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAABoAAAAAAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwCoAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T09:37:27.225Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "Skarabeus_Api.http",
+              "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\Skarabeus_Api.http",
+              "RelativeDocumentMoniker": "Skarabeus_Api.http",
+              "ToolTip": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\Skarabeus_Api.http",
+              "RelativeToolTip": "Skarabeus_Api.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-11-06T11:06:13.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
               "ToolTip": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\appsettings.Development.json",
               "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABmAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-06T10:31:54.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T10:31:54.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "..\\Skarabeus_Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "..\\Skarabeus_Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T10:14:43.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\ProjectManager_Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "..\\ProjectManager_Data\\ApplicationDbContext.cs",
@@ -159,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\1059\\source\\repos\\my\\maturita\\1059_Skarabeus_API\\Skarabeus_Api\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -167,8 +181,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-06T09:37:37.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-06T09:37:37.195Z"
             }
           ]
         },
