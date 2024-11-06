@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Skarabeus_Api.props" />
+</Project>
