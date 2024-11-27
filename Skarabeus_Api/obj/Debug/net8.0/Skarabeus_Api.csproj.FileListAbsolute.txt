@@ -122,3 +122,7 @@ C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debu
 C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\System.Web.WebPages.Razor.dll
 C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\System.Web.WebPages.dll
 C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\Microsoft.Web.Infrastructure.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\MailKit.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\MimeKit.dll
+C:\Users\1059\source\repos\my\maturita\1059_Skarabeus_API\Skarabeus_Api\bin\Debug\net8.0\System.Formats.Asn1.dll

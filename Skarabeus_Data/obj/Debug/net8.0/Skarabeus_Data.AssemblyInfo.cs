@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Skarabeus_Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0eebb9d6a18c447f6f9f67d75da17c4f2021f7ff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d4299361aec996889980dfba206731b3a32f2ac")]
 [assembly: System.Reflection.AssemblyProductAttribute("Skarabeus_Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Skarabeus_Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

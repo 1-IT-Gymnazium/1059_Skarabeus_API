@@ -1,12 +1,14 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ProjectManager.Api.Services;
 using Skarabeus_Data.Entities;
 
 namespace Skarabeus_Data;
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityRole<Guid>, Guid>
 {
     public DbSet<Ingredient> Ingredients { get; set; }
+    public DbSet<Email> Emails { get; set; }
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
@@ -19,5 +21,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
         //modelBuilder.Ignore<IdentityUserClaim<Guid>>();
         modelBuilder.Ignore<IdentityUserToken<Guid>>();
         modelBuilder.Ignore<IdentityRoleClaim<Guid>>();
+
+        var assemblyWithConfiguration = GetType().Assembly;
+        modelBuilder.ApplyConfigurationsFromAssembly(assemblyWithConfiguration);
     }
 }

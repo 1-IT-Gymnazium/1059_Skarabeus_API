@@ -45,6 +45,59 @@ namespace Skarabeus_Data.Migrations
                     b.ToTable("UserClaims");
                 });
 
+            modelBuilder.Entity("ProjectManager.Api.Services.Email", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Instant>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Instant?>("DeletedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("text");
+
+                    b.Property<Instant>("ModifiedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("ModifiedBy")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Receiver")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Instant>("ScheduledAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Sender")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<Instant?>("SentAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Emails");
+                });
+
             modelBuilder.Entity("Skarabeus_Data.Entities.ApplicationUser", b =>
                 {
                     b.Property<Guid>("Id")
@@ -118,7 +171,31 @@ namespace Skarabeus_Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ApsNetUser");
+                    b.ToTable("AspNetUser", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("ceab6921-dfed-4b4d-b661-dc36b8749067"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ba46c7df-e2cf-469d-a17d-b653c50a0147",
+                            CreatedAt = NodaTime.Instant.FromUnixTimeTicks(-3776735808000000000L),
+                            CreatedBy = "System",
+                            Email = "user@example.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = true,
+                            LockoutEnd = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
+                            ModifiedAt = NodaTime.Instant.FromUnixTimeTicks(-3776735808000000000L),
+                            ModifiedBy = "System",
+                            NormalizedEmail = "USER@EXAMPLE.COM",
+                            NormalizedUserName = "USER@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAELKQmdGcfZbjxaz1GeqZ62mF7gEO9d49ofpdaQ+Mq0904MEIWvUnaMMfx9gJ27NmdQ==",
+                            PhoneNumber = "123456798",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "2MLDENGLJTQEITJVCJMIJJQOKXOUNSD6",
+                            TwoFactorEnabled = false,
+                            UserName = "user@example.com"
+                        });
                 });
 
             modelBuilder.Entity("Skarabeus_Data.Entities.Ingredient", b =>
