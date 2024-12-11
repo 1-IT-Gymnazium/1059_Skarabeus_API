@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using NodaTime;
@@ -12,6 +13,7 @@ namespace Skarabeus_Api.Controllers;
 
 [Controller]
 [Route("api/v1/ingredient")]
+//[Authorize]
 public class IngredientController : Controller
 {
     private readonly ILogger<IngredientController> _logger;

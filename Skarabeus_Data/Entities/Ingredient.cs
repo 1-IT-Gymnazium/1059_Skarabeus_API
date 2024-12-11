@@ -5,6 +5,8 @@ public class Ingredient : ITrackable
 {
     public Guid Id { get; set; }
     public string Name { get; set; } = null!;
+
+
     public decimal PriceForUnit { get; set; }
     public Instant CreatedAt { get; set; }
     public string CreatedBy { get; set; } = null!;

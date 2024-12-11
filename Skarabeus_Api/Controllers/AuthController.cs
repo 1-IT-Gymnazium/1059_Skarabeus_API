@@ -47,7 +47,7 @@ public class AuthController : ControllerBase
         var newUser = new ApplicationUser
         {
             Id = Guid.NewGuid(),
-            FullName = model.Name,
+            LogginName = model.Name,
             Email = model.Email,
             UserName = model.Email,
         }.SetCreateBySystem(now);
@@ -69,7 +69,7 @@ public class AuthController : ControllerBase
         await _emailService.AddEmailToSendAsync(
             model.Email,
             "Potvrzení registrace",
-            $"<a href=\"https://www.projectmanagement.cz/?token={Uri.EscapeDataString(token)}&email={model.Email}\">{token}</a>"
+            $"<a href=\"localhost:5000/api/v1/Auth/ValidateToken?token={Uri.EscapeDataString(token)}&email={(model.Email)}\">{token}</a>"
             );
 
         return Ok(token);
@@ -103,17 +103,13 @@ public class AuthController : ControllerBase
         return Ok();
     }
 
-    /// <summary>
-    /// unascape token before sending
-    /// </summary>
-    /// <param name="model"></param>
-    /// <returns></returns>
-    [HttpPost("api/v1/Auth/ValidateToken")]
+
+    [HttpGet("api/v1/Auth/ValidateToken")]
     public async Task<ActionResult> ValidateToken(
-        [FromBody] TokenModel model
+        [FromQuery] TokenModel model
         )
     {
-        var normalizedMail = model.Email.ToUpperInvariant();
+        var normalizedMail =model.Email.ToUpperInvariant();
         var user = await _userManager
             .Users
             .SingleOrDefaultAsync(x => !x.EmailConfirmed && x.NormalizedEmail == normalizedMail);
@@ -124,7 +120,7 @@ public class AuthController : ControllerBase
             return ValidationProblem(ModelState);
         }
 
-        var check = await _userManager.ConfirmEmailAsync(user, model.Token);
+        var check = await _userManager.ConfirmEmailAsync(user,model.Token);
         if (!check.Succeeded)
         {
             ModelState.AddModelError<TokenModel>(x => x.Token, "INVALID_TOKEN");

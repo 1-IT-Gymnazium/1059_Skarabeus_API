@@ -90,14 +90,19 @@
     "ContainingType": "Skarabeus_Api.Controllers.AuthController",
     "Method": "ValidateToken",
     "RelativePath": "api/v1/Auth/ValidateToken",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "Skarabeus_Api.Controllers.Models.Auth.TokenModel",
-        "IsRequired": true
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

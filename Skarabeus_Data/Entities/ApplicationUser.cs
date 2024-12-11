@@ -7,7 +7,7 @@ namespace Skarabeus_Data.Entities;
 [Table(name: "ApsNetUser")]
 public class ApplicationUser : IdentityUser<Guid>, ITrackable
 {
-    public string? FullName { get; set; }
+    public string? LogginName { get; set; }
 
     public Instant CreatedAt { get; set; }
     public string CreatedBy { get; set; } = null!;

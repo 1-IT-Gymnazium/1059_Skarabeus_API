@@ -129,14 +129,14 @@ namespace Skarabeus_Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("FullName")
-                        .HasColumnType("text");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("boolean");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("LogginName")
+                        .HasColumnType("text");
 
                     b.Property<Instant>("ModifiedAt")
                         .HasColumnType("timestamp with time zone");
