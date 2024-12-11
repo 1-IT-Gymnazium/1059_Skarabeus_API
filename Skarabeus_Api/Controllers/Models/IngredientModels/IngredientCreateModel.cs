@@ -1,4 +1,4 @@
-﻿namespace Skarabeus_Api.Controllers.Models.Ingredient;
+﻿namespace Skarabeus_Api.Controllers.Models.IngredientModels;
 
 public class IngredientCreateModel
 {

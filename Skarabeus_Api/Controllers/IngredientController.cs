@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using NodaTime;
-using Skarabeus_Api.Controllers.Models.Ingredient;
+using Skarabeus_Api.Controllers.Models.IngredientModels;
 using Skarabeus_Data;
 using Skarabeus_Data.Entities;
 using Skarabeus_Data.Interfaces;
-using System.ComponentModel.DataAnnotations;
 
 namespace Skarabeus_Api.Controllers;
 
@@ -65,9 +63,10 @@ public class IngredientController : Controller
     }
 
     [HttpGet]
-    public async Task<ActionResult<ICollection<IngredientDetailModel>>> GetList()
+    public async Task<ActionResult<ICollection<IngredientDetailModel>>> GetList(
+        )
     {
-        var list = await _dbContext.Set<Ingredient>().Select(x => new IngredientDetailModel
+        var list = await _dbContext.Set<Ingredient>().FilterDeleted().Select(x => new IngredientDetailModel
         {
             Name = x.Name,
             PriceForUnit = x.PriceForUnit,

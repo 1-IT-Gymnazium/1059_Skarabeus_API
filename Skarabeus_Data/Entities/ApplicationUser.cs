@@ -8,6 +8,7 @@ namespace Skarabeus_Data.Entities;
 public class ApplicationUser : IdentityUser<Guid>, ITrackable
 {
     public string? LogginName { get; set; }
+    public Person? Person { get; set; }
 
     public Instant CreatedAt { get; set; }
     public string CreatedBy { get; set; } = null!;
