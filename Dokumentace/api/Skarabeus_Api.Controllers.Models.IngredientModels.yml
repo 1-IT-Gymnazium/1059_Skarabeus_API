@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels
+  commentId: N:Skarabeus_Api.Controllers.Models.IngredientModels
+  id: Skarabeus_Api.Controllers.Models.IngredientModels
+  children:
+  - Skarabeus_Api.Controllers.Models.IngredientModels.IngredientCreateModel
+  - Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel
+  - Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Api.Controllers.Models.IngredientModels
+  nameWithType: Skarabeus_Api.Controllers.Models.IngredientModels
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientCreateModel
+  commentId: T:Skarabeus_Api.Controllers.Models.IngredientModels.IngredientCreateModel
+  parent: Skarabeus_Api.Controllers.Models.IngredientModels
+  href: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientCreateModel.html
+  name: IngredientCreateModel
+  nameWithType: IngredientCreateModel
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientCreateModel
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel
+  commentId: T:Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel
+  parent: Skarabeus_Api.Controllers.Models.IngredientModels
+  href: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel.html
+  name: IngredientDetailModel
+  nameWithType: IngredientDetailModel
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions
+  commentId: T:Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions
+  href: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.html
+  name: IngredientDetailModelExtensions
+  nameWithType: IngredientDetailModelExtensions
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels
+  commentId: N:Skarabeus_Api.Controllers.Models.IngredientModels
+  href: Skarabeus_Api.html
+  name: Skarabeus_Api.Controllers.Models.IngredientModels
+  nameWithType: Skarabeus_Api.Controllers.Models.IngredientModels
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels
+  spec.csharp:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.IngredientModels
+    name: IngredientModels
+    href: Skarabeus_Api.Controllers.Models.IngredientModels.html
+  spec.vb:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.IngredientModels
+    name: IngredientModels
+    href: Skarabeus_Api.Controllers.Models.IngredientModels.html

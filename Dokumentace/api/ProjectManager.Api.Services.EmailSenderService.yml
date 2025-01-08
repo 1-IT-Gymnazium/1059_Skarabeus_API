@@ -1,0 +1,613 @@
+### YamlMime:ManagedReference
+items:
+- uid: ProjectManager.Api.Services.EmailSenderService
+  commentId: T:ProjectManager.Api.Services.EmailSenderService
+  id: EmailSenderService
+  parent: ProjectManager.Api.Services
+  children:
+  - ProjectManager.Api.Services.EmailSenderService.#ctor(NodaTime.IClock,Skarabeus_Data.ApplicationDbContext,Microsoft.Extensions.Options.IOptionsSnapshot{Skarabeus_Api.Settings.SmtpSettings})
+  - ProjectManager.Api.Services.EmailSenderService.AddEmailToSendAsync(System.String,System.String,System.String)
+  - ProjectManager.Api.Services.EmailSenderService.SendEmailsAsync
+  langs:
+  - csharp
+  - vb
+  name: EmailSenderService
+  nameWithType: EmailSenderService
+  fullName: ProjectManager.Api.Services.EmailSenderService
+  type: Class
+  source:
+    remote:
+      path: src/Skarabeus_Api/Services/EmailSenderService.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: EmailSenderService
+    path: ../src/Skarabeus_Api/Services/EmailSenderService.cs
+    startLine: 11
+  assemblies:
+  - Skarabeus_Api
+  namespace: ProjectManager.Api.Services
+  syntax:
+    content: public class EmailSenderService
+    content.vb: Public Class EmailSenderService
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: ProjectManager.Api.Services.EmailSenderService.#ctor(NodaTime.IClock,Skarabeus_Data.ApplicationDbContext,Microsoft.Extensions.Options.IOptionsSnapshot{Skarabeus_Api.Settings.SmtpSettings})
+  commentId: M:ProjectManager.Api.Services.EmailSenderService.#ctor(NodaTime.IClock,Skarabeus_Data.ApplicationDbContext,Microsoft.Extensions.Options.IOptionsSnapshot{Skarabeus_Api.Settings.SmtpSettings})
+  id: '#ctor(NodaTime.IClock,Skarabeus_Data.ApplicationDbContext,Microsoft.Extensions.Options.IOptionsSnapshot{Skarabeus_Api.Settings.SmtpSettings})'
+  parent: ProjectManager.Api.Services.EmailSenderService
+  langs:
+  - csharp
+  - vb
+  name: EmailSenderService(IClock, ApplicationDbContext, IOptionsSnapshot<SmtpSettings>)
+  nameWithType: EmailSenderService.EmailSenderService(IClock, ApplicationDbContext, IOptionsSnapshot<SmtpSettings>)
+  fullName: ProjectManager.Api.Services.EmailSenderService.EmailSenderService(NodaTime.IClock, Skarabeus_Data.ApplicationDbContext, Microsoft.Extensions.Options.IOptionsSnapshot<Skarabeus_Api.Settings.SmtpSettings>)
+  type: Constructor
+  source:
+    remote:
+      path: src/Skarabeus_Api/Services/EmailSenderService.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: .ctor
+    path: ../src/Skarabeus_Api/Services/EmailSenderService.cs
+    startLine: 17
+  assemblies:
+  - Skarabeus_Api
+  namespace: ProjectManager.Api.Services
+  syntax:
+    content: public EmailSenderService(IClock clock, ApplicationDbContext dbContext, IOptionsSnapshot<SmtpSettings> smtpSettings)
+    parameters:
+    - id: clock
+      type: NodaTime.IClock
+    - id: dbContext
+      type: Skarabeus_Data.ApplicationDbContext
+    - id: smtpSettings
+      type: Microsoft.Extensions.Options.IOptionsSnapshot{Skarabeus_Api.Settings.SmtpSettings}
+    content.vb: Public Sub New(clock As IClock, dbContext As ApplicationDbContext, smtpSettings As IOptionsSnapshot(Of SmtpSettings))
+  overload: ProjectManager.Api.Services.EmailSenderService.#ctor*
+  nameWithType.vb: EmailSenderService.New(IClock, ApplicationDbContext, IOptionsSnapshot(Of SmtpSettings))
+  fullName.vb: ProjectManager.Api.Services.EmailSenderService.New(NodaTime.IClock, Skarabeus_Data.ApplicationDbContext, Microsoft.Extensions.Options.IOptionsSnapshot(Of Skarabeus_Api.Settings.SmtpSettings))
+  name.vb: New(IClock, ApplicationDbContext, IOptionsSnapshot(Of SmtpSettings))
+- uid: ProjectManager.Api.Services.EmailSenderService.AddEmailToSendAsync(System.String,System.String,System.String)
+  commentId: M:ProjectManager.Api.Services.EmailSenderService.AddEmailToSendAsync(System.String,System.String,System.String)
+  id: AddEmailToSendAsync(System.String,System.String,System.String)
+  parent: ProjectManager.Api.Services.EmailSenderService
+  langs:
+  - csharp
+  - vb
+  name: AddEmailToSendAsync(string, string, string)
+  nameWithType: EmailSenderService.AddEmailToSendAsync(string, string, string)
+  fullName: ProjectManager.Api.Services.EmailSenderService.AddEmailToSendAsync(string, string, string)
+  type: Method
+  source:
+    remote:
+      path: src/Skarabeus_Api/Services/EmailSenderService.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: AddEmailToSendAsync
+    path: ../src/Skarabeus_Api/Services/EmailSenderService.cs
+    startLine: 28
+  assemblies:
+  - Skarabeus_Api
+  namespace: ProjectManager.Api.Services
+  syntax:
+    content: public Task AddEmailToSendAsync(string receiver, string subject, string body)
+    parameters:
+    - id: receiver
+      type: System.String
+    - id: subject
+      type: System.String
+    - id: body
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function AddEmailToSendAsync(receiver As String, subject As String, body As String) As Task
+  overload: ProjectManager.Api.Services.EmailSenderService.AddEmailToSendAsync*
+  nameWithType.vb: EmailSenderService.AddEmailToSendAsync(String, String, String)
+  fullName.vb: ProjectManager.Api.Services.EmailSenderService.AddEmailToSendAsync(String, String, String)
+  name.vb: AddEmailToSendAsync(String, String, String)
+- uid: ProjectManager.Api.Services.EmailSenderService.SendEmailsAsync
+  commentId: M:ProjectManager.Api.Services.EmailSenderService.SendEmailsAsync
+  id: SendEmailsAsync
+  parent: ProjectManager.Api.Services.EmailSenderService
+  langs:
+  - csharp
+  - vb
+  name: SendEmailsAsync()
+  nameWithType: EmailSenderService.SendEmailsAsync()
+  fullName: ProjectManager.Api.Services.EmailSenderService.SendEmailsAsync()
+  type: Method
+  source:
+    remote:
+      path: src/Skarabeus_Api/Services/EmailSenderService.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: SendEmailsAsync
+    path: ../src/Skarabeus_Api/Services/EmailSenderService.cs
+    startLine: 49
+  assemblies:
+  - Skarabeus_Api
+  namespace: ProjectManager.Api.Services
+  syntax:
+    content: public Task SendEmailsAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function SendEmailsAsync() As Task
+  overload: ProjectManager.Api.Services.EmailSenderService.SendEmailsAsync*
+references:
+- uid: ProjectManager.Api.Services
+  commentId: N:ProjectManager.Api.Services
+  href: ProjectManager.html
+  name: ProjectManager.Api.Services
+  nameWithType: ProjectManager.Api.Services
+  fullName: ProjectManager.Api.Services
+  spec.csharp:
+  - uid: ProjectManager
+    name: ProjectManager
+    href: ProjectManager.html
+  - name: .
+  - uid: ProjectManager.Api
+    name: Api
+    href: ProjectManager.Api.html
+  - name: .
+  - uid: ProjectManager.Api.Services
+    name: Services
+    href: ProjectManager.Api.Services.html
+  spec.vb:
+  - uid: ProjectManager
+    name: ProjectManager
+    href: ProjectManager.html
+  - name: .
+  - uid: ProjectManager.Api
+    name: Api
+    href: ProjectManager.Api.html
+  - name: .
+  - uid: ProjectManager.Api.Services
+    name: Services
+    href: ProjectManager.Api.Services.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ProjectManager.Api.Services.EmailSenderService.#ctor*
+  commentId: Overload:ProjectManager.Api.Services.EmailSenderService.#ctor
+  href: ProjectManager.Api.Services.EmailSenderService.html#ProjectManager_Api_Services_EmailSenderService__ctor_NodaTime_IClock_Skarabeus_Data_ApplicationDbContext_Microsoft_Extensions_Options_IOptionsSnapshot_Skarabeus_Api_Settings_SmtpSettings__
+  name: EmailSenderService
+  nameWithType: EmailSenderService.EmailSenderService
+  fullName: ProjectManager.Api.Services.EmailSenderService.EmailSenderService
+  nameWithType.vb: EmailSenderService.New
+  fullName.vb: ProjectManager.Api.Services.EmailSenderService.New
+  name.vb: New
+- uid: NodaTime.IClock
+  commentId: T:NodaTime.IClock
+  parent: NodaTime
+  isExternal: true
+  href: https://github.com/nodatime/nodatime/blob/c4989451019b3ca6b387accbd40c9867b3951f3e/src/NodaTime/IClock.cs
+  name: IClock
+  nameWithType: IClock
+  fullName: NodaTime.IClock
+- uid: Skarabeus_Data.ApplicationDbContext
+  commentId: T:Skarabeus_Data.ApplicationDbContext
+  parent: Skarabeus_Data
+  href: Skarabeus_Data.ApplicationDbContext.html
+  name: ApplicationDbContext
+  nameWithType: ApplicationDbContext
+  fullName: Skarabeus_Data.ApplicationDbContext
+- uid: Microsoft.Extensions.Options.IOptionsSnapshot{Skarabeus_Api.Settings.SmtpSettings}
+  commentId: T:Microsoft.Extensions.Options.IOptionsSnapshot{Skarabeus_Api.Settings.SmtpSettings}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptionsSnapshot`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1
+  name: IOptionsSnapshot<SmtpSettings>
+  nameWithType: IOptionsSnapshot<SmtpSettings>
+  fullName: Microsoft.Extensions.Options.IOptionsSnapshot<Skarabeus_Api.Settings.SmtpSettings>
+  nameWithType.vb: IOptionsSnapshot(Of SmtpSettings)
+  fullName.vb: Microsoft.Extensions.Options.IOptionsSnapshot(Of Skarabeus_Api.Settings.SmtpSettings)
+  name.vb: IOptionsSnapshot(Of SmtpSettings)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptionsSnapshot`1
+    name: IOptionsSnapshot
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1
+  - name: <
+  - uid: Skarabeus_Api.Settings.SmtpSettings
+    name: SmtpSettings
+    href: Skarabeus_Api.Settings.SmtpSettings.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptionsSnapshot`1
+    name: IOptionsSnapshot
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Api.Settings.SmtpSettings
+    name: SmtpSettings
+    href: Skarabeus_Api.Settings.SmtpSettings.html
+  - name: )
+- uid: NodaTime
+  commentId: N:NodaTime
+  isExternal: true
+  name: NodaTime
+  nameWithType: NodaTime
+  fullName: NodaTime
+- uid: Skarabeus_Data
+  commentId: N:Skarabeus_Data
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data
+  nameWithType: Skarabeus_Data
+  fullName: Skarabeus_Data
+- uid: Microsoft.Extensions.Options.IOptionsSnapshot`1
+  commentId: T:Microsoft.Extensions.Options.IOptionsSnapshot`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1
+  name: IOptionsSnapshot<TOptions>
+  nameWithType: IOptionsSnapshot<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptionsSnapshot<TOptions>
+  nameWithType.vb: IOptionsSnapshot(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptionsSnapshot(Of TOptions)
+  name.vb: IOptionsSnapshot(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptionsSnapshot`1
+    name: IOptionsSnapshot
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptionsSnapshot`1
+    name: IOptionsSnapshot
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: ProjectManager.Api.Services.EmailSenderService.AddEmailToSendAsync*
+  commentId: Overload:ProjectManager.Api.Services.EmailSenderService.AddEmailToSendAsync
+  href: ProjectManager.Api.Services.EmailSenderService.html#ProjectManager_Api_Services_EmailSenderService_AddEmailToSendAsync_System_String_System_String_System_String_
+  name: AddEmailToSendAsync
+  nameWithType: EmailSenderService.AddEmailToSendAsync
+  fullName: ProjectManager.Api.Services.EmailSenderService.AddEmailToSendAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: ProjectManager.Api.Services.EmailSenderService.SendEmailsAsync*
+  commentId: Overload:ProjectManager.Api.Services.EmailSenderService.SendEmailsAsync
+  href: ProjectManager.Api.Services.EmailSenderService.html#ProjectManager_Api_Services_EmailSenderService_SendEmailsAsync
+  name: SendEmailsAsync
+  nameWithType: EmailSenderService.SendEmailsAsync
+  fullName: ProjectManager.Api.Services.EmailSenderService.SendEmailsAsync

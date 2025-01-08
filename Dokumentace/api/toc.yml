@@ -1,0 +1,190 @@
+### YamlMime:TableOfContent
+items:
+- uid: ProjectManager.Api.Services
+  name: ProjectManager.Api.Services
+  type: Namespace
+  items:
+  - uid: ProjectManager.Api.Services.Email
+    name: Email
+    type: Class
+  - uid: ProjectManager.Api.Services.EmailSenderService
+    name: EmailSenderService
+    type: Class
+- uid: Skarabeus_Api
+  name: Skarabeus_Api
+  type: Namespace
+  items:
+  - uid: Skarabeus_Api.Program
+    name: Program
+    type: Class
+- uid: Skarabeus_Api.BackgroundServices
+  name: Skarabeus_Api.BackgroundServices
+  type: Namespace
+  items:
+  - uid: Skarabeus_Api.BackgroundServices.EmailSenderBackgroundService
+    name: EmailSenderBackgroundService
+    type: Class
+- uid: Skarabeus_Api.Controllers
+  name: Skarabeus_Api.Controllers
+  type: Namespace
+  items:
+  - uid: Skarabeus_Api.Controllers.AuthController
+    name: AuthController
+    type: Class
+  - uid: Skarabeus_Api.Controllers.IngredientController
+    name: IngredientController
+    type: Class
+- uid: Skarabeus_Api.Controllers.Models.Auth
+  name: Skarabeus_Api.Controllers.Models.Auth
+  type: Namespace
+  items:
+  - uid: Skarabeus_Api.Controllers.Models.Auth.LoginModel
+    name: LoginModel
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.Auth.RegisterModel
+    name: RegisterModel
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.Auth.TokenModel
+    name: TokenModel
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.Auth.UserInfoModel
+    name: UserInfoModel
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.Auth.UserInfoModelExtensions
+    name: UserInfoModelExtensions
+    type: Class
+- uid: Skarabeus_Api.Controllers.Models.DishModels
+  name: Skarabeus_Api.Controllers.Models.DishModels
+  type: Namespace
+  items:
+  - uid: Skarabeus_Api.Controllers.Models.DishModels.DishDetailModel
+    name: DishDetailModel
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.DishModels.DishDetailModelExtensions
+    name: DishDetailModelExtensions
+    type: Class
+- uid: Skarabeus_Api.Controllers.Models.EventModels
+  name: Skarabeus_Api.Controllers.Models.EventModels
+  type: Namespace
+  items:
+  - uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+    name: EventDetailModel
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.EventModels.PersonDetailModelExtensions
+    name: PersonDetailModelExtensions
+    type: Class
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels
+  name: Skarabeus_Api.Controllers.Models.IngredientModels
+  type: Namespace
+  items:
+  - uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientCreateModel
+    name: IngredientCreateModel
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel
+    name: IngredientDetailModel
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions
+    name: IngredientDetailModelExtensions
+    type: Class
+- uid: Skarabeus_Api.Controllers.Models.PersonModels
+  name: Skarabeus_Api.Controllers.Models.PersonModels
+  type: Namespace
+  items:
+  - uid: Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModel
+    name: PersonDetailModel
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModelExtensions
+    name: PersonDetailModelExtensions
+    type: Class
+  - uid: Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel
+    name: SmallPersonDetailModel
+    type: Class
+- uid: Skarabeus_Api.Settings
+  name: Skarabeus_Api.Settings
+  type: Namespace
+  items:
+  - uid: Skarabeus_Api.Settings.SmtpSettings
+    name: SmtpSettings
+    type: Class
+- uid: Skarabeus_Data
+  name: Skarabeus_Data
+  type: Namespace
+  items:
+  - uid: Skarabeus_Data.ApplicationDbContext
+    name: ApplicationDbContext
+    type: Class
+- uid: Skarabeus_Data.Entities
+  name: Skarabeus_Data.Entities
+  type: Namespace
+  items:
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    type: Class
+  - uid: Skarabeus_Data.Entities.Dish
+    name: Dish
+    type: Class
+  - uid: Skarabeus_Data.Entities.Event
+    name: Event
+    type: Class
+  - uid: Skarabeus_Data.Entities.Ingredient
+    name: Ingredient
+    type: Class
+  - uid: Skarabeus_Data.Entities.IngredientExtensions
+    name: IngredientExtensions
+    type: Class
+  - uid: Skarabeus_Data.Entities.Person
+    name: Person
+    type: Class
+- uid: Skarabeus_Data.Entities.ConnectionTables
+  name: Skarabeus_Data.Entities.ConnectionTables
+  type: Namespace
+  items:
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventDish
+    name: EventDish
+    type: Class
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    type: Class
+  - uid: Skarabeus_Data.Entities.ConnectionTables.IngredientDish
+    name: IngredientDish
+    type: Class
+- uid: Skarabeus_Data.Interfaces
+  name: Skarabeus_Data.Interfaces
+  type: Namespace
+  items:
+  - uid: Skarabeus_Data.Interfaces.ITrackable
+    name: ITrackable
+    type: Interface
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions
+    name: ITrackableExtensions
+    type: Class
+- uid: Skarabeus_Data.Migrations
+  name: Skarabeus_Data.Migrations
+  type: Namespace
+  items:
+  - uid: Skarabeus_Data.Migrations.addedIngredient
+    name: addedIngredient
+    type: Class
+  - uid: Skarabeus_Data.Migrations.addedMostOfTheDatabaseTables
+    name: addedMostOfTheDatabaseTables
+    type: Class
+  - uid: Skarabeus_Data.Migrations.addedemails
+    name: addedemails
+    type: Class
+  - uid: Skarabeus_Data.Migrations.init
+    name: init
+    type: Class
+  - uid: Skarabeus_Data.Migrations.renamedIngredientTabl
+    name: renamedIngredientTabl
+    type: Class
+  - uid: Skarabeus_Data.Migrations.renamedUserFullName
+    name: renamedUserFullName
+    type: Class
+- uid: Skarabeus_Data.Utilities
+  name: Skarabeus_Data.Utilities
+  type: Namespace
+  items:
+  - uid: Skarabeus_Data.Utilities.ClaimsPrincipalExtensions
+    name: ClaimsPrincipalExtensions
+    type: Class
+memberLayout: SamePage

@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.Controllers.Models.DishModels
+  commentId: N:Skarabeus_Api.Controllers.Models.DishModels
+  id: Skarabeus_Api.Controllers.Models.DishModels
+  children:
+  - Skarabeus_Api.Controllers.Models.DishModels.DishDetailModel
+  - Skarabeus_Api.Controllers.Models.DishModels.DishDetailModelExtensions
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Api.Controllers.Models.DishModels
+  nameWithType: Skarabeus_Api.Controllers.Models.DishModels
+  fullName: Skarabeus_Api.Controllers.Models.DishModels
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: Skarabeus_Api.Controllers.Models.DishModels.DishDetailModel
+  commentId: T:Skarabeus_Api.Controllers.Models.DishModels.DishDetailModel
+  parent: Skarabeus_Api.Controllers.Models.DishModels
+  href: Skarabeus_Api.Controllers.Models.DishModels.DishDetailModel.html
+  name: DishDetailModel
+  nameWithType: DishDetailModel
+  fullName: Skarabeus_Api.Controllers.Models.DishModels.DishDetailModel
+- uid: Skarabeus_Api.Controllers.Models.DishModels.DishDetailModelExtensions
+  commentId: T:Skarabeus_Api.Controllers.Models.DishModels.DishDetailModelExtensions
+  href: Skarabeus_Api.Controllers.Models.DishModels.DishDetailModelExtensions.html
+  name: DishDetailModelExtensions
+  nameWithType: DishDetailModelExtensions
+  fullName: Skarabeus_Api.Controllers.Models.DishModels.DishDetailModelExtensions
+- uid: Skarabeus_Api.Controllers.Models.DishModels
+  commentId: N:Skarabeus_Api.Controllers.Models.DishModels
+  href: Skarabeus_Api.html
+  name: Skarabeus_Api.Controllers.Models.DishModels
+  nameWithType: Skarabeus_Api.Controllers.Models.DishModels
+  fullName: Skarabeus_Api.Controllers.Models.DishModels
+  spec.csharp:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.DishModels
+    name: DishModels
+    href: Skarabeus_Api.Controllers.Models.DishModels.html
+  spec.vb:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.DishModels
+    name: DishModels
+    href: Skarabeus_Api.Controllers.Models.DishModels.html

@@ -1,0 +1,1861 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Data.Entities.ApplicationUser
+  commentId: T:Skarabeus_Data.Entities.ApplicationUser
+  id: ApplicationUser
+  parent: Skarabeus_Data.Entities
+  children:
+  - Skarabeus_Data.Entities.ApplicationUser.CreatedAt
+  - Skarabeus_Data.Entities.ApplicationUser.CreatedBy
+  - Skarabeus_Data.Entities.ApplicationUser.DeletedAt
+  - Skarabeus_Data.Entities.ApplicationUser.DeletedBy
+  - Skarabeus_Data.Entities.ApplicationUser.LogginName
+  - Skarabeus_Data.Entities.ApplicationUser.ModifiedAt
+  - Skarabeus_Data.Entities.ApplicationUser.ModifiedBy
+  - Skarabeus_Data.Entities.ApplicationUser.Person
+  langs:
+  - csharp
+  - vb
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: Skarabeus_Data.Entities.ApplicationUser
+  type: Class
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ApplicationUser.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: ApplicationUser
+    path: ../src/Skarabeus_Data/Entities/ApplicationUser.cs
+    startLine: 6
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities
+  syntax:
+    content: >-
+      [Table("ApsNetUser")]
+
+      public class ApplicationUser : IdentityUser<Guid>, ITrackable
+    content.vb: >-
+      <Table("ApsNetUser")>
+
+      Public Class ApplicationUser Inherits IdentityUser(Of Guid) Implements ITrackable
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable
+  inheritedMembers:
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.ToString
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.Id
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.UserName
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.NormalizedUserName
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.Email
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.NormalizedEmail
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.EmailConfirmed
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.PasswordHash
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.SecurityStamp
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.ConcurrencyStamp
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.PhoneNumber
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.PhoneNumberConfirmed
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.TwoFactorEnabled
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.LockoutEnd
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.LockoutEnabled
+  - Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.AccessFailedCount
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  extensionMethods:
+  - Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(NodaTime.Instant)
+  - Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(System.String,NodaTime.Instant)
+  - Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(NodaTime.Instant)
+  - Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(System.String,NodaTime.Instant)
+  - Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(NodaTime.Instant)
+  - Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(System.String,NodaTime.Instant)
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.Schema.TableAttribute
+    ctor: System.ComponentModel.DataAnnotations.Schema.TableAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ApsNetUser
+- uid: Skarabeus_Data.Entities.ApplicationUser.LogginName
+  commentId: P:Skarabeus_Data.Entities.ApplicationUser.LogginName
+  id: LogginName
+  parent: Skarabeus_Data.Entities.ApplicationUser
+  langs:
+  - csharp
+  - vb
+  name: LogginName
+  nameWithType: ApplicationUser.LogginName
+  fullName: Skarabeus_Data.Entities.ApplicationUser.LogginName
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ApplicationUser.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: LogginName
+    path: ../src/Skarabeus_Data/Entities/ApplicationUser.cs
+    startLine: 9
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities
+  syntax:
+    content: public string? LogginName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LogginName As String
+  overload: Skarabeus_Data.Entities.ApplicationUser.LogginName*
+- uid: Skarabeus_Data.Entities.ApplicationUser.Person
+  commentId: P:Skarabeus_Data.Entities.ApplicationUser.Person
+  id: Person
+  parent: Skarabeus_Data.Entities.ApplicationUser
+  langs:
+  - csharp
+  - vb
+  name: Person
+  nameWithType: ApplicationUser.Person
+  fullName: Skarabeus_Data.Entities.ApplicationUser.Person
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ApplicationUser.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: Person
+    path: ../src/Skarabeus_Data/Entities/ApplicationUser.cs
+    startLine: 10
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities
+  syntax:
+    content: public Person? Person { get; set; }
+    parameters: []
+    return:
+      type: Skarabeus_Data.Entities.Person
+    content.vb: Public Property Person As Person
+  overload: Skarabeus_Data.Entities.ApplicationUser.Person*
+- uid: Skarabeus_Data.Entities.ApplicationUser.CreatedAt
+  commentId: P:Skarabeus_Data.Entities.ApplicationUser.CreatedAt
+  id: CreatedAt
+  parent: Skarabeus_Data.Entities.ApplicationUser
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: ApplicationUser.CreatedAt
+  fullName: Skarabeus_Data.Entities.ApplicationUser.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ApplicationUser.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: CreatedAt
+    path: ../src/Skarabeus_Data/Entities/ApplicationUser.cs
+    startLine: 12
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities
+  example: []
+  syntax:
+    content: public Instant CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: NodaTime.Instant
+    content.vb: Public Property CreatedAt As Instant
+  overload: Skarabeus_Data.Entities.ApplicationUser.CreatedAt*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.CreatedAt
+- uid: Skarabeus_Data.Entities.ApplicationUser.CreatedBy
+  commentId: P:Skarabeus_Data.Entities.ApplicationUser.CreatedBy
+  id: CreatedBy
+  parent: Skarabeus_Data.Entities.ApplicationUser
+  langs:
+  - csharp
+  - vb
+  name: CreatedBy
+  nameWithType: ApplicationUser.CreatedBy
+  fullName: Skarabeus_Data.Entities.ApplicationUser.CreatedBy
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ApplicationUser.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: CreatedBy
+    path: ../src/Skarabeus_Data/Entities/ApplicationUser.cs
+    startLine: 13
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities
+  example: []
+  syntax:
+    content: public string CreatedBy { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CreatedBy As String
+  overload: Skarabeus_Data.Entities.ApplicationUser.CreatedBy*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.CreatedBy
+- uid: Skarabeus_Data.Entities.ApplicationUser.ModifiedAt
+  commentId: P:Skarabeus_Data.Entities.ApplicationUser.ModifiedAt
+  id: ModifiedAt
+  parent: Skarabeus_Data.Entities.ApplicationUser
+  langs:
+  - csharp
+  - vb
+  name: ModifiedAt
+  nameWithType: ApplicationUser.ModifiedAt
+  fullName: Skarabeus_Data.Entities.ApplicationUser.ModifiedAt
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ApplicationUser.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: ModifiedAt
+    path: ../src/Skarabeus_Data/Entities/ApplicationUser.cs
+    startLine: 15
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities
+  example: []
+  syntax:
+    content: public Instant ModifiedAt { get; set; }
+    parameters: []
+    return:
+      type: NodaTime.Instant
+    content.vb: Public Property ModifiedAt As Instant
+  overload: Skarabeus_Data.Entities.ApplicationUser.ModifiedAt*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.ModifiedAt
+- uid: Skarabeus_Data.Entities.ApplicationUser.ModifiedBy
+  commentId: P:Skarabeus_Data.Entities.ApplicationUser.ModifiedBy
+  id: ModifiedBy
+  parent: Skarabeus_Data.Entities.ApplicationUser
+  langs:
+  - csharp
+  - vb
+  name: ModifiedBy
+  nameWithType: ApplicationUser.ModifiedBy
+  fullName: Skarabeus_Data.Entities.ApplicationUser.ModifiedBy
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ApplicationUser.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: ModifiedBy
+    path: ../src/Skarabeus_Data/Entities/ApplicationUser.cs
+    startLine: 16
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities
+  example: []
+  syntax:
+    content: public string ModifiedBy { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ModifiedBy As String
+  overload: Skarabeus_Data.Entities.ApplicationUser.ModifiedBy*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.ModifiedBy
+- uid: Skarabeus_Data.Entities.ApplicationUser.DeletedAt
+  commentId: P:Skarabeus_Data.Entities.ApplicationUser.DeletedAt
+  id: DeletedAt
+  parent: Skarabeus_Data.Entities.ApplicationUser
+  langs:
+  - csharp
+  - vb
+  name: DeletedAt
+  nameWithType: ApplicationUser.DeletedAt
+  fullName: Skarabeus_Data.Entities.ApplicationUser.DeletedAt
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ApplicationUser.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: DeletedAt
+    path: ../src/Skarabeus_Data/Entities/ApplicationUser.cs
+    startLine: 18
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities
+  example: []
+  syntax:
+    content: public Instant? DeletedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{NodaTime.Instant}
+    content.vb: Public Property DeletedAt As Instant?
+  overload: Skarabeus_Data.Entities.ApplicationUser.DeletedAt*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.DeletedAt
+- uid: Skarabeus_Data.Entities.ApplicationUser.DeletedBy
+  commentId: P:Skarabeus_Data.Entities.ApplicationUser.DeletedBy
+  id: DeletedBy
+  parent: Skarabeus_Data.Entities.ApplicationUser
+  langs:
+  - csharp
+  - vb
+  name: DeletedBy
+  nameWithType: ApplicationUser.DeletedBy
+  fullName: Skarabeus_Data.Entities.ApplicationUser.DeletedBy
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ApplicationUser.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: DeletedBy
+    path: ../src/Skarabeus_Data/Entities/ApplicationUser.cs
+    startLine: 19
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities
+  example: []
+  syntax:
+    content: public string? DeletedBy { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DeletedBy As String
+  overload: Skarabeus_Data.Entities.ApplicationUser.DeletedBy*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.DeletedBy
+references:
+- uid: Skarabeus_Data.Entities
+  commentId: N:Skarabeus_Data.Entities
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data.Entities
+  nameWithType: Skarabeus_Data.Entities
+  fullName: Skarabeus_Data.Entities
+  spec.csharp:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html
+  spec.vb:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  commentId: T:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  parent: Microsoft.AspNetCore.Identity
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  name: IdentityUser<Guid>
+  nameWithType: IdentityUser<Guid>
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>
+  nameWithType.vb: IdentityUser(Of Guid)
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid)
+  name.vb: IdentityUser(Of Guid)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: <
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Guid
+    name: Guid
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.guid
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackable
+  commentId: T:Skarabeus_Data.Interfaces.ITrackable
+  parent: Skarabeus_Data.Interfaces
+  href: Skarabeus_Data.Interfaces.ITrackable.html
+  name: ITrackable
+  nameWithType: ITrackable
+  fullName: Skarabeus_Data.Interfaces.ITrackable
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.ToString
+  commentId: M:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.ToString
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  name: ToString()
+  nameWithType: IdentityUser<Guid>.ToString()
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.ToString()
+  nameWithType.vb: IdentityUser(Of Guid).ToString()
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).ToString()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.Id
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.Id
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.Id
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.id
+  name: Id
+  nameWithType: IdentityUser<Guid>.Id
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.Id
+  nameWithType.vb: IdentityUser(Of Guid).Id
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).Id
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.UserName
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.UserName
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.UserName
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.username
+  name: UserName
+  nameWithType: IdentityUser<Guid>.UserName
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.UserName
+  nameWithType.vb: IdentityUser(Of Guid).UserName
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).UserName
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.NormalizedUserName
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.NormalizedUserName
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedUserName
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.normalizedusername
+  name: NormalizedUserName
+  nameWithType: IdentityUser<Guid>.NormalizedUserName
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.NormalizedUserName
+  nameWithType.vb: IdentityUser(Of Guid).NormalizedUserName
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).NormalizedUserName
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.Email
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.Email
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.Email
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.email
+  name: Email
+  nameWithType: IdentityUser<Guid>.Email
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.Email
+  nameWithType.vb: IdentityUser(Of Guid).Email
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).Email
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.NormalizedEmail
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.NormalizedEmail
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedEmail
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.normalizedemail
+  name: NormalizedEmail
+  nameWithType: IdentityUser<Guid>.NormalizedEmail
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.NormalizedEmail
+  nameWithType.vb: IdentityUser(Of Guid).NormalizedEmail
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).NormalizedEmail
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.EmailConfirmed
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.EmailConfirmed
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.EmailConfirmed
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.emailconfirmed
+  name: EmailConfirmed
+  nameWithType: IdentityUser<Guid>.EmailConfirmed
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.EmailConfirmed
+  nameWithType.vb: IdentityUser(Of Guid).EmailConfirmed
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).EmailConfirmed
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.PasswordHash
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.PasswordHash
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.PasswordHash
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.passwordhash
+  name: PasswordHash
+  nameWithType: IdentityUser<Guid>.PasswordHash
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.PasswordHash
+  nameWithType.vb: IdentityUser(Of Guid).PasswordHash
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).PasswordHash
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.SecurityStamp
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.SecurityStamp
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.SecurityStamp
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.securitystamp
+  name: SecurityStamp
+  nameWithType: IdentityUser<Guid>.SecurityStamp
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.SecurityStamp
+  nameWithType.vb: IdentityUser(Of Guid).SecurityStamp
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).SecurityStamp
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.ConcurrencyStamp
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.ConcurrencyStamp
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.ConcurrencyStamp
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.concurrencystamp
+  name: ConcurrencyStamp
+  nameWithType: IdentityUser<Guid>.ConcurrencyStamp
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.ConcurrencyStamp
+  nameWithType.vb: IdentityUser(Of Guid).ConcurrencyStamp
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).ConcurrencyStamp
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.PhoneNumber
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.PhoneNumber
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumber
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.phonenumber
+  name: PhoneNumber
+  nameWithType: IdentityUser<Guid>.PhoneNumber
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.PhoneNumber
+  nameWithType.vb: IdentityUser(Of Guid).PhoneNumber
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).PhoneNumber
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.PhoneNumberConfirmed
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.PhoneNumberConfirmed
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumberConfirmed
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.phonenumberconfirmed
+  name: PhoneNumberConfirmed
+  nameWithType: IdentityUser<Guid>.PhoneNumberConfirmed
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.PhoneNumberConfirmed
+  nameWithType.vb: IdentityUser(Of Guid).PhoneNumberConfirmed
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).PhoneNumberConfirmed
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.TwoFactorEnabled
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.TwoFactorEnabled
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.TwoFactorEnabled
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.twofactorenabled
+  name: TwoFactorEnabled
+  nameWithType: IdentityUser<Guid>.TwoFactorEnabled
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.TwoFactorEnabled
+  nameWithType.vb: IdentityUser(Of Guid).TwoFactorEnabled
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).TwoFactorEnabled
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.LockoutEnd
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.LockoutEnd
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnd
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.lockoutend
+  name: LockoutEnd
+  nameWithType: IdentityUser<Guid>.LockoutEnd
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.LockoutEnd
+  nameWithType.vb: IdentityUser(Of Guid).LockoutEnd
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).LockoutEnd
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.LockoutEnabled
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.LockoutEnabled
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnabled
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.lockoutenabled
+  name: LockoutEnabled
+  nameWithType: IdentityUser<Guid>.LockoutEnabled
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.LockoutEnabled
+  nameWithType.vb: IdentityUser(Of Guid).LockoutEnabled
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).LockoutEnabled
+- uid: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.AccessFailedCount
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}.AccessFailedCount
+  parent: Microsoft.AspNetCore.Identity.IdentityUser{System.Guid}
+  definition: Microsoft.AspNetCore.Identity.IdentityUser`1.AccessFailedCount
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.accessfailedcount
+  name: AccessFailedCount
+  nameWithType: IdentityUser<Guid>.AccessFailedCount
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<System.Guid>.AccessFailedCount
+  nameWithType.vb: IdentityUser(Of Guid).AccessFailedCount
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of System.Guid).AccessFailedCount
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  name: SetCreateBySystem<ApplicationUser>(ApplicationUser, Instant)
+  nameWithType: ITrackableExtensions.SetCreateBySystem<ApplicationUser>(ApplicationUser, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem<Skarabeus_Data.Entities.ApplicationUser>(Skarabeus_Data.Entities.ApplicationUser, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetCreateBySystem(Of ApplicationUser)(ApplicationUser, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem(Of Skarabeus_Data.Entities.ApplicationUser)(Skarabeus_Data.Entities.ApplicationUser, NodaTime.Instant)
+  name.vb: SetCreateBySystem(Of ApplicationUser)(ApplicationUser, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(Skarabeus_Data.Entities.ApplicationUser,NodaTime.Instant)
+    name: SetCreateBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(Skarabeus_Data.Entities.ApplicationUser,NodaTime.Instant)
+    name: SetCreateBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  name: SetCreateBy<ApplicationUser>(ApplicationUser, string, Instant)
+  nameWithType: ITrackableExtensions.SetCreateBy<ApplicationUser>(ApplicationUser, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy<Skarabeus_Data.Entities.ApplicationUser>(Skarabeus_Data.Entities.ApplicationUser, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetCreateBy(Of ApplicationUser)(ApplicationUser, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy(Of Skarabeus_Data.Entities.ApplicationUser)(Skarabeus_Data.Entities.ApplicationUser, String, NodaTime.Instant)
+  name.vb: SetCreateBy(Of ApplicationUser)(ApplicationUser, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(Skarabeus_Data.Entities.ApplicationUser,System.String,NodaTime.Instant)
+    name: SetCreateBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(Skarabeus_Data.Entities.ApplicationUser,System.String,NodaTime.Instant)
+    name: SetCreateBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  name: SetDeleteBySystem<ApplicationUser>(ApplicationUser, Instant)
+  nameWithType: ITrackableExtensions.SetDeleteBySystem<ApplicationUser>(ApplicationUser, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem<Skarabeus_Data.Entities.ApplicationUser>(Skarabeus_Data.Entities.ApplicationUser, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetDeleteBySystem(Of ApplicationUser)(ApplicationUser, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem(Of Skarabeus_Data.Entities.ApplicationUser)(Skarabeus_Data.Entities.ApplicationUser, NodaTime.Instant)
+  name.vb: SetDeleteBySystem(Of ApplicationUser)(ApplicationUser, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(Skarabeus_Data.Entities.ApplicationUser,NodaTime.Instant)
+    name: SetDeleteBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(Skarabeus_Data.Entities.ApplicationUser,NodaTime.Instant)
+    name: SetDeleteBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  name: SetDeleteBy<ApplicationUser>(ApplicationUser, string, Instant)
+  nameWithType: ITrackableExtensions.SetDeleteBy<ApplicationUser>(ApplicationUser, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy<Skarabeus_Data.Entities.ApplicationUser>(Skarabeus_Data.Entities.ApplicationUser, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetDeleteBy(Of ApplicationUser)(ApplicationUser, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy(Of Skarabeus_Data.Entities.ApplicationUser)(Skarabeus_Data.Entities.ApplicationUser, String, NodaTime.Instant)
+  name.vb: SetDeleteBy(Of ApplicationUser)(ApplicationUser, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(Skarabeus_Data.Entities.ApplicationUser,System.String,NodaTime.Instant)
+    name: SetDeleteBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(Skarabeus_Data.Entities.ApplicationUser,System.String,NodaTime.Instant)
+    name: SetDeleteBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  name: SetModifyBySystem<ApplicationUser>(ApplicationUser, Instant)
+  nameWithType: ITrackableExtensions.SetModifyBySystem<ApplicationUser>(ApplicationUser, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem<Skarabeus_Data.Entities.ApplicationUser>(Skarabeus_Data.Entities.ApplicationUser, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetModifyBySystem(Of ApplicationUser)(ApplicationUser, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem(Of Skarabeus_Data.Entities.ApplicationUser)(Skarabeus_Data.Entities.ApplicationUser, NodaTime.Instant)
+  name.vb: SetModifyBySystem(Of ApplicationUser)(ApplicationUser, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(Skarabeus_Data.Entities.ApplicationUser,NodaTime.Instant)
+    name: SetModifyBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(Skarabeus_Data.Entities.ApplicationUser,NodaTime.Instant)
+    name: SetModifyBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ApplicationUser.Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  name: SetModifyBy<ApplicationUser>(ApplicationUser, string, Instant)
+  nameWithType: ITrackableExtensions.SetModifyBy<ApplicationUser>(ApplicationUser, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy<Skarabeus_Data.Entities.ApplicationUser>(Skarabeus_Data.Entities.ApplicationUser, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetModifyBy(Of ApplicationUser)(ApplicationUser, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy(Of Skarabeus_Data.Entities.ApplicationUser)(Skarabeus_Data.Entities.ApplicationUser, String, NodaTime.Instant)
+  name.vb: SetModifyBy(Of ApplicationUser)(ApplicationUser, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(Skarabeus_Data.Entities.ApplicationUser,System.String,NodaTime.Instant)
+    name: SetModifyBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(Skarabeus_Data.Entities.ApplicationUser,System.String,NodaTime.Instant)
+    name: SetModifyBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ApplicationUser
+    name: ApplicationUser
+    href: Skarabeus_Data.Entities.ApplicationUser.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+  commentId: T:Microsoft.AspNetCore.Identity.IdentityUser`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  name: IdentityUser<TKey>
+  nameWithType: IdentityUser<TKey>
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>
+  nameWithType.vb: IdentityUser(Of TKey)
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey)
+  name.vb: IdentityUser(Of TKey)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: <
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
+- uid: Microsoft.AspNetCore.Identity
+  commentId: N:Microsoft.AspNetCore.Identity
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Identity
+  nameWithType: Microsoft.AspNetCore.Identity
+  fullName: Microsoft.AspNetCore.Identity
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Identity
+    name: Identity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Identity
+    name: Identity
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity
+- uid: Skarabeus_Data.Interfaces
+  commentId: N:Skarabeus_Data.Interfaces
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data.Interfaces
+  nameWithType: Skarabeus_Data.Interfaces
+  fullName: Skarabeus_Data.Interfaces
+  spec.csharp:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Interfaces
+    name: Interfaces
+    href: Skarabeus_Data.Interfaces.html
+  spec.vb:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Interfaces
+    name: Interfaces
+    href: Skarabeus_Data.Interfaces.html
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+  commentId: M:Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  name: ToString()
+  nameWithType: IdentityUser<TKey>.ToString()
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.ToString()
+  nameWithType.vb: IdentityUser(Of TKey).ToString()
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).ToString()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.tostring
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.Id
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.Id
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.id
+  name: Id
+  nameWithType: IdentityUser<TKey>.Id
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.Id
+  nameWithType.vb: IdentityUser(Of TKey).Id
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).Id
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.UserName
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.UserName
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.username
+  name: UserName
+  nameWithType: IdentityUser<TKey>.UserName
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.UserName
+  nameWithType.vb: IdentityUser(Of TKey).UserName
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).UserName
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedUserName
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedUserName
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.normalizedusername
+  name: NormalizedUserName
+  nameWithType: IdentityUser<TKey>.NormalizedUserName
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.NormalizedUserName
+  nameWithType.vb: IdentityUser(Of TKey).NormalizedUserName
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).NormalizedUserName
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.Email
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.Email
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.email
+  name: Email
+  nameWithType: IdentityUser<TKey>.Email
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.Email
+  nameWithType.vb: IdentityUser(Of TKey).Email
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).Email
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedEmail
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.NormalizedEmail
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.normalizedemail
+  name: NormalizedEmail
+  nameWithType: IdentityUser<TKey>.NormalizedEmail
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.NormalizedEmail
+  nameWithType.vb: IdentityUser(Of TKey).NormalizedEmail
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).NormalizedEmail
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.EmailConfirmed
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.EmailConfirmed
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.emailconfirmed
+  name: EmailConfirmed
+  nameWithType: IdentityUser<TKey>.EmailConfirmed
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.EmailConfirmed
+  nameWithType.vb: IdentityUser(Of TKey).EmailConfirmed
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).EmailConfirmed
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.PasswordHash
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.PasswordHash
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.passwordhash
+  name: PasswordHash
+  nameWithType: IdentityUser<TKey>.PasswordHash
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.PasswordHash
+  nameWithType.vb: IdentityUser(Of TKey).PasswordHash
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).PasswordHash
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.SecurityStamp
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.SecurityStamp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.securitystamp
+  name: SecurityStamp
+  nameWithType: IdentityUser<TKey>.SecurityStamp
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.SecurityStamp
+  nameWithType.vb: IdentityUser(Of TKey).SecurityStamp
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).SecurityStamp
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.ConcurrencyStamp
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.ConcurrencyStamp
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.concurrencystamp
+  name: ConcurrencyStamp
+  nameWithType: IdentityUser<TKey>.ConcurrencyStamp
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.ConcurrencyStamp
+  nameWithType.vb: IdentityUser(Of TKey).ConcurrencyStamp
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).ConcurrencyStamp
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumber
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumber
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.phonenumber
+  name: PhoneNumber
+  nameWithType: IdentityUser<TKey>.PhoneNumber
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.PhoneNumber
+  nameWithType.vb: IdentityUser(Of TKey).PhoneNumber
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).PhoneNumber
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumberConfirmed
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.PhoneNumberConfirmed
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.phonenumberconfirmed
+  name: PhoneNumberConfirmed
+  nameWithType: IdentityUser<TKey>.PhoneNumberConfirmed
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.PhoneNumberConfirmed
+  nameWithType.vb: IdentityUser(Of TKey).PhoneNumberConfirmed
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).PhoneNumberConfirmed
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.TwoFactorEnabled
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.TwoFactorEnabled
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.twofactorenabled
+  name: TwoFactorEnabled
+  nameWithType: IdentityUser<TKey>.TwoFactorEnabled
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.TwoFactorEnabled
+  nameWithType.vb: IdentityUser(Of TKey).TwoFactorEnabled
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).TwoFactorEnabled
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnd
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnd
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.lockoutend
+  name: LockoutEnd
+  nameWithType: IdentityUser<TKey>.LockoutEnd
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.LockoutEnd
+  nameWithType.vb: IdentityUser(Of TKey).LockoutEnd
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).LockoutEnd
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnabled
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.LockoutEnabled
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.lockoutenabled
+  name: LockoutEnabled
+  nameWithType: IdentityUser<TKey>.LockoutEnabled
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.LockoutEnabled
+  nameWithType.vb: IdentityUser(Of TKey).LockoutEnabled
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).LockoutEnabled
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.AccessFailedCount
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.AccessFailedCount
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.accessfailedcount
+  name: AccessFailedCount
+  nameWithType: IdentityUser<TKey>.AccessFailedCount
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.AccessFailedCount
+  nameWithType.vb: IdentityUser(Of TKey).AccessFailedCount
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).AccessFailedCount
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  name: SetCreateBySystem<T>(T, Instant)
+  nameWithType: ITrackableExtensions.SetCreateBySystem<T>(T, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem<T>(T, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetCreateBySystem(Of T)(T, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem(Of T)(T, NodaTime.Instant)
+  name.vb: SetCreateBySystem(Of T)(T, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+    name: SetCreateBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+    name: SetCreateBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions
+  commentId: T:Skarabeus_Data.Interfaces.ITrackableExtensions
+  parent: Skarabeus_Data.Interfaces
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html
+  name: ITrackableExtensions
+  nameWithType: ITrackableExtensions
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  name: SetCreateBy<T>(T, string, Instant)
+  nameWithType: ITrackableExtensions.SetCreateBy<T>(T, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy<T>(T, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetCreateBy(Of T)(T, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy(Of T)(T, String, NodaTime.Instant)
+  name.vb: SetCreateBy(Of T)(T, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+    name: SetCreateBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+    name: SetCreateBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  name: SetDeleteBySystem<T>(T, Instant)
+  nameWithType: ITrackableExtensions.SetDeleteBySystem<T>(T, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem<T>(T, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetDeleteBySystem(Of T)(T, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem(Of T)(T, NodaTime.Instant)
+  name.vb: SetDeleteBySystem(Of T)(T, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+    name: SetDeleteBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+    name: SetDeleteBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  name: SetDeleteBy<T>(T, string, Instant)
+  nameWithType: ITrackableExtensions.SetDeleteBy<T>(T, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy<T>(T, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetDeleteBy(Of T)(T, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy(Of T)(T, String, NodaTime.Instant)
+  name.vb: SetDeleteBy(Of T)(T, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+    name: SetDeleteBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+    name: SetDeleteBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  name: SetModifyBySystem<T>(T, Instant)
+  nameWithType: ITrackableExtensions.SetModifyBySystem<T>(T, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem<T>(T, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetModifyBySystem(Of T)(T, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem(Of T)(T, NodaTime.Instant)
+  name.vb: SetModifyBySystem(Of T)(T, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+    name: SetModifyBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+    name: SetModifyBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  name: SetModifyBy<T>(T, string, Instant)
+  nameWithType: ITrackableExtensions.SetModifyBy<T>(T, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy<T>(T, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetModifyBy(Of T)(T, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy(Of T)(T, String, NodaTime.Instant)
+  name.vb: SetModifyBy(Of T)(T, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+    name: SetModifyBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+    name: SetModifyBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ApplicationUser.LogginName*
+  commentId: Overload:Skarabeus_Data.Entities.ApplicationUser.LogginName
+  href: Skarabeus_Data.Entities.ApplicationUser.html#Skarabeus_Data_Entities_ApplicationUser_LogginName
+  name: LogginName
+  nameWithType: ApplicationUser.LogginName
+  fullName: Skarabeus_Data.Entities.ApplicationUser.LogginName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Skarabeus_Data.Entities.ApplicationUser.Person*
+  commentId: Overload:Skarabeus_Data.Entities.ApplicationUser.Person
+  href: Skarabeus_Data.Entities.ApplicationUser.html#Skarabeus_Data_Entities_ApplicationUser_Person
+  name: Person
+  nameWithType: ApplicationUser.Person
+  fullName: Skarabeus_Data.Entities.ApplicationUser.Person
+- uid: Skarabeus_Data.Entities.Person
+  commentId: T:Skarabeus_Data.Entities.Person
+  parent: Skarabeus_Data.Entities
+  href: Skarabeus_Data.Entities.Person.html
+  name: Person
+  nameWithType: Person
+  fullName: Skarabeus_Data.Entities.Person
+- uid: Skarabeus_Data.Entities.ApplicationUser.CreatedAt*
+  commentId: Overload:Skarabeus_Data.Entities.ApplicationUser.CreatedAt
+  href: Skarabeus_Data.Entities.ApplicationUser.html#Skarabeus_Data_Entities_ApplicationUser_CreatedAt
+  name: CreatedAt
+  nameWithType: ApplicationUser.CreatedAt
+  fullName: Skarabeus_Data.Entities.ApplicationUser.CreatedAt
+- uid: Skarabeus_Data.Interfaces.ITrackable.CreatedAt
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.CreatedAt
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_CreatedAt
+  name: CreatedAt
+  nameWithType: ITrackable.CreatedAt
+  fullName: Skarabeus_Data.Interfaces.ITrackable.CreatedAt
+- uid: NodaTime.Instant
+  commentId: T:NodaTime.Instant
+  parent: NodaTime
+  isExternal: true
+  href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  name: Instant
+  nameWithType: Instant
+  fullName: NodaTime.Instant
+- uid: NodaTime
+  commentId: N:NodaTime
+  isExternal: true
+  name: NodaTime
+  nameWithType: NodaTime
+  fullName: NodaTime
+- uid: Skarabeus_Data.Entities.ApplicationUser.CreatedBy*
+  commentId: Overload:Skarabeus_Data.Entities.ApplicationUser.CreatedBy
+  href: Skarabeus_Data.Entities.ApplicationUser.html#Skarabeus_Data_Entities_ApplicationUser_CreatedBy
+  name: CreatedBy
+  nameWithType: ApplicationUser.CreatedBy
+  fullName: Skarabeus_Data.Entities.ApplicationUser.CreatedBy
+- uid: Skarabeus_Data.Interfaces.ITrackable.CreatedBy
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.CreatedBy
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_CreatedBy
+  name: CreatedBy
+  nameWithType: ITrackable.CreatedBy
+  fullName: Skarabeus_Data.Interfaces.ITrackable.CreatedBy
+- uid: Skarabeus_Data.Entities.ApplicationUser.ModifiedAt*
+  commentId: Overload:Skarabeus_Data.Entities.ApplicationUser.ModifiedAt
+  href: Skarabeus_Data.Entities.ApplicationUser.html#Skarabeus_Data_Entities_ApplicationUser_ModifiedAt
+  name: ModifiedAt
+  nameWithType: ApplicationUser.ModifiedAt
+  fullName: Skarabeus_Data.Entities.ApplicationUser.ModifiedAt
+- uid: Skarabeus_Data.Interfaces.ITrackable.ModifiedAt
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.ModifiedAt
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_ModifiedAt
+  name: ModifiedAt
+  nameWithType: ITrackable.ModifiedAt
+  fullName: Skarabeus_Data.Interfaces.ITrackable.ModifiedAt
+- uid: Skarabeus_Data.Entities.ApplicationUser.ModifiedBy*
+  commentId: Overload:Skarabeus_Data.Entities.ApplicationUser.ModifiedBy
+  href: Skarabeus_Data.Entities.ApplicationUser.html#Skarabeus_Data_Entities_ApplicationUser_ModifiedBy
+  name: ModifiedBy
+  nameWithType: ApplicationUser.ModifiedBy
+  fullName: Skarabeus_Data.Entities.ApplicationUser.ModifiedBy
+- uid: Skarabeus_Data.Interfaces.ITrackable.ModifiedBy
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.ModifiedBy
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_ModifiedBy
+  name: ModifiedBy
+  nameWithType: ITrackable.ModifiedBy
+  fullName: Skarabeus_Data.Interfaces.ITrackable.ModifiedBy
+- uid: Skarabeus_Data.Entities.ApplicationUser.DeletedAt*
+  commentId: Overload:Skarabeus_Data.Entities.ApplicationUser.DeletedAt
+  href: Skarabeus_Data.Entities.ApplicationUser.html#Skarabeus_Data_Entities_ApplicationUser_DeletedAt
+  name: DeletedAt
+  nameWithType: ApplicationUser.DeletedAt
+  fullName: Skarabeus_Data.Entities.ApplicationUser.DeletedAt
+- uid: Skarabeus_Data.Interfaces.ITrackable.DeletedAt
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.DeletedAt
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_DeletedAt
+  name: DeletedAt
+  nameWithType: ITrackable.DeletedAt
+  fullName: Skarabeus_Data.Interfaces.ITrackable.DeletedAt
+- uid: System.Nullable{NodaTime.Instant}
+  commentId: T:System.Nullable{NodaTime.Instant}
+  parent: System
+  definition: System.Nullable`1
+  href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  name: Instant?
+  nameWithType: Instant?
+  fullName: NodaTime.Instant?
+  spec.csharp:
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: '?'
+  spec.vb:
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Skarabeus_Data.Entities.ApplicationUser.DeletedBy*
+  commentId: Overload:Skarabeus_Data.Entities.ApplicationUser.DeletedBy
+  href: Skarabeus_Data.Entities.ApplicationUser.html#Skarabeus_Data_Entities_ApplicationUser_DeletedBy
+  name: DeletedBy
+  nameWithType: ApplicationUser.DeletedBy
+  fullName: Skarabeus_Data.Entities.ApplicationUser.DeletedBy
+- uid: Skarabeus_Data.Interfaces.ITrackable.DeletedBy
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.DeletedBy
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_DeletedBy
+  name: DeletedBy
+  nameWithType: ITrackable.DeletedBy
+  fullName: Skarabeus_Data.Interfaces.ITrackable.DeletedBy

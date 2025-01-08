@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Data.Entities.ConnectionTables
+  commentId: N:Skarabeus_Data.Entities.ConnectionTables
+  id: Skarabeus_Data.Entities.ConnectionTables
+  children:
+  - Skarabeus_Data.Entities.ConnectionTables.EventDish
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  - Skarabeus_Data.Entities.ConnectionTables.IngredientDish
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Data.Entities.ConnectionTables
+  nameWithType: Skarabeus_Data.Entities.ConnectionTables
+  fullName: Skarabeus_Data.Entities.ConnectionTables
+  type: Namespace
+  assemblies:
+  - Skarabeus_Data
+references:
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventDish
+  commentId: T:Skarabeus_Data.Entities.ConnectionTables.EventDish
+  href: Skarabeus_Data.Entities.ConnectionTables.EventDish.html
+  name: EventDish
+  nameWithType: EventDish
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventDish
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  commentId: T:Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  name: EventPerson
+  nameWithType: EventPerson
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+- uid: Skarabeus_Data.Entities.ConnectionTables.IngredientDish
+  commentId: T:Skarabeus_Data.Entities.ConnectionTables.IngredientDish
+  href: Skarabeus_Data.Entities.ConnectionTables.IngredientDish.html
+  name: IngredientDish
+  nameWithType: IngredientDish
+  fullName: Skarabeus_Data.Entities.ConnectionTables.IngredientDish

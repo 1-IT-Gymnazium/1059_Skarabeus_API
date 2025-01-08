@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.Controllers
+  commentId: N:Skarabeus_Api.Controllers
+  id: Skarabeus_Api.Controllers
+  children:
+  - Skarabeus_Api.Controllers.AuthController
+  - Skarabeus_Api.Controllers.IngredientController
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Api.Controllers
+  nameWithType: Skarabeus_Api.Controllers
+  fullName: Skarabeus_Api.Controllers
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: Skarabeus_Api.Controllers.AuthController
+  commentId: T:Skarabeus_Api.Controllers.AuthController
+  href: Skarabeus_Api.Controllers.AuthController.html
+  name: AuthController
+  nameWithType: AuthController
+  fullName: Skarabeus_Api.Controllers.AuthController
+- uid: Skarabeus_Api.Controllers.IngredientController
+  commentId: T:Skarabeus_Api.Controllers.IngredientController
+  href: Skarabeus_Api.Controllers.IngredientController.html
+  name: IngredientController
+  nameWithType: IngredientController
+  fullName: Skarabeus_Api.Controllers.IngredientController

@@ -1,0 +1,389 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions
+  commentId: T:Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions
+  id: IngredientDetailModelExtensions
+  parent: Skarabeus_Api.Controllers.Models.IngredientModels
+  children:
+  - Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.ToDetail(Skarabeus_Data.Entities.Ingredient)
+  langs:
+  - csharp
+  - vb
+  name: IngredientDetailModelExtensions
+  nameWithType: IngredientDetailModelExtensions
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions
+  type: Class
+  source:
+    remote:
+      path: src/Skarabeus_Api/Controllers/Models/IngredientModels/IngredientDetailModel.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: IngredientDetailModelExtensions
+    path: ../src/Skarabeus_Api/Controllers/Models/IngredientModels/IngredientDetailModel.cs
+    startLine: 11
+  assemblies:
+  - Skarabeus_Api
+  namespace: Skarabeus_Api.Controllers.Models.IngredientModels
+  syntax:
+    content: public static class IngredientDetailModelExtensions
+    content.vb: Public Module IngredientDetailModelExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.ToDetail(Skarabeus_Data.Entities.Ingredient)
+  commentId: M:Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.ToDetail(Skarabeus_Data.Entities.Ingredient)
+  id: ToDetail(Skarabeus_Data.Entities.Ingredient)
+  isExtensionMethod: true
+  parent: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToDetail(Ingredient)
+  nameWithType: IngredientDetailModelExtensions.ToDetail(Ingredient)
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.ToDetail(Skarabeus_Data.Entities.Ingredient)
+  type: Method
+  source:
+    remote:
+      path: src/Skarabeus_Api/Controllers/Models/IngredientModels/IngredientDetailModel.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: ToDetail
+    path: ../src/Skarabeus_Api/Controllers/Models/IngredientModels/IngredientDetailModel.cs
+    startLine: 13
+  assemblies:
+  - Skarabeus_Api
+  namespace: Skarabeus_Api.Controllers.Models.IngredientModels
+  syntax:
+    content: public static IngredientDetailModel ToDetail(this Ingredient model)
+    parameters:
+    - id: model
+      type: Skarabeus_Data.Entities.Ingredient
+    return:
+      type: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel
+    content.vb: Public Shared Function ToDetail(model As Ingredient) As IngredientDetailModel
+  overload: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.ToDetail*
+references:
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels
+  commentId: N:Skarabeus_Api.Controllers.Models.IngredientModels
+  href: Skarabeus_Api.html
+  name: Skarabeus_Api.Controllers.Models.IngredientModels
+  nameWithType: Skarabeus_Api.Controllers.Models.IngredientModels
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels
+  spec.csharp:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.IngredientModels
+    name: IngredientModels
+    href: Skarabeus_Api.Controllers.Models.IngredientModels.html
+  spec.vb:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.IngredientModels
+    name: IngredientModels
+    href: Skarabeus_Api.Controllers.Models.IngredientModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.ToDetail*
+  commentId: Overload:Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.ToDetail
+  href: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.html#Skarabeus_Api_Controllers_Models_IngredientModels_IngredientDetailModelExtensions_ToDetail_Skarabeus_Data_Entities_Ingredient_
+  name: ToDetail
+  nameWithType: IngredientDetailModelExtensions.ToDetail
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.ToDetail
+- uid: Skarabeus_Data.Entities.Ingredient
+  commentId: T:Skarabeus_Data.Entities.Ingredient
+  parent: Skarabeus_Data.Entities
+  href: Skarabeus_Data.Entities.Ingredient.html
+  name: Ingredient
+  nameWithType: Ingredient
+  fullName: Skarabeus_Data.Entities.Ingredient
+- uid: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel
+  commentId: T:Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel
+  parent: Skarabeus_Api.Controllers.Models.IngredientModels
+  href: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel.html
+  name: IngredientDetailModel
+  nameWithType: IngredientDetailModel
+  fullName: Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel
+- uid: Skarabeus_Data.Entities
+  commentId: N:Skarabeus_Data.Entities
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data.Entities
+  nameWithType: Skarabeus_Data.Entities
+  fullName: Skarabeus_Data.Entities
+  spec.csharp:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html
+  spec.vb:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html

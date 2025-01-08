@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Data.Interfaces
+  commentId: N:Skarabeus_Data.Interfaces
+  id: Skarabeus_Data.Interfaces
+  children:
+  - Skarabeus_Data.Interfaces.ITrackable
+  - Skarabeus_Data.Interfaces.ITrackableExtensions
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Data.Interfaces
+  nameWithType: Skarabeus_Data.Interfaces
+  fullName: Skarabeus_Data.Interfaces
+  type: Namespace
+  assemblies:
+  - Skarabeus_Data
+references:
+- uid: Skarabeus_Data.Interfaces.ITrackable
+  commentId: T:Skarabeus_Data.Interfaces.ITrackable
+  parent: Skarabeus_Data.Interfaces
+  href: Skarabeus_Data.Interfaces.ITrackable.html
+  name: ITrackable
+  nameWithType: ITrackable
+  fullName: Skarabeus_Data.Interfaces.ITrackable
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions
+  commentId: T:Skarabeus_Data.Interfaces.ITrackableExtensions
+  parent: Skarabeus_Data.Interfaces
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html
+  name: ITrackableExtensions
+  nameWithType: ITrackableExtensions
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions
+- uid: Skarabeus_Data.Interfaces
+  commentId: N:Skarabeus_Data.Interfaces
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data.Interfaces
+  nameWithType: Skarabeus_Data.Interfaces
+  fullName: Skarabeus_Data.Interfaces
+  spec.csharp:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Interfaces
+    name: Interfaces
+    href: Skarabeus_Data.Interfaces.html
+  spec.vb:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Interfaces
+    name: Interfaces
+    href: Skarabeus_Data.Interfaces.html

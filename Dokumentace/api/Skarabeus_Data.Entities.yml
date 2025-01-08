@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Data.Entities
+  commentId: N:Skarabeus_Data.Entities
+  id: Skarabeus_Data.Entities
+  children:
+  - Skarabeus_Data.Entities.ApplicationUser
+  - Skarabeus_Data.Entities.Dish
+  - Skarabeus_Data.Entities.Event
+  - Skarabeus_Data.Entities.Ingredient
+  - Skarabeus_Data.Entities.IngredientExtensions
+  - Skarabeus_Data.Entities.Person
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Data.Entities
+  nameWithType: Skarabeus_Data.Entities
+  fullName: Skarabeus_Data.Entities
+  type: Namespace
+  assemblies:
+  - Skarabeus_Data
+references:
+- uid: Skarabeus_Data.Entities.ApplicationUser
+  commentId: T:Skarabeus_Data.Entities.ApplicationUser
+  parent: Skarabeus_Data.Entities
+  href: Skarabeus_Data.Entities.ApplicationUser.html
+  name: ApplicationUser
+  nameWithType: ApplicationUser
+  fullName: Skarabeus_Data.Entities.ApplicationUser
+- uid: Skarabeus_Data.Entities.Dish
+  commentId: T:Skarabeus_Data.Entities.Dish
+  parent: Skarabeus_Data.Entities
+  href: Skarabeus_Data.Entities.Dish.html
+  name: Dish
+  nameWithType: Dish
+  fullName: Skarabeus_Data.Entities.Dish
+- uid: Skarabeus_Data.Entities.Event
+  commentId: T:Skarabeus_Data.Entities.Event
+  parent: Skarabeus_Data.Entities
+  href: Skarabeus_Data.Entities.Event.html
+  name: Event
+  nameWithType: Event
+  fullName: Skarabeus_Data.Entities.Event
+- uid: Skarabeus_Data.Entities.Ingredient
+  commentId: T:Skarabeus_Data.Entities.Ingredient
+  parent: Skarabeus_Data.Entities
+  href: Skarabeus_Data.Entities.Ingredient.html
+  name: Ingredient
+  nameWithType: Ingredient
+  fullName: Skarabeus_Data.Entities.Ingredient
+- uid: Skarabeus_Data.Entities.IngredientExtensions
+  commentId: T:Skarabeus_Data.Entities.IngredientExtensions
+  href: Skarabeus_Data.Entities.IngredientExtensions.html
+  name: IngredientExtensions
+  nameWithType: IngredientExtensions
+  fullName: Skarabeus_Data.Entities.IngredientExtensions
+- uid: Skarabeus_Data.Entities.Person
+  commentId: T:Skarabeus_Data.Entities.Person
+  parent: Skarabeus_Data.Entities
+  href: Skarabeus_Data.Entities.Person.html
+  name: Person
+  nameWithType: Person
+  fullName: Skarabeus_Data.Entities.Person
+- uid: Skarabeus_Data.Entities
+  commentId: N:Skarabeus_Data.Entities
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data.Entities
+  nameWithType: Skarabeus_Data.Entities
+  fullName: Skarabeus_Data.Entities
+  spec.csharp:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html
+  spec.vb:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html

@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.Settings
+  commentId: N:Skarabeus_Api.Settings
+  id: Skarabeus_Api.Settings
+  children:
+  - Skarabeus_Api.Settings.SmtpSettings
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Api.Settings
+  nameWithType: Skarabeus_Api.Settings
+  fullName: Skarabeus_Api.Settings
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: Skarabeus_Api.Settings.SmtpSettings
+  commentId: T:Skarabeus_Api.Settings.SmtpSettings
+  href: Skarabeus_Api.Settings.SmtpSettings.html
+  name: SmtpSettings
+  nameWithType: SmtpSettings
+  fullName: Skarabeus_Api.Settings.SmtpSettings
