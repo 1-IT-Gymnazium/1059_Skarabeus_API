@@ -21,7 +21,8 @@ namespace Skarabeus_Api
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers()
+            .AddNewtonsoftJson(); 
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {

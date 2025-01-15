@@ -13,9 +13,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
     public DbSet<Dish> Dishes { get; set; }
     public DbSet<Event> Evets { get; set; }
     public DbSet<Person> Persons { get; set; }
-    public DbSet<EventDish> EventDishes { get; set; }
     public DbSet<IngredientDish> IngredientDishes { get; set; }
-    public DbSet<EventPerson> EventPersons { get; set; }
 
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {

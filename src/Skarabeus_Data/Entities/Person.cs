@@ -24,3 +24,19 @@ public class Person : ITrackable
     public Instant? DeletedAt { get; set; }
     public string? DeletedBy { get; set; }
 }
+
+public static class PersonExtensions
+{
+    public static IQueryable<Person> FilterActive(this IQueryable<Person> query)
+        => query
+        .Where(x => x.Active == true)
+        ;
+    public static IQueryable<Person> FilterDeleted(this IQueryable<Person> query)
+        => query
+        .Where(x => x.DeletedAt == null)
+        ;
+
+    public static IQueryable<Person> Filter(this IQueryable<Person> query)
+        => query.FilterActive().FilterDeleted()
+        ;
+}

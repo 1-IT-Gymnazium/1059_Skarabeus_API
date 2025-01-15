@@ -580,7 +580,7 @@ namespace Skarabeus_Data.Migrations
             modelBuilder.Entity("Skarabeus_Data.Entities.ConnectionTables.IngredientDish", b =>
                 {
                     b.HasOne("Skarabeus_Data.Entities.Dish", "Dish")
-                        .WithMany()
+                        .WithMany("Ingredients")
                         .HasForeignKey("DishId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -605,6 +605,11 @@ namespace Skarabeus_Data.Migrations
                         .IsRequired();
 
                     b.Navigation("ResponsiblePerson");
+                });
+
+            modelBuilder.Entity("Skarabeus_Data.Entities.Dish", b =>
+                {
+                    b.Navigation("Ingredients");
                 });
 #pragma warning restore 612, 618
         }
