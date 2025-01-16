@@ -11,8 +11,6 @@ using Skarabeus_Data.Entities;
 using Skarabeus_Data.Entities.ConnectionTables;
 using Skarabeus_Data.Interfaces;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Skarabeus_Api.Controllers;
 
 [Route("api/v1/[controller]")]

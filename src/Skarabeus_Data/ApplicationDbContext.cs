@@ -11,7 +11,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
     public DbSet<Ingredient> Ingredients { get; set; }
     public DbSet<Email> Emails { get; set; }
     public DbSet<Dish> Dishes { get; set; }
-    public DbSet<Event> Evets { get; set; }
+    public DbSet<Event> Events { get; set; }
     public DbSet<Person> Persons { get; set; }
     public DbSet<IngredientDish> IngredientDishes { get; set; }
 
@@ -30,5 +30,13 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser, IdentityR
 
         var assemblyWithConfiguration = GetType().Assembly;
         modelBuilder.ApplyConfigurationsFromAssembly(assemblyWithConfiguration);
+        modelBuilder.Entity<Event>()
+        .HasMany(e => e.Participants)
+        .WithMany(p => p.Events);
+        modelBuilder.Entity<Event>()
+        .HasOne(e => e.ResponsiblePerson)
+        .WithMany()
+        .HasForeignKey(e => e.ResponsiblePersonId)
+        .OnDelete(DeleteBehavior.Restrict);
     }
 }

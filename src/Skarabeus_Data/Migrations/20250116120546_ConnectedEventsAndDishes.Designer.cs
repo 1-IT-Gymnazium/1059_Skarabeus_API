@@ -13,8 +13,8 @@ using Skarabeus_Data;
 namespace Skarabeus_Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241211112656_addedMostOfTheDatabaseTables")]
-    partial class addedMostOfTheDatabaseTables
+    [Migration("20250116120546_ConnectedEventsAndDishes")]
+    partial class ConnectedEventsAndDishes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,6 +25,36 @@ namespace Skarabeus_Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("DishEvent", b =>
+                {
+                    b.Property<Guid>("DishesId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("EventsId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("DishesId", "EventsId");
+
+                    b.HasIndex("EventsId");
+
+                    b.ToTable("DishEvent");
+                });
+
+            modelBuilder.Entity("EventPerson", b =>
+                {
+                    b.Property<Guid>("EventsId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ParticipantsId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("EventsId", "ParticipantsId");
+
+                    b.HasIndex("ParticipantsId");
+
+                    b.ToTable("EventPerson");
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
@@ -206,88 +236,6 @@ namespace Skarabeus_Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Skarabeus_Data.Entities.ConnectionTables.EventDish", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Instant>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Instant?>("DeletedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("DishId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("EventId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Instant>("ModifiedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("DishId");
-
-                    b.HasIndex("EventId");
-
-                    b.ToTable("EventDishes");
-                });
-
-            modelBuilder.Entity("Skarabeus_Data.Entities.ConnectionTables.EventPerson", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<Instant>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Instant?>("DeletedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("EventId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Instant>("ModifiedAt")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("ModifiedBy")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("PersonId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EventId");
-
-                    b.HasIndex("PersonId");
-
-                    b.ToTable("EventPersons");
-                });
-
             modelBuilder.Entity("Skarabeus_Data.Entities.ConnectionTables.IngredientDish", b =>
                 {
                     b.Property<Guid>("Id")
@@ -407,20 +355,20 @@ namespace Skarabeus_Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Place")
+                        .HasColumnType("text");
+
                     b.Property<Guid>("ResponsiblePersonId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("Start")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("place")
-                        .HasColumnType("text");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ResponsiblePersonId");
 
-                    b.ToTable("Evets");
+                    b.ToTable("Events");
                 });
 
             modelBuilder.Entity("Skarabeus_Data.Entities.Ingredient", b =>
@@ -533,6 +481,36 @@ namespace Skarabeus_Data.Migrations
                     b.ToTable("Persons");
                 });
 
+            modelBuilder.Entity("DishEvent", b =>
+                {
+                    b.HasOne("Skarabeus_Data.Entities.Dish", null)
+                        .WithMany()
+                        .HasForeignKey("DishesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Skarabeus_Data.Entities.Event", null)
+                        .WithMany()
+                        .HasForeignKey("EventsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EventPerson", b =>
+                {
+                    b.HasOne("Skarabeus_Data.Entities.Event", null)
+                        .WithMany()
+                        .HasForeignKey("EventsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Skarabeus_Data.Entities.Person", null)
+                        .WithMany()
+                        .HasForeignKey("ParticipantsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Skarabeus_Data.Entities.ApplicationUser", b =>
                 {
                     b.HasOne("Skarabeus_Data.Entities.Person", "Person")
@@ -542,48 +520,10 @@ namespace Skarabeus_Data.Migrations
                     b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("Skarabeus_Data.Entities.ConnectionTables.EventDish", b =>
-                {
-                    b.HasOne("Skarabeus_Data.Entities.Dish", "Dish")
-                        .WithMany()
-                        .HasForeignKey("DishId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Skarabeus_Data.Entities.Event", "Event")
-                        .WithMany()
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Dish");
-
-                    b.Navigation("Event");
-                });
-
-            modelBuilder.Entity("Skarabeus_Data.Entities.ConnectionTables.EventPerson", b =>
-                {
-                    b.HasOne("Skarabeus_Data.Entities.Event", "Event")
-                        .WithMany()
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Skarabeus_Data.Entities.Person", "Person")
-                        .WithMany()
-                        .HasForeignKey("PersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Event");
-
-                    b.Navigation("Person");
-                });
-
             modelBuilder.Entity("Skarabeus_Data.Entities.ConnectionTables.IngredientDish", b =>
                 {
                     b.HasOne("Skarabeus_Data.Entities.Dish", "Dish")
-                        .WithMany()
+                        .WithMany("Ingredients")
                         .HasForeignKey("DishId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -604,10 +544,15 @@ namespace Skarabeus_Data.Migrations
                     b.HasOne("Skarabeus_Data.Entities.Person", "ResponsiblePerson")
                         .WithMany()
                         .HasForeignKey("ResponsiblePersonId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("ResponsiblePerson");
+                });
+
+            modelBuilder.Entity("Skarabeus_Data.Entities.Dish", b =>
+                {
+                    b.Navigation("Ingredients");
                 });
 #pragma warning restore 612, 618
         }

@@ -16,6 +16,7 @@ public class Person : ITrackable
     public string? FullNameOfMother { get; set; }
     public string? FullNameOfFather { get; set; }
     public bool Active { get; set; }
+    public ICollection<Event> Events { get; set; } = new HashSet<Event>();
 
     public Instant CreatedAt { get; set; }
     public string CreatedBy { get; set; }

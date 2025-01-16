@@ -1,23 +1,18 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 using NodaTime;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
 namespace Skarabeus_Data.Migrations
 {
     /// <inheritdoc />
-    public partial class addedMostOfTheDatabaseTables : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<Guid>(
-                name: "PersonId",
-                table: "AspNetUser",
-                type: "uuid",
-                nullable: true);
-
             migrationBuilder.CreateTable(
                 name: "Dishes",
                 columns: table => new
@@ -35,6 +30,48 @@ namespace Skarabeus_Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Dishes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Emails",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Body = table.Column<string>(type: "text", nullable: false),
+                    Subject = table.Column<string>(type: "text", nullable: false),
+                    Receiver = table.Column<string>(type: "text", nullable: false),
+                    Sender = table.Column<string>(type: "text", nullable: false),
+                    ScheduledAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
+                    SentAt = table.Column<Instant>(type: "timestamp with time zone", nullable: true),
+                    CreatedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
+                    CreatedBy = table.Column<string>(type: "text", nullable: false),
+                    ModifiedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
+                    ModifiedBy = table.Column<string>(type: "text", nullable: false),
+                    DeletedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: true),
+                    DeletedBy = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Emails", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Ingredients",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    PriceForUnit = table.Column<decimal>(type: "numeric", nullable: false),
+                    CreatedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
+                    CreatedBy = table.Column<string>(type: "text", nullable: false),
+                    ModifiedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
+                    ModifiedBy = table.Column<string>(type: "text", nullable: false),
+                    DeletedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: true),
+                    DeletedBy = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Ingredients", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -65,6 +102,21 @@ namespace Skarabeus_Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Persons", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ClaimType = table.Column<string>(type: "text", nullable: true),
+                    ClaimValue = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserClaims", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -100,7 +152,45 @@ namespace Skarabeus_Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Evets",
+                name: "AspNetUser",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    LogginName = table.Column<string>(type: "text", nullable: true),
+                    PersonId = table.Column<Guid>(type: "uuid", nullable: true),
+                    CreatedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
+                    CreatedBy = table.Column<string>(type: "text", nullable: false),
+                    ModifiedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
+                    ModifiedBy = table.Column<string>(type: "text", nullable: false),
+                    DeletedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: true),
+                    DeletedBy = table.Column<string>(type: "text", nullable: true),
+                    UserName = table.Column<string>(type: "text", nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "text", nullable: true),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "text", nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "boolean", nullable: false),
+                    PasswordHash = table.Column<string>(type: "text", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "text", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "text", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "text", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "boolean", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "boolean", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "timestamp with time zone", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "boolean", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUser", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetUser_Persons_PersonId",
+                        column: x => x.PersonId,
+                        principalTable: "Persons",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Events",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -109,7 +199,7 @@ namespace Skarabeus_Data.Migrations
                     ResponsiblePersonId = table.Column<Guid>(type: "uuid", nullable: false),
                     Start = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     End = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    place = table.Column<string>(type: "text", nullable: true),
+                    Place = table.Column<string>(type: "text", nullable: true),
                     CreatedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
                     CreatedBy = table.Column<string>(type: "text", nullable: false),
                     ModifiedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
@@ -119,83 +209,43 @@ namespace Skarabeus_Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Evets", x => x.Id);
+                    table.PrimaryKey("PK_Events", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Evets_Persons_ResponsiblePersonId",
+                        name: "FK_Events_Persons_ResponsiblePersonId",
                         column: x => x.ResponsiblePersonId,
                         principalTable: "Persons",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "EventDishes",
+                name: "EventPerson",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    EventId = table.Column<Guid>(type: "uuid", nullable: false),
-                    DishId = table.Column<Guid>(type: "uuid", nullable: false),
-                    CreatedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
-                    CreatedBy = table.Column<string>(type: "text", nullable: false),
-                    ModifiedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "text", nullable: false),
-                    DeletedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: true),
-                    DeletedBy = table.Column<string>(type: "text", nullable: true)
+                    EventsId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ParticipantsId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EventDishes", x => x.Id);
+                    table.PrimaryKey("PK_EventPerson", x => new { x.EventsId, x.ParticipantsId });
                     table.ForeignKey(
-                        name: "FK_EventDishes_Dishes_DishId",
-                        column: x => x.DishId,
-                        principalTable: "Dishes",
+                        name: "FK_EventPerson_Events_EventsId",
+                        column: x => x.EventsId,
+                        principalTable: "Events",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_EventDishes_Evets_EventId",
-                        column: x => x.EventId,
-                        principalTable: "Evets",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EventPersons",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    EventId = table.Column<Guid>(type: "uuid", nullable: false),
-                    PersonId = table.Column<Guid>(type: "uuid", nullable: false),
-                    CreatedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
-                    CreatedBy = table.Column<string>(type: "text", nullable: false),
-                    ModifiedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: false),
-                    ModifiedBy = table.Column<string>(type: "text", nullable: false),
-                    DeletedAt = table.Column<Instant>(type: "timestamp with time zone", nullable: true),
-                    DeletedBy = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EventPersons", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_EventPersons_Evets_EventId",
-                        column: x => x.EventId,
-                        principalTable: "Evets",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EventPersons_Persons_PersonId",
-                        column: x => x.PersonId,
+                        name: "FK_EventPerson_Persons_ParticipantsId",
+                        column: x => x.ParticipantsId,
                         principalTable: "Persons",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.UpdateData(
+            migrationBuilder.InsertData(
                 table: "AspNetUser",
-                keyColumn: "Id",
-                keyValue: new Guid("ceab6921-dfed-4b4d-b661-dc36b8749067"),
-                column: "PersonId",
-                value: null);
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreatedAt", "CreatedBy", "DeletedAt", "DeletedBy", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "LogginName", "ModifiedAt", "ModifiedBy", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PersonId", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { new Guid("ceab6921-dfed-4b4d-b661-dc36b8749067"), 0, "ba46c7df-e2cf-469d-a17d-b653c50a0147", NodaTime.Instant.FromUnixTimeTicks(-3776735808000000000L), "System", null, null, "user@example.com", true, true, new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)), null, NodaTime.Instant.FromUnixTimeTicks(-3776735808000000000L), "System", "USER@EXAMPLE.COM", "USER@EXAMPLE.COM", "AQAAAAEAACcQAAAAELKQmdGcfZbjxaz1GeqZ62mF7gEO9d49ofpdaQ+Mq0904MEIWvUnaMMfx9gJ27NmdQ==", null, "123456798", true, "2MLDENGLJTQEITJVCJMIJJQOKXOUNSD6", false, "user@example.com" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetUser_PersonId",
@@ -203,28 +253,13 @@ namespace Skarabeus_Data.Migrations
                 column: "PersonId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EventDishes_DishId",
-                table: "EventDishes",
-                column: "DishId");
+                name: "IX_EventPerson_ParticipantsId",
+                table: "EventPerson",
+                column: "ParticipantsId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EventDishes_EventId",
-                table: "EventDishes",
-                column: "EventId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EventPersons_EventId",
-                table: "EventPersons",
-                column: "EventId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EventPersons_PersonId",
-                table: "EventPersons",
-                column: "PersonId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Evets_ResponsiblePersonId",
-                table: "Evets",
+                name: "IX_Events_ResponsiblePersonId",
+                table: "Events",
                 column: "ResponsiblePersonId");
 
             migrationBuilder.CreateIndex(
@@ -236,47 +271,37 @@ namespace Skarabeus_Data.Migrations
                 name: "IX_IngredientDishes_IngredientId",
                 table: "IngredientDishes",
                 column: "IngredientId");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_AspNetUser_Persons_PersonId",
-                table: "AspNetUser",
-                column: "PersonId",
-                principalTable: "Persons",
-                principalColumn: "Id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_AspNetUser_Persons_PersonId",
-                table: "AspNetUser");
+            migrationBuilder.DropTable(
+                name: "AspNetUser");
 
             migrationBuilder.DropTable(
-                name: "EventDishes");
+                name: "Emails");
 
             migrationBuilder.DropTable(
-                name: "EventPersons");
+                name: "EventPerson");
 
             migrationBuilder.DropTable(
                 name: "IngredientDishes");
 
             migrationBuilder.DropTable(
-                name: "Evets");
+                name: "UserClaims");
+
+            migrationBuilder.DropTable(
+                name: "Events");
 
             migrationBuilder.DropTable(
                 name: "Dishes");
 
             migrationBuilder.DropTable(
+                name: "Ingredients");
+
+            migrationBuilder.DropTable(
                 name: "Persons");
-
-            migrationBuilder.DropIndex(
-                name: "IX_AspNetUser_PersonId",
-                table: "AspNetUser");
-
-            migrationBuilder.DropColumn(
-                name: "PersonId",
-                table: "AspNetUser");
         }
     }
 }

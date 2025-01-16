@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NodaTime;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -12,9 +13,11 @@ using Skarabeus_Data;
 namespace Skarabeus_Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250116115831_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,21 +25,6 @@ namespace Skarabeus_Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("DishEvent", b =>
-                {
-                    b.Property<Guid>("DishesId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("EventsId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("DishesId", "EventsId");
-
-                    b.HasIndex("EventsId");
-
-                    b.ToTable("DishEvent");
-                });
 
             modelBuilder.Entity("EventPerson", b =>
                 {
@@ -355,7 +343,7 @@ namespace Skarabeus_Data.Migrations
                     b.Property<string>("Place")
                         .HasColumnType("text");
 
-                    b.Property<Guid?>("ResponsiblePersonId")
+                    b.Property<Guid>("ResponsiblePersonId")
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("Start")
@@ -478,21 +466,6 @@ namespace Skarabeus_Data.Migrations
                     b.ToTable("Persons");
                 });
 
-            modelBuilder.Entity("DishEvent", b =>
-                {
-                    b.HasOne("Skarabeus_Data.Entities.Dish", null)
-                        .WithMany()
-                        .HasForeignKey("DishesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Skarabeus_Data.Entities.Event", null)
-                        .WithMany()
-                        .HasForeignKey("EventsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("EventPerson", b =>
                 {
                     b.HasOne("Skarabeus_Data.Entities.Event", null)
@@ -541,7 +514,8 @@ namespace Skarabeus_Data.Migrations
                     b.HasOne("Skarabeus_Data.Entities.Person", "ResponsiblePerson")
                         .WithMany()
                         .HasForeignKey("ResponsiblePersonId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("ResponsiblePerson");
                 });
