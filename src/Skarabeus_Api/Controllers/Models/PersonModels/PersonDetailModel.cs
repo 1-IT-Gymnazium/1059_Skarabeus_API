@@ -14,6 +14,7 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
 
     public class SmallPersonDetailModel
     {
+        public Guid Id { get; set; }
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public bool Gender { get; set; }
@@ -31,6 +32,7 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
         public static PersonDetailModel ToDetail(this Person model)
             => new()
             {
+                Id = model.Id,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Gender = model.Gender,
@@ -48,6 +50,7 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
         public static SmallPersonDetailModel ToSmall(this Person model)
             => new()
             {
+                Id = model.Id,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 DateOfBirth = model.DateOfBirth,

@@ -5,10 +5,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using NodaTime;
 using ProjectManager.Api.Services;
+using Serilog;
 using Skarabeus_Api.BackgroundServices;
 using Skarabeus_Api.Settings;
 using Skarabeus_Data;
 using Skarabeus_Data.Entities;
+using System.Configuration;
 
 namespace Skarabeus_Api
 {
@@ -18,9 +20,13 @@ namespace Skarabeus_Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            Log.Logger = new LoggerConfiguration().
+                ReadFrom.Configuration(builder.Configuration).
+                CreateLogger().ForContext<Program>();
+
+            builder.Host.UseSerilog();
 
             // Add services to the container.
-
             builder.Services.AddControllers()
             .AddNewtonsoftJson(); 
 
@@ -34,13 +40,13 @@ namespace Skarabeus_Api
             });
 
 
+
             builder.Services.AddIdentityCore<ApplicationUser>(options =>
                 options.SignIn.RequireConfirmedAccount = true
                 )
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddSignInManager()
                 .AddDefaultTokenProviders();
-
 
 
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -66,6 +72,8 @@ namespace Skarabeus_Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            
+            app.UseSerilogRequestLogging();
 
             //app.UseHttpsRedirection();
 
