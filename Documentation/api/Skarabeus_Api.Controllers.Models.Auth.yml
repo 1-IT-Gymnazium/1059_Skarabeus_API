@@ -1,0 +1,93 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.Controllers.Models.Auth
+  commentId: N:Skarabeus_Api.Controllers.Models.Auth
+  id: Skarabeus_Api.Controllers.Models.Auth
+  children:
+  - Skarabeus_Api.Controllers.Models.Auth.LoginModel
+  - Skarabeus_Api.Controllers.Models.Auth.RegisterModel
+  - Skarabeus_Api.Controllers.Models.Auth.TokenModel
+  - Skarabeus_Api.Controllers.Models.Auth.UserInfoModel
+  - Skarabeus_Api.Controllers.Models.Auth.UserInfoModelExtensions
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Api.Controllers.Models.Auth
+  nameWithType: Skarabeus_Api.Controllers.Models.Auth
+  fullName: Skarabeus_Api.Controllers.Models.Auth
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: Skarabeus_Api.Controllers.Models.Auth.LoginModel
+  commentId: T:Skarabeus_Api.Controllers.Models.Auth.LoginModel
+  parent: Skarabeus_Api.Controllers.Models.Auth
+  href: Skarabeus_Api.Controllers.Models.Auth.LoginModel.html
+  name: LoginModel
+  nameWithType: LoginModel
+  fullName: Skarabeus_Api.Controllers.Models.Auth.LoginModel
+- uid: Skarabeus_Api.Controllers.Models.Auth.RegisterModel
+  commentId: T:Skarabeus_Api.Controllers.Models.Auth.RegisterModel
+  parent: Skarabeus_Api.Controllers.Models.Auth
+  href: Skarabeus_Api.Controllers.Models.Auth.RegisterModel.html
+  name: RegisterModel
+  nameWithType: RegisterModel
+  fullName: Skarabeus_Api.Controllers.Models.Auth.RegisterModel
+- uid: Skarabeus_Api.Controllers.Models.Auth.TokenModel
+  commentId: T:Skarabeus_Api.Controllers.Models.Auth.TokenModel
+  parent: Skarabeus_Api.Controllers.Models.Auth
+  href: Skarabeus_Api.Controllers.Models.Auth.TokenModel.html
+  name: TokenModel
+  nameWithType: TokenModel
+  fullName: Skarabeus_Api.Controllers.Models.Auth.TokenModel
+- uid: Skarabeus_Api.Controllers.Models.Auth.UserInfoModel
+  commentId: T:Skarabeus_Api.Controllers.Models.Auth.UserInfoModel
+  parent: Skarabeus_Api.Controllers.Models.Auth
+  href: Skarabeus_Api.Controllers.Models.Auth.UserInfoModel.html
+  name: UserInfoModel
+  nameWithType: UserInfoModel
+  fullName: Skarabeus_Api.Controllers.Models.Auth.UserInfoModel
+- uid: Skarabeus_Api.Controllers.Models.Auth.UserInfoModelExtensions
+  commentId: T:Skarabeus_Api.Controllers.Models.Auth.UserInfoModelExtensions
+  href: Skarabeus_Api.Controllers.Models.Auth.UserInfoModelExtensions.html
+  name: UserInfoModelExtensions
+  nameWithType: UserInfoModelExtensions
+  fullName: Skarabeus_Api.Controllers.Models.Auth.UserInfoModelExtensions
+- uid: Skarabeus_Api.Controllers.Models.Auth
+  commentId: N:Skarabeus_Api.Controllers.Models.Auth
+  href: Skarabeus_Api.html
+  name: Skarabeus_Api.Controllers.Models.Auth
+  nameWithType: Skarabeus_Api.Controllers.Models.Auth
+  fullName: Skarabeus_Api.Controllers.Models.Auth
+  spec.csharp:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.Auth
+    name: Auth
+    href: Skarabeus_Api.Controllers.Models.Auth.html
+  spec.vb:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.Auth
+    name: Auth
+    href: Skarabeus_Api.Controllers.Models.Auth.html

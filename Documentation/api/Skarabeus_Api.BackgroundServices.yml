@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.BackgroundServices
+  commentId: N:Skarabeus_Api.BackgroundServices
+  id: Skarabeus_Api.BackgroundServices
+  children:
+  - Skarabeus_Api.BackgroundServices.EmailSenderBackgroundService
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Api.BackgroundServices
+  nameWithType: Skarabeus_Api.BackgroundServices
+  fullName: Skarabeus_Api.BackgroundServices
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: Skarabeus_Api.BackgroundServices.EmailSenderBackgroundService
+  commentId: T:Skarabeus_Api.BackgroundServices.EmailSenderBackgroundService
+  href: Skarabeus_Api.BackgroundServices.EmailSenderBackgroundService.html
+  name: EmailSenderBackgroundService
+  nameWithType: EmailSenderBackgroundService
+  fullName: Skarabeus_Api.BackgroundServices.EmailSenderBackgroundService

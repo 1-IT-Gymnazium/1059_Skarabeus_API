@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Data.Migrations
+  commentId: N:Skarabeus_Data.Migrations
+  id: Skarabeus_Data.Migrations
+  children:
+  - Skarabeus_Data.Migrations.addedIngredient
+  - Skarabeus_Data.Migrations.addedMostOfTheDatabaseTables
+  - Skarabeus_Data.Migrations.addedemails
+  - Skarabeus_Data.Migrations.init
+  - Skarabeus_Data.Migrations.renamedIngredientTabl
+  - Skarabeus_Data.Migrations.renamedUserFullName
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Data.Migrations
+  nameWithType: Skarabeus_Data.Migrations
+  fullName: Skarabeus_Data.Migrations
+  type: Namespace
+  assemblies:
+  - Skarabeus_Data
+references:
+- uid: Skarabeus_Data.Migrations.init
+  commentId: T:Skarabeus_Data.Migrations.init
+  href: Skarabeus_Data.Migrations.init.html
+  name: init
+  nameWithType: init
+  fullName: Skarabeus_Data.Migrations.init
+- uid: Skarabeus_Data.Migrations.addedIngredient
+  commentId: T:Skarabeus_Data.Migrations.addedIngredient
+  href: Skarabeus_Data.Migrations.addedIngredient.html
+  name: addedIngredient
+  nameWithType: addedIngredient
+  fullName: Skarabeus_Data.Migrations.addedIngredient
+- uid: Skarabeus_Data.Migrations.addedemails
+  commentId: T:Skarabeus_Data.Migrations.addedemails
+  href: Skarabeus_Data.Migrations.addedemails.html
+  name: addedemails
+  nameWithType: addedemails
+  fullName: Skarabeus_Data.Migrations.addedemails
+- uid: Skarabeus_Data.Migrations.renamedUserFullName
+  commentId: T:Skarabeus_Data.Migrations.renamedUserFullName
+  href: Skarabeus_Data.Migrations.renamedUserFullName.html
+  name: renamedUserFullName
+  nameWithType: renamedUserFullName
+  fullName: Skarabeus_Data.Migrations.renamedUserFullName
+- uid: Skarabeus_Data.Migrations.renamedIngredientTabl
+  commentId: T:Skarabeus_Data.Migrations.renamedIngredientTabl
+  href: Skarabeus_Data.Migrations.renamedIngredientTabl.html
+  name: renamedIngredientTabl
+  nameWithType: renamedIngredientTabl
+  fullName: Skarabeus_Data.Migrations.renamedIngredientTabl
+- uid: Skarabeus_Data.Migrations.addedMostOfTheDatabaseTables
+  commentId: T:Skarabeus_Data.Migrations.addedMostOfTheDatabaseTables
+  href: Skarabeus_Data.Migrations.addedMostOfTheDatabaseTables.html
+  name: addedMostOfTheDatabaseTables
+  nameWithType: addedMostOfTheDatabaseTables
+  fullName: Skarabeus_Data.Migrations.addedMostOfTheDatabaseTables

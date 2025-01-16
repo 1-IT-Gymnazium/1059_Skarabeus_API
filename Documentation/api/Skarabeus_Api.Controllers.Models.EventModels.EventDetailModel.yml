@@ -1,0 +1,597 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  commentId: T:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  id: EventDetailModel
+  parent: Skarabeus_Api.Controllers.Models.EventModels
+  children:
+  - Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Description
+  - Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.End
+  - Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Name
+  - Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Place
+  - Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.ResponsiblePerson
+  - Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Start
+  langs:
+  - csharp
+  - vb
+  name: EventDetailModel
+  nameWithType: EventDetailModel
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  type: Class
+  source:
+    remote:
+      path: src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: EventDetailModel
+    path: ../src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+    startLine: 5
+  assemblies:
+  - Skarabeus_Api
+  namespace: Skarabeus_Api.Controllers.Models.EventModels
+  syntax:
+    content: public class EventDetailModel
+    content.vb: Public Class EventDetailModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Name
+  commentId: P:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Name
+  id: Name
+  parent: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: EventDetailModel.Name
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Name
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: Name
+    path: ../src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+    startLine: 7
+  assemblies:
+  - Skarabeus_Api
+  namespace: Skarabeus_Api.Controllers.Models.EventModels
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Name*
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Description
+  commentId: P:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Description
+  id: Description
+  parent: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: EventDetailModel.Description
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Description
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: Description
+    path: ../src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+    startLine: 8
+  assemblies:
+  - Skarabeus_Api
+  namespace: Skarabeus_Api.Controllers.Models.EventModels
+  syntax:
+    content: public string Description { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Description*
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Place
+  commentId: P:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Place
+  id: Place
+  parent: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  langs:
+  - csharp
+  - vb
+  name: Place
+  nameWithType: EventDetailModel.Place
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Place
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: Place
+    path: ../src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+    startLine: 9
+  assemblies:
+  - Skarabeus_Api
+  namespace: Skarabeus_Api.Controllers.Models.EventModels
+  syntax:
+    content: public string Place { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Place As String
+  overload: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Place*
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.ResponsiblePerson
+  commentId: P:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.ResponsiblePerson
+  id: ResponsiblePerson
+  parent: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  langs:
+  - csharp
+  - vb
+  name: ResponsiblePerson
+  nameWithType: EventDetailModel.ResponsiblePerson
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.ResponsiblePerson
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: ResponsiblePerson
+    path: ../src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+    startLine: 10
+  assemblies:
+  - Skarabeus_Api
+  namespace: Skarabeus_Api.Controllers.Models.EventModels
+  syntax:
+    content: public SmallPersonDetailModel ResponsiblePerson { get; set; }
+    parameters: []
+    return:
+      type: Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel
+    content.vb: Public Property ResponsiblePerson As SmallPersonDetailModel
+  overload: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.ResponsiblePerson*
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Start
+  commentId: P:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Start
+  id: Start
+  parent: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  langs:
+  - csharp
+  - vb
+  name: Start
+  nameWithType: EventDetailModel.Start
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Start
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: Start
+    path: ../src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+    startLine: 11
+  assemblies:
+  - Skarabeus_Api
+  namespace: Skarabeus_Api.Controllers.Models.EventModels
+  syntax:
+    content: public DateTime Start { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property Start As Date
+  overload: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Start*
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.End
+  commentId: P:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.End
+  id: End
+  parent: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  langs:
+  - csharp
+  - vb
+  name: End
+  nameWithType: EventDetailModel.End
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.End
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: End
+    path: ../src/Skarabeus_Api/Controllers/Models/EventModels/EventDetailModel.cs
+    startLine: 12
+  assemblies:
+  - Skarabeus_Api
+  namespace: Skarabeus_Api.Controllers.Models.EventModels
+  syntax:
+    content: public DateTime End { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property [End] As Date
+  overload: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.End*
+references:
+- uid: Skarabeus_Api.Controllers.Models.EventModels
+  commentId: N:Skarabeus_Api.Controllers.Models.EventModels
+  href: Skarabeus_Api.html
+  name: Skarabeus_Api.Controllers.Models.EventModels
+  nameWithType: Skarabeus_Api.Controllers.Models.EventModels
+  fullName: Skarabeus_Api.Controllers.Models.EventModels
+  spec.csharp:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.EventModels
+    name: EventModels
+    href: Skarabeus_Api.Controllers.Models.EventModels.html
+  spec.vb:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.EventModels
+    name: EventModels
+    href: Skarabeus_Api.Controllers.Models.EventModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Name*
+  commentId: Overload:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Name
+  href: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.html#Skarabeus_Api_Controllers_Models_EventModels_EventDetailModel_Name
+  name: Name
+  nameWithType: EventDetailModel.Name
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Description*
+  commentId: Overload:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Description
+  href: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.html#Skarabeus_Api_Controllers_Models_EventModels_EventDetailModel_Description
+  name: Description
+  nameWithType: EventDetailModel.Description
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Description
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Place*
+  commentId: Overload:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Place
+  href: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.html#Skarabeus_Api_Controllers_Models_EventModels_EventDetailModel_Place
+  name: Place
+  nameWithType: EventDetailModel.Place
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Place
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.ResponsiblePerson*
+  commentId: Overload:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.ResponsiblePerson
+  href: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.html#Skarabeus_Api_Controllers_Models_EventModels_EventDetailModel_ResponsiblePerson
+  name: ResponsiblePerson
+  nameWithType: EventDetailModel.ResponsiblePerson
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.ResponsiblePerson
+- uid: Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel
+  commentId: T:Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel
+  parent: Skarabeus_Api.Controllers.Models.PersonModels
+  href: Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel.html
+  name: SmallPersonDetailModel
+  nameWithType: SmallPersonDetailModel
+  fullName: Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel
+- uid: Skarabeus_Api.Controllers.Models.PersonModels
+  commentId: N:Skarabeus_Api.Controllers.Models.PersonModels
+  href: Skarabeus_Api.html
+  name: Skarabeus_Api.Controllers.Models.PersonModels
+  nameWithType: Skarabeus_Api.Controllers.Models.PersonModels
+  fullName: Skarabeus_Api.Controllers.Models.PersonModels
+  spec.csharp:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.PersonModels
+    name: PersonModels
+    href: Skarabeus_Api.Controllers.Models.PersonModels.html
+  spec.vb:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.PersonModels
+    name: PersonModels
+    href: Skarabeus_Api.Controllers.Models.PersonModels.html
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Start*
+  commentId: Overload:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Start
+  href: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.html#Skarabeus_Api_Controllers_Models_EventModels_EventDetailModel_Start
+  name: Start
+  nameWithType: EventDetailModel.Start
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.Start
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.End*
+  commentId: Overload:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.End
+  href: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.html#Skarabeus_Api_Controllers_Models_EventModels_EventDetailModel_End
+  name: End
+  nameWithType: EventDetailModel.End
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.End

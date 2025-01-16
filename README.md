@@ -1,1 +1,36 @@
-# 1059_Skarabeus_API
+# Skarabeus
+## funkční požadavky
+ - ### uživatel může pokud má patřičná oprávnění
+   - #### registrace (bez oprávnění)
+     - ostatní uživatelé co se sami registrují nemají žádná oprávnění
+   - #### přihlášení
+     - na základě uživatelského jména nebo emailu
+     - obnova zapomenutého hesla
+   - #### vytvářet uživatelské přihlášení pro osoby a upravovat uživatelská oprávnění (administrator)
+   - #### zobrazovat, vytvářet a upravovat osoby (read, create a update)
+     - ##### informace o osobě
+       - základní údaje - jméno, příjmení, rodné číslo...
+       - kontaktní údaje - telefon, email.... (nepovinné)
+       - základní a kontaktní údaje zákonných zástupců
+   - #### zobrazovat, vytvářet a upravovat akce, jídla a ingredience (read, create a update)
+     - ##### akce
+       - data trvání
+       - popis, název
+       - jídla
+     - ##### jídla
+       - název, postup
+       - ingredience, jejich množství
+     - ##### ingredience
+       - název
+       - přibližná cena za kg/l
+## nefunkční požadavky
+ - #### Bezpečnost:
+   - Ověřování uživatelů při registraci a přihlašování.
+   - Ochrana osobních údajů uživatelů (email, hash hesla).
+ - #### Výkon:
+   - Všechny akce v aplikaci musí být prováděny v reálném čase do 0,5 s
+   - Aplikace musí být schopna zvládnout alespoň 200 připojených uživatelů, včetně správy skupin a místností.
+ - #### Dostupnost:
+   - Aplikace by měla být přístupná 24/7 s minimálními výpadky v rámci dostupných nástrojů, které jsou zdarma.
+ - #### Responzivita:
+   - Zobrazení aplikace by mělo být optimalizované pro různé druhy zařízení.

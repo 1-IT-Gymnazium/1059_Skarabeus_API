@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Data
+  commentId: N:Skarabeus_Data
+  id: Skarabeus_Data
+  children:
+  - Skarabeus_Data.ApplicationDbContext
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Data
+  nameWithType: Skarabeus_Data
+  fullName: Skarabeus_Data
+  type: Namespace
+  assemblies:
+  - Skarabeus_Data
+references:
+- uid: Skarabeus_Data.ApplicationDbContext
+  commentId: T:Skarabeus_Data.ApplicationDbContext
+  parent: Skarabeus_Data
+  href: Skarabeus_Data.ApplicationDbContext.html
+  name: ApplicationDbContext
+  nameWithType: ApplicationDbContext
+  fullName: Skarabeus_Data.ApplicationDbContext
+- uid: Skarabeus_Data
+  commentId: N:Skarabeus_Data
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data
+  nameWithType: Skarabeus_Data
+  fullName: Skarabeus_Data

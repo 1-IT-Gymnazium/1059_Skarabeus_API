@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api
+  commentId: N:Skarabeus_Api
+  id: Skarabeus_Api
+  children:
+  - Skarabeus_Api.Program
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Api
+  nameWithType: Skarabeus_Api
+  fullName: Skarabeus_Api
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: Skarabeus_Api.Program
+  commentId: T:Skarabeus_Api.Program
+  href: Skarabeus_Api.Program.html
+  name: Program
+  nameWithType: Program
+  fullName: Skarabeus_Api.Program

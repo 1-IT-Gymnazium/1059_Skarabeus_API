@@ -1,0 +1,77 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.Controllers.Models.PersonModels
+  commentId: N:Skarabeus_Api.Controllers.Models.PersonModels
+  id: Skarabeus_Api.Controllers.Models.PersonModels
+  children:
+  - Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModel
+  - Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModelExtensions
+  - Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Api.Controllers.Models.PersonModels
+  nameWithType: Skarabeus_Api.Controllers.Models.PersonModels
+  fullName: Skarabeus_Api.Controllers.Models.PersonModels
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModel
+  commentId: T:Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModel
+  parent: Skarabeus_Api.Controllers.Models.PersonModels
+  href: Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModel.html
+  name: PersonDetailModel
+  nameWithType: PersonDetailModel
+  fullName: Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModel
+- uid: Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel
+  commentId: T:Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel
+  parent: Skarabeus_Api.Controllers.Models.PersonModels
+  href: Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel.html
+  name: SmallPersonDetailModel
+  nameWithType: SmallPersonDetailModel
+  fullName: Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel
+- uid: Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModelExtensions
+  commentId: T:Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModelExtensions
+  href: Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModelExtensions.html
+  name: PersonDetailModelExtensions
+  nameWithType: PersonDetailModelExtensions
+  fullName: Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModelExtensions
+- uid: Skarabeus_Api.Controllers.Models.PersonModels
+  commentId: N:Skarabeus_Api.Controllers.Models.PersonModels
+  href: Skarabeus_Api.html
+  name: Skarabeus_Api.Controllers.Models.PersonModels
+  nameWithType: Skarabeus_Api.Controllers.Models.PersonModels
+  fullName: Skarabeus_Api.Controllers.Models.PersonModels
+  spec.csharp:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.PersonModels
+    name: PersonModels
+    href: Skarabeus_Api.Controllers.Models.PersonModels.html
+  spec.vb:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.PersonModels
+    name: PersonModels
+    href: Skarabeus_Api.Controllers.Models.PersonModels.html

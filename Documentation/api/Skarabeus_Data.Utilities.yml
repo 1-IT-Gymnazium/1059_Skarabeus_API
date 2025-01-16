@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Data.Utilities
+  commentId: N:Skarabeus_Data.Utilities
+  id: Skarabeus_Data.Utilities
+  children:
+  - Skarabeus_Data.Utilities.ClaimsPrincipalExtensions
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Data.Utilities
+  nameWithType: Skarabeus_Data.Utilities
+  fullName: Skarabeus_Data.Utilities
+  type: Namespace
+  assemblies:
+  - Skarabeus_Data
+references:
+- uid: Skarabeus_Data.Utilities.ClaimsPrincipalExtensions
+  commentId: T:Skarabeus_Data.Utilities.ClaimsPrincipalExtensions
+  href: Skarabeus_Data.Utilities.ClaimsPrincipalExtensions.html
+  name: ClaimsPrincipalExtensions
+  nameWithType: ClaimsPrincipalExtensions
+  fullName: Skarabeus_Data.Utilities.ClaimsPrincipalExtensions

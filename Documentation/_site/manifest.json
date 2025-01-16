@@ -1,0 +1,658 @@
+{
+  "source_base_path": "C:/Users/1059/source/repos/my/maturita/1059_Skarabeus_API/Dokumentace",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ProjectManager.Api.Services.Email.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ProjectManager.Api.Services.Email.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ProjectManager.Api.Services.EmailSenderService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ProjectManager.Api.Services.EmailSenderService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ProjectManager.Api.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ProjectManager.Api.Services.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.BackgroundServices.EmailSenderBackgroundService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.BackgroundServices.EmailSenderBackgroundService.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.BackgroundServices.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.BackgroundServices.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.AuthController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.AuthController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.IngredientController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.IngredientController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.LoginModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.LoginModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.RegisterModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.RegisterModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.TokenModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.TokenModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.UserInfoModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.UserInfoModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.UserInfoModelExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.UserInfoModelExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.Auth.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.DishModels.DishDetailModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.DishModels.DishDetailModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.DishModels.DishDetailModelExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.DishModels.DishDetailModelExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.DishModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.DishModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.EventModels.PersonDetailModelExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.EventModels.PersonDetailModelExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.EventModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.EventModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.IngredientModels.IngredientCreateModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.IngredientModels.IngredientCreateModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.IngredientModels.IngredientDetailModelExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.IngredientModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.IngredientModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModelExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.PersonModels.PersonDetailModelExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.PersonModels.SmallPersonDetailModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.Models.PersonModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.Models.PersonModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Controllers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Program.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Settings.SmtpSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Settings.SmtpSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.Settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Api.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Api.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.ApplicationDbContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.ApplicationDbContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.ApplicationUser.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.ApplicationUser.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.ConnectionTables.EventDish.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.ConnectionTables.EventDish.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.ConnectionTables.EventPerson.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.ConnectionTables.EventPerson.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.ConnectionTables.IngredientDish.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.ConnectionTables.IngredientDish.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.ConnectionTables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.ConnectionTables.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.Dish.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.Dish.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.Event.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.Event.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.Ingredient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.Ingredient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.IngredientExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.IngredientExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.Person.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.Person.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Entities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Interfaces.ITrackable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Interfaces.ITrackable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Interfaces.ITrackableExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Interfaces.ITrackableExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Migrations.addedIngredient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Migrations.addedIngredient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Migrations.addedMostOfTheDatabaseTables.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Migrations.addedMostOfTheDatabaseTables.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Migrations.addedemails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Migrations.addedemails.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Migrations.init.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Migrations.init.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Migrations.renamedIngredientTabl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Migrations.renamedIngredientTabl.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Migrations.renamedUserFullName.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Migrations.renamedUserFullName.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Migrations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Migrations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Utilities.ClaimsPrincipalExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Utilities.ClaimsPrincipalExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.Utilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.Utilities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Skarabeus_Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Skarabeus_Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

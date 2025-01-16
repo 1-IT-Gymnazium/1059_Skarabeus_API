@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Api.Controllers.Models.EventModels
+  commentId: N:Skarabeus_Api.Controllers.Models.EventModels
+  id: Skarabeus_Api.Controllers.Models.EventModels
+  children:
+  - Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  - Skarabeus_Api.Controllers.Models.EventModels.PersonDetailModelExtensions
+  langs:
+  - csharp
+  - vb
+  name: Skarabeus_Api.Controllers.Models.EventModels
+  nameWithType: Skarabeus_Api.Controllers.Models.EventModels
+  fullName: Skarabeus_Api.Controllers.Models.EventModels
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  commentId: T:Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+  parent: Skarabeus_Api.Controllers.Models.EventModels
+  href: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel.html
+  name: EventDetailModel
+  nameWithType: EventDetailModel
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.EventDetailModel
+- uid: Skarabeus_Api.Controllers.Models.EventModels.PersonDetailModelExtensions
+  commentId: T:Skarabeus_Api.Controllers.Models.EventModels.PersonDetailModelExtensions
+  href: Skarabeus_Api.Controllers.Models.EventModels.PersonDetailModelExtensions.html
+  name: PersonDetailModelExtensions
+  nameWithType: PersonDetailModelExtensions
+  fullName: Skarabeus_Api.Controllers.Models.EventModels.PersonDetailModelExtensions
+- uid: Skarabeus_Api.Controllers.Models.EventModels
+  commentId: N:Skarabeus_Api.Controllers.Models.EventModels
+  href: Skarabeus_Api.html
+  name: Skarabeus_Api.Controllers.Models.EventModels
+  nameWithType: Skarabeus_Api.Controllers.Models.EventModels
+  fullName: Skarabeus_Api.Controllers.Models.EventModels
+  spec.csharp:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.EventModels
+    name: EventModels
+    href: Skarabeus_Api.Controllers.Models.EventModels.html
+  spec.vb:
+  - uid: Skarabeus_Api
+    name: Skarabeus_Api
+    href: Skarabeus_Api.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers
+    name: Controllers
+    href: Skarabeus_Api.Controllers.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models
+    name: Models
+    href: Skarabeus_Api.Controllers.Models.html
+  - name: .
+  - uid: Skarabeus_Api.Controllers.Models.EventModels
+    name: EventModels
+    href: Skarabeus_Api.Controllers.Models.EventModels.html

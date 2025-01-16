@@ -1,0 +1,1506 @@
+### YamlMime:ManagedReference
+items:
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  commentId: T:Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  id: EventPerson
+  parent: Skarabeus_Data.Entities.ConnectionTables
+  children:
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedAt
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedBy
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedAt
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedBy
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.Event
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.Id
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedAt
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedBy
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.Person
+  langs:
+  - csharp
+  - vb
+  name: EventPerson
+  nameWithType: EventPerson
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  type: Class
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: EventPerson
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 1
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  syntax:
+    content: 'public class EventPerson : ITrackable'
+    content.vb: Public Class EventPerson Implements ITrackable
+  inheritance:
+  - System.Object
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  extensionMethods:
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(NodaTime.Instant)
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(System.String,NodaTime.Instant)
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(NodaTime.Instant)
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(System.String,NodaTime.Instant)
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(NodaTime.Instant)
+  - Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(System.String,NodaTime.Instant)
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Id
+  commentId: P:Skarabeus_Data.Entities.ConnectionTables.EventPerson.Id
+  id: Id
+  parent: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: EventPerson.Id
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Id
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: Id
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 3
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  syntax:
+    content: public Guid Id { get; set; }
+    parameters: []
+    return:
+      type: System.Guid
+    content.vb: Public Property Id As Guid
+  overload: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Id*
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Event
+  commentId: P:Skarabeus_Data.Entities.ConnectionTables.EventPerson.Event
+  id: Event
+  parent: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  langs:
+  - csharp
+  - vb
+  name: Event
+  nameWithType: EventPerson.Event
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Event
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: Event
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 4
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  syntax:
+    content: public Event Event { get; set; }
+    parameters: []
+    return:
+      type: Skarabeus_Data.Entities.Event
+    content.vb: Public Property [Event] As [Event]
+  overload: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Event*
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Person
+  commentId: P:Skarabeus_Data.Entities.ConnectionTables.EventPerson.Person
+  id: Person
+  parent: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  langs:
+  - csharp
+  - vb
+  name: Person
+  nameWithType: EventPerson.Person
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Person
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: Person
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 5
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  syntax:
+    content: public Person Person { get; set; }
+    parameters: []
+    return:
+      type: Skarabeus_Data.Entities.Person
+    content.vb: Public Property Person As Person
+  overload: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Person*
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedAt
+  commentId: P:Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedAt
+  id: CreatedAt
+  parent: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: EventPerson.CreatedAt
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: CreatedAt
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 7
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  example: []
+  syntax:
+    content: public Instant CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: NodaTime.Instant
+    content.vb: Public Property CreatedAt As Instant
+  overload: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedAt*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.CreatedAt
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedBy
+  commentId: P:Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedBy
+  id: CreatedBy
+  parent: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  langs:
+  - csharp
+  - vb
+  name: CreatedBy
+  nameWithType: EventPerson.CreatedBy
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedBy
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: CreatedBy
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 8
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  example: []
+  syntax:
+    content: public string CreatedBy { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CreatedBy As String
+  overload: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedBy*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.CreatedBy
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedAt
+  commentId: P:Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedAt
+  id: ModifiedAt
+  parent: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  langs:
+  - csharp
+  - vb
+  name: ModifiedAt
+  nameWithType: EventPerson.ModifiedAt
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedAt
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: ModifiedAt
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 9
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  example: []
+  syntax:
+    content: public Instant ModifiedAt { get; set; }
+    parameters: []
+    return:
+      type: NodaTime.Instant
+    content.vb: Public Property ModifiedAt As Instant
+  overload: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedAt*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.ModifiedAt
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedBy
+  commentId: P:Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedBy
+  id: ModifiedBy
+  parent: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  langs:
+  - csharp
+  - vb
+  name: ModifiedBy
+  nameWithType: EventPerson.ModifiedBy
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedBy
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: ModifiedBy
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 10
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  example: []
+  syntax:
+    content: public string ModifiedBy { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ModifiedBy As String
+  overload: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedBy*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.ModifiedBy
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedAt
+  commentId: P:Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedAt
+  id: DeletedAt
+  parent: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  langs:
+  - csharp
+  - vb
+  name: DeletedAt
+  nameWithType: EventPerson.DeletedAt
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedAt
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: DeletedAt
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 11
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  example: []
+  syntax:
+    content: public Instant? DeletedAt { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{NodaTime.Instant}
+    content.vb: Public Property DeletedAt As Instant?
+  overload: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedAt*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.DeletedAt
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedBy
+  commentId: P:Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedBy
+  id: DeletedBy
+  parent: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+  langs:
+  - csharp
+  - vb
+  name: DeletedBy
+  nameWithType: EventPerson.DeletedBy
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedBy
+  type: Property
+  source:
+    remote:
+      path: src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+      branch: dev
+      repo: https://github.com/1-IT-Gymnazium/1059_Skarabeus_API.git
+    id: DeletedBy
+    path: ../src/Skarabeus_Data/Entities/ConnectionTables/EventPerson.cs
+    startLine: 12
+  assemblies:
+  - Skarabeus_Data
+  namespace: Skarabeus_Data.Entities.ConnectionTables
+  example: []
+  syntax:
+    content: public string? DeletedBy { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property DeletedBy As String
+  overload: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedBy*
+  implements:
+  - Skarabeus_Data.Interfaces.ITrackable.DeletedBy
+references:
+- uid: Skarabeus_Data.Entities.ConnectionTables
+  commentId: N:Skarabeus_Data.Entities.ConnectionTables
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data.Entities.ConnectionTables
+  nameWithType: Skarabeus_Data.Entities.ConnectionTables
+  fullName: Skarabeus_Data.Entities.ConnectionTables
+  spec.csharp:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html
+  - name: .
+  - uid: Skarabeus_Data.Entities.ConnectionTables
+    name: ConnectionTables
+    href: Skarabeus_Data.Entities.ConnectionTables.html
+  spec.vb:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html
+  - name: .
+  - uid: Skarabeus_Data.Entities.ConnectionTables
+    name: ConnectionTables
+    href: Skarabeus_Data.Entities.ConnectionTables.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Skarabeus_Data.Interfaces.ITrackable
+  commentId: T:Skarabeus_Data.Interfaces.ITrackable
+  parent: Skarabeus_Data.Interfaces
+  href: Skarabeus_Data.Interfaces.ITrackable.html
+  name: ITrackable
+  nameWithType: ITrackable
+  fullName: Skarabeus_Data.Interfaces.ITrackable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  name: SetCreateBySystem<EventPerson>(EventPerson, Instant)
+  nameWithType: ITrackableExtensions.SetCreateBySystem<EventPerson>(EventPerson, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem<Skarabeus_Data.Entities.ConnectionTables.EventPerson>(Skarabeus_Data.Entities.ConnectionTables.EventPerson, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetCreateBySystem(Of EventPerson)(EventPerson, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem(Of Skarabeus_Data.Entities.ConnectionTables.EventPerson)(Skarabeus_Data.Entities.ConnectionTables.EventPerson, NodaTime.Instant)
+  name.vb: SetCreateBySystem(Of EventPerson)(EventPerson, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,NodaTime.Instant)
+    name: SetCreateBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,NodaTime.Instant)
+    name: SetCreateBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  name: SetCreateBy<EventPerson>(EventPerson, string, Instant)
+  nameWithType: ITrackableExtensions.SetCreateBy<EventPerson>(EventPerson, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy<Skarabeus_Data.Entities.ConnectionTables.EventPerson>(Skarabeus_Data.Entities.ConnectionTables.EventPerson, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetCreateBy(Of EventPerson)(EventPerson, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy(Of Skarabeus_Data.Entities.ConnectionTables.EventPerson)(Skarabeus_Data.Entities.ConnectionTables.EventPerson, String, NodaTime.Instant)
+  name.vb: SetCreateBy(Of EventPerson)(EventPerson, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,System.String,NodaTime.Instant)
+    name: SetCreateBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,System.String,NodaTime.Instant)
+    name: SetCreateBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  name: SetDeleteBySystem<EventPerson>(EventPerson, Instant)
+  nameWithType: ITrackableExtensions.SetDeleteBySystem<EventPerson>(EventPerson, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem<Skarabeus_Data.Entities.ConnectionTables.EventPerson>(Skarabeus_Data.Entities.ConnectionTables.EventPerson, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetDeleteBySystem(Of EventPerson)(EventPerson, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem(Of Skarabeus_Data.Entities.ConnectionTables.EventPerson)(Skarabeus_Data.Entities.ConnectionTables.EventPerson, NodaTime.Instant)
+  name.vb: SetDeleteBySystem(Of EventPerson)(EventPerson, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,NodaTime.Instant)
+    name: SetDeleteBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,NodaTime.Instant)
+    name: SetDeleteBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  name: SetDeleteBy<EventPerson>(EventPerson, string, Instant)
+  nameWithType: ITrackableExtensions.SetDeleteBy<EventPerson>(EventPerson, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy<Skarabeus_Data.Entities.ConnectionTables.EventPerson>(Skarabeus_Data.Entities.ConnectionTables.EventPerson, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetDeleteBy(Of EventPerson)(EventPerson, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy(Of Skarabeus_Data.Entities.ConnectionTables.EventPerson)(Skarabeus_Data.Entities.ConnectionTables.EventPerson, String, NodaTime.Instant)
+  name.vb: SetDeleteBy(Of EventPerson)(EventPerson, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,System.String,NodaTime.Instant)
+    name: SetDeleteBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,System.String,NodaTime.Instant)
+    name: SetDeleteBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  name: SetModifyBySystem<EventPerson>(EventPerson, Instant)
+  nameWithType: ITrackableExtensions.SetModifyBySystem<EventPerson>(EventPerson, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem<Skarabeus_Data.Entities.ConnectionTables.EventPerson>(Skarabeus_Data.Entities.ConnectionTables.EventPerson, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetModifyBySystem(Of EventPerson)(EventPerson, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem(Of Skarabeus_Data.Entities.ConnectionTables.EventPerson)(Skarabeus_Data.Entities.ConnectionTables.EventPerson, NodaTime.Instant)
+  name.vb: SetModifyBySystem(Of EventPerson)(EventPerson, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,NodaTime.Instant)
+    name: SetModifyBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,NodaTime.Instant)
+    name: SetModifyBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+  parent: Skarabeus_Data.Interfaces.ITrackableExtensions
+  definition: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  name: SetModifyBy<EventPerson>(EventPerson, string, Instant)
+  nameWithType: ITrackableExtensions.SetModifyBy<EventPerson>(EventPerson, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy<Skarabeus_Data.Entities.ConnectionTables.EventPerson>(Skarabeus_Data.Entities.ConnectionTables.EventPerson, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetModifyBy(Of EventPerson)(EventPerson, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy(Of Skarabeus_Data.Entities.ConnectionTables.EventPerson)(Skarabeus_Data.Entities.ConnectionTables.EventPerson, String, NodaTime.Instant)
+  name.vb: SetModifyBy(Of EventPerson)(EventPerson, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,System.String,NodaTime.Instant)
+    name: SetModifyBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: '>'
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(Skarabeus_Data.Entities.ConnectionTables.EventPerson,System.String,NodaTime.Instant)
+    name: SetModifyBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: )
+  - name: (
+  - uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson
+    name: EventPerson
+    href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Skarabeus_Data.Interfaces
+  commentId: N:Skarabeus_Data.Interfaces
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data.Interfaces
+  nameWithType: Skarabeus_Data.Interfaces
+  fullName: Skarabeus_Data.Interfaces
+  spec.csharp:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Interfaces
+    name: Interfaces
+    href: Skarabeus_Data.Interfaces.html
+  spec.vb:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Interfaces
+    name: Interfaces
+    href: Skarabeus_Data.Interfaces.html
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  name: SetCreateBySystem<T>(T, Instant)
+  nameWithType: ITrackableExtensions.SetCreateBySystem<T>(T, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem<T>(T, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetCreateBySystem(Of T)(T, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem(Of T)(T, NodaTime.Instant)
+  name.vb: SetCreateBySystem(Of T)(T, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+    name: SetCreateBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBySystem``1(``0,NodaTime.Instant)
+    name: SetCreateBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions
+  commentId: T:Skarabeus_Data.Interfaces.ITrackableExtensions
+  parent: Skarabeus_Data.Interfaces
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html
+  name: ITrackableExtensions
+  nameWithType: ITrackableExtensions
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  name: SetCreateBy<T>(T, string, Instant)
+  nameWithType: ITrackableExtensions.SetCreateBy<T>(T, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy<T>(T, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetCreateBy(Of T)(T, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy(Of T)(T, String, NodaTime.Instant)
+  name.vb: SetCreateBy(Of T)(T, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+    name: SetCreateBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetCreateBy``1(``0,System.String,NodaTime.Instant)
+    name: SetCreateBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetCreateBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  name: SetDeleteBySystem<T>(T, Instant)
+  nameWithType: ITrackableExtensions.SetDeleteBySystem<T>(T, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem<T>(T, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetDeleteBySystem(Of T)(T, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem(Of T)(T, NodaTime.Instant)
+  name.vb: SetDeleteBySystem(Of T)(T, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+    name: SetDeleteBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBySystem``1(``0,NodaTime.Instant)
+    name: SetDeleteBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  name: SetDeleteBy<T>(T, string, Instant)
+  nameWithType: ITrackableExtensions.SetDeleteBy<T>(T, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy<T>(T, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetDeleteBy(Of T)(T, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy(Of T)(T, String, NodaTime.Instant)
+  name.vb: SetDeleteBy(Of T)(T, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+    name: SetDeleteBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetDeleteBy``1(``0,System.String,NodaTime.Instant)
+    name: SetDeleteBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetDeleteBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  name: SetModifyBySystem<T>(T, Instant)
+  nameWithType: ITrackableExtensions.SetModifyBySystem<T>(T, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem<T>(T, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetModifyBySystem(Of T)(T, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem(Of T)(T, NodaTime.Instant)
+  name.vb: SetModifyBySystem(Of T)(T, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+    name: SetModifyBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBySystem``1(``0,NodaTime.Instant)
+    name: SetModifyBySystem
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBySystem__1___0_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+  commentId: M:Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+  isExternal: true
+  href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  name: SetModifyBy<T>(T, string, Instant)
+  nameWithType: ITrackableExtensions.SetModifyBy<T>(T, string, Instant)
+  fullName: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy<T>(T, string, NodaTime.Instant)
+  nameWithType.vb: ITrackableExtensions.SetModifyBy(Of T)(T, String, Instant)
+  fullName.vb: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy(Of T)(T, String, NodaTime.Instant)
+  name.vb: SetModifyBy(Of T)(T, String, Instant)
+  spec.csharp:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+    name: SetModifyBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+  spec.vb:
+  - uid: Skarabeus_Data.Interfaces.ITrackableExtensions.SetModifyBy``1(``0,System.String,NodaTime.Instant)
+    name: SetModifyBy
+    href: Skarabeus_Data.Interfaces.ITrackableExtensions.html#Skarabeus_Data_Interfaces_ITrackableExtensions_SetModifyBy__1___0_System_String_NodaTime_Instant_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: )
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Id*
+  commentId: Overload:Skarabeus_Data.Entities.ConnectionTables.EventPerson.Id
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html#Skarabeus_Data_Entities_ConnectionTables_EventPerson_Id
+  name: Id
+  nameWithType: EventPerson.Id
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Id
+- uid: System.Guid
+  commentId: T:System.Guid
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Event*
+  commentId: Overload:Skarabeus_Data.Entities.ConnectionTables.EventPerson.Event
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html#Skarabeus_Data_Entities_ConnectionTables_EventPerson_Event
+  name: Event
+  nameWithType: EventPerson.Event
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Event
+- uid: Skarabeus_Data.Entities.Event
+  commentId: T:Skarabeus_Data.Entities.Event
+  parent: Skarabeus_Data.Entities
+  href: Skarabeus_Data.Entities.Event.html
+  name: Event
+  nameWithType: Event
+  fullName: Skarabeus_Data.Entities.Event
+- uid: Skarabeus_Data.Entities
+  commentId: N:Skarabeus_Data.Entities
+  href: Skarabeus_Data.html
+  name: Skarabeus_Data.Entities
+  nameWithType: Skarabeus_Data.Entities
+  fullName: Skarabeus_Data.Entities
+  spec.csharp:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html
+  spec.vb:
+  - uid: Skarabeus_Data
+    name: Skarabeus_Data
+    href: Skarabeus_Data.html
+  - name: .
+  - uid: Skarabeus_Data.Entities
+    name: Entities
+    href: Skarabeus_Data.Entities.html
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Person*
+  commentId: Overload:Skarabeus_Data.Entities.ConnectionTables.EventPerson.Person
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html#Skarabeus_Data_Entities_ConnectionTables_EventPerson_Person
+  name: Person
+  nameWithType: EventPerson.Person
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.Person
+- uid: Skarabeus_Data.Entities.Person
+  commentId: T:Skarabeus_Data.Entities.Person
+  parent: Skarabeus_Data.Entities
+  href: Skarabeus_Data.Entities.Person.html
+  name: Person
+  nameWithType: Person
+  fullName: Skarabeus_Data.Entities.Person
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedAt*
+  commentId: Overload:Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedAt
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html#Skarabeus_Data_Entities_ConnectionTables_EventPerson_CreatedAt
+  name: CreatedAt
+  nameWithType: EventPerson.CreatedAt
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedAt
+- uid: Skarabeus_Data.Interfaces.ITrackable.CreatedAt
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.CreatedAt
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_CreatedAt
+  name: CreatedAt
+  nameWithType: ITrackable.CreatedAt
+  fullName: Skarabeus_Data.Interfaces.ITrackable.CreatedAt
+- uid: NodaTime.Instant
+  commentId: T:NodaTime.Instant
+  parent: NodaTime
+  isExternal: true
+  href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  name: Instant
+  nameWithType: Instant
+  fullName: NodaTime.Instant
+- uid: NodaTime
+  commentId: N:NodaTime
+  isExternal: true
+  name: NodaTime
+  nameWithType: NodaTime
+  fullName: NodaTime
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedBy*
+  commentId: Overload:Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedBy
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html#Skarabeus_Data_Entities_ConnectionTables_EventPerson_CreatedBy
+  name: CreatedBy
+  nameWithType: EventPerson.CreatedBy
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.CreatedBy
+- uid: Skarabeus_Data.Interfaces.ITrackable.CreatedBy
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.CreatedBy
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_CreatedBy
+  name: CreatedBy
+  nameWithType: ITrackable.CreatedBy
+  fullName: Skarabeus_Data.Interfaces.ITrackable.CreatedBy
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedAt*
+  commentId: Overload:Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedAt
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html#Skarabeus_Data_Entities_ConnectionTables_EventPerson_ModifiedAt
+  name: ModifiedAt
+  nameWithType: EventPerson.ModifiedAt
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedAt
+- uid: Skarabeus_Data.Interfaces.ITrackable.ModifiedAt
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.ModifiedAt
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_ModifiedAt
+  name: ModifiedAt
+  nameWithType: ITrackable.ModifiedAt
+  fullName: Skarabeus_Data.Interfaces.ITrackable.ModifiedAt
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedBy*
+  commentId: Overload:Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedBy
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html#Skarabeus_Data_Entities_ConnectionTables_EventPerson_ModifiedBy
+  name: ModifiedBy
+  nameWithType: EventPerson.ModifiedBy
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.ModifiedBy
+- uid: Skarabeus_Data.Interfaces.ITrackable.ModifiedBy
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.ModifiedBy
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_ModifiedBy
+  name: ModifiedBy
+  nameWithType: ITrackable.ModifiedBy
+  fullName: Skarabeus_Data.Interfaces.ITrackable.ModifiedBy
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedAt*
+  commentId: Overload:Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedAt
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html#Skarabeus_Data_Entities_ConnectionTables_EventPerson_DeletedAt
+  name: DeletedAt
+  nameWithType: EventPerson.DeletedAt
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedAt
+- uid: Skarabeus_Data.Interfaces.ITrackable.DeletedAt
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.DeletedAt
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_DeletedAt
+  name: DeletedAt
+  nameWithType: ITrackable.DeletedAt
+  fullName: Skarabeus_Data.Interfaces.ITrackable.DeletedAt
+- uid: System.Nullable{NodaTime.Instant}
+  commentId: T:System.Nullable{NodaTime.Instant}
+  parent: System
+  definition: System.Nullable`1
+  href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  name: Instant?
+  nameWithType: Instant?
+  fullName: NodaTime.Instant?
+  spec.csharp:
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: '?'
+  spec.vb:
+  - uid: NodaTime.Instant
+    name: Instant
+    isExternal: true
+    href: https://github.com/nodatime/nodatime/blob/30b4b33fcc4d354d25949601aea88866f25e8353/src/NodaTime/Instant.cs
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedBy*
+  commentId: Overload:Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedBy
+  href: Skarabeus_Data.Entities.ConnectionTables.EventPerson.html#Skarabeus_Data_Entities_ConnectionTables_EventPerson_DeletedBy
+  name: DeletedBy
+  nameWithType: EventPerson.DeletedBy
+  fullName: Skarabeus_Data.Entities.ConnectionTables.EventPerson.DeletedBy
+- uid: Skarabeus_Data.Interfaces.ITrackable.DeletedBy
+  commentId: P:Skarabeus_Data.Interfaces.ITrackable.DeletedBy
+  parent: Skarabeus_Data.Interfaces.ITrackable
+  href: Skarabeus_Data.Interfaces.ITrackable.html#Skarabeus_Data_Interfaces_ITrackable_DeletedBy
+  name: DeletedBy
+  nameWithType: ITrackable.DeletedBy
+  fullName: Skarabeus_Data.Interfaces.ITrackable.DeletedBy

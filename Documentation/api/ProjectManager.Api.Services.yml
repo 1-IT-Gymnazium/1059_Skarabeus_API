@@ -1,0 +1,61 @@
+### YamlMime:ManagedReference
+items:
+- uid: ProjectManager.Api.Services
+  commentId: N:ProjectManager.Api.Services
+  id: ProjectManager.Api.Services
+  children:
+  - ProjectManager.Api.Services.Email
+  - ProjectManager.Api.Services.EmailSenderService
+  langs:
+  - csharp
+  - vb
+  name: ProjectManager.Api.Services
+  nameWithType: ProjectManager.Api.Services
+  fullName: ProjectManager.Api.Services
+  type: Namespace
+  assemblies:
+  - Skarabeus_Api
+references:
+- uid: ProjectManager.Api.Services.EmailSenderService
+  commentId: T:ProjectManager.Api.Services.EmailSenderService
+  parent: ProjectManager.Api.Services
+  href: ProjectManager.Api.Services.EmailSenderService.html
+  name: EmailSenderService
+  nameWithType: EmailSenderService
+  fullName: ProjectManager.Api.Services.EmailSenderService
+- uid: ProjectManager.Api.Services.Email
+  commentId: T:ProjectManager.Api.Services.Email
+  href: ProjectManager.Api.Services.Email.html
+  name: Email
+  nameWithType: Email
+  fullName: ProjectManager.Api.Services.Email
+- uid: ProjectManager.Api.Services
+  commentId: N:ProjectManager.Api.Services
+  href: ProjectManager.html
+  name: ProjectManager.Api.Services
+  nameWithType: ProjectManager.Api.Services
+  fullName: ProjectManager.Api.Services
+  spec.csharp:
+  - uid: ProjectManager
+    name: ProjectManager
+    href: ProjectManager.html
+  - name: .
+  - uid: ProjectManager.Api
+    name: Api
+    href: ProjectManager.Api.html
+  - name: .
+  - uid: ProjectManager.Api.Services
+    name: Services
+    href: ProjectManager.Api.Services.html
+  spec.vb:
+  - uid: ProjectManager
+    name: ProjectManager
+    href: ProjectManager.html
+  - name: .
+  - uid: ProjectManager.Api
+    name: Api
+    href: ProjectManager.Api.html
+  - name: .
+  - uid: ProjectManager.Api.Services
+    name: Services
+    href: ProjectManager.Api.Services.html
