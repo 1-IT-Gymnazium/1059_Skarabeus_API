@@ -43,22 +43,8 @@ public class DishController : ControllerBase
             .Include(x => x.Ingredients)
             .ThenInclude(x => x.Ingredient)
             .FilterDeleted()
-            .Select(x => new DishDetailModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-                ingredients = (ICollection<IngredientDishDetailModel>)x.Ingredients.Select(y => new IngredientDishDetailModel()
-                {
-                    Id = y.Id,
-                    IngredientId = y.IngredientId,
-                    Name = y.Ingredient.Name,
-                    PriceForUnit = y.Ingredient.PriceForUnit,
-                    Amount = y.AmountInBaseUnits,
-                    Price = y.AmountInBaseUnits * y.Ingredient.PriceForUnit,
-                })
-
-            }).ToArrayAsync();
+            .Select(x => x.ToDetail(true))
+            .ToArrayAsync();
         return Ok(list);
     }
 
@@ -243,21 +229,7 @@ public class DishController : ControllerBase
             .Include(x => x.Ingredients)
             .ThenInclude(x => x.Ingredient)
             .Where(x => x.Id == id)
-            .Select(x => new DishDetailModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-                ingredients = (ICollection<IngredientDishDetailModel>)x.Ingredients.Select(y => new IngredientDishDetailModel()
-                {
-                    Id = y.Id,
-                    IngredientId = y.IngredientId,
-                    Name = y.Ingredient.Name,
-                    PriceForUnit = y.Ingredient.PriceForUnit,
-                    Amount = y.AmountInBaseUnits,
-                    Price = y.AmountInBaseUnits * y.Ingredient.PriceForUnit,
-                })
-            });
+            .Select(x => x.ToDetail(true));
 
         if (dish == null)
         {

@@ -130,37 +130,11 @@ public class AuthController : ControllerBase
         return NoContent();
     }
 
-    [HttpGet("api/v1/Auth/UserInfo")]
-    public async Task<ActionResult<UserInfoModel>> UserInfo()
-    {
-        if (User.Identity == null || !User.Identity.IsAuthenticated)
-        {
-            throw new InvalidOperationException("user not logged in");
-        }
-        var idString = User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value;
-
-        var usr = await _userManager
-                .Users
-                .SingleOrDefaultAsync(x => x.Id == Guid.Parse(idString))
-                ;
-        var usrModel = usr.ToModel();
-        return Ok(usrModel);
-    }
-
     [Authorize]
     [HttpPost("api/v1/Auth/Logout")]
     public async Task<ActionResult> Logout()
     {
         await HttpContext.SignOutAsync();
         return NoContent();
-    }
-
-    [HttpGet("api/v1/Auth/TestMail")]
-    public async Task<ActionResult> Test(
-        [FromServices] EmailSenderService service
-        )
-    {
-        await service.AddEmailToSendAsync("test@test.cz", "Suuuubject", "<h1>Aaaaaaaaaaa</h1>");
-        return Ok();
     }
 }
