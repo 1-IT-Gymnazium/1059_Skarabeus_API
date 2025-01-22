@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using Skarabeus_Data.Interfaces;
 
 namespace Skarabeus_Api.Controllers;
 
+[Authorize]
 [Controller]
 [Route("api/v1/ingredient")]
 //[Authorize]
