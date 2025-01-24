@@ -10,5 +10,6 @@ public class RegisterModel
     [Required]
     public string Password { get; set; } = null!;
 
-    public string? Name { get; set; }
+    public string Name { get; set; }
+    public Guid? PersonId { get; set; }
 }

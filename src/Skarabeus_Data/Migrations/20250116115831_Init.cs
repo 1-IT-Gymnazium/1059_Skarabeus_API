@@ -186,7 +186,9 @@ namespace Skarabeus_Data.Migrations
                         name: "FK_AspNetUser_Persons_PersonId",
                         column: x => x.PersonId,
                         principalTable: "Persons",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete:ReferentialAction.SetNull);
+
                 });
 
             migrationBuilder.CreateTable(

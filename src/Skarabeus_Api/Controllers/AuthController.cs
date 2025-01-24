@@ -44,63 +44,18 @@ public class AuthController : ControllerBase
         _jwtSettings = options.Value;
     }
 
-    [Authorize]
-    [HttpPost("Register")]
-    public async Task<ActionResult> Register(
-       [FromBody] RegisterModel model
-       )
-    {
-        var validator = new PasswordValidator<ApplicationUser>();
-        var now = _clock.GetCurrentInstant();
-
-        var newUser = new ApplicationUser
-        {
-            Id = Guid.NewGuid(),
-            LogginName = model.Name,
-            Email = model.Email,
-            UserName = model.Email,
-        }.SetCreateBySystem(now);
-
-        var checkPassword = await validator.ValidateAsync(_userManager, newUser, model.Password);
-
-        if (!checkPassword.Succeeded)
-        {
-            ModelState.AddModelError<RegisterModel>(
-                x => x.Password, string.Join("\n", checkPassword.Errors.Select(x => x.Description)));
-            return ValidationProblem(ModelState);
-        }
-
-        await _userManager.CreateAsync(newUser);
-        await _userManager.AddPasswordAsync(newUser, model.Password);
-        var token = string.Empty;
-        token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
-
-        await _emailService.AddEmailToSendAsync(
-            model.Email,
-            "Potvrzení registrace",
-            $"<a href=\"localhost:5000/api/v1/Auth/ValidateToken?token={Uri.EscapeDataString(token)}&email={(model.Email)}\">{token}</a>"
-            );
-
-        return Ok(token);
-    }
-
     [HttpPost("Login")]
-    public async Task<ActionResult> Login([FromBody] LoginModel model)
+    public async Task<ActionResult> Login(
+        [FromBody] LoginModel model
+        )
     {
-        var normalizedEmail = model.Email.ToUpperInvariant();
-        var user = await _userManager
-            .Users
-            .SingleOrDefaultAsync(x => x.EmailConfirmed && x.NormalizedEmail == normalizedEmail)
-            ;
+        var user = await _userManager.FindByEmailAsync(model.Email);
 
-
-        if (user == null)
+        if ((user == null) || !user.EmailConfirmed || user.DeletedAt != null)
         {
             ModelState.AddModelError(string.Empty, "LOGIN_FAILED");
             return ValidationProblem(ModelState);
         }
-
-        var claims = await _userManager.GetClaimsAsync(user);
 
         var signInResult = await _signInManager.CheckPasswordSignInAsync(user, model.Password, lockoutOnFailure: true);
         if (!signInResult.Succeeded)
@@ -108,6 +63,10 @@ public class AuthController : ControllerBase
             ModelState.AddModelError(string.Empty, "LOGIN_FAILED");
             return ValidationProblem(ModelState);
         }
+        var claims = (await _userManager.GetClaimsAsync(user));
+
+        claims.Add(new Claim(ClaimTypes.Name, user.LogginName));
+        claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
 
         //var userPrincipal = await _signInManager.CreateUserPrincipalAsync(user);
         //await HttpContext.(userPrincipal);
