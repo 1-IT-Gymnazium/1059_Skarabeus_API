@@ -65,14 +65,14 @@ public class AuthController : ControllerBase
         }
         var claims = (await _userManager.GetClaimsAsync(user));
 
-        claims.Add(new Claim(ClaimTypes.Name, user.LogginName));
-        claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
+        //claims.Add(new Claim(ClaimTypes.Name, user.LogginName));
+        //claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
 
-        //var userPrincipal = await _signInManager.CreateUserPrincipalAsync(user);
-        //await HttpContext.(userPrincipal);
+        var userPrincipal = await _signInManager.CreateUserPrincipalAsync(user);
+        await HttpContext.SignInAsync(userPrincipal);
 
-        var token = GenerateJwtToken(claims.ToList());
-        return Ok(new { Token = token });
+        //var token = GenerateJwtToken(claims.ToList());
+        return Ok(/*new { Token = token }*/);
     }
 
 

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ using ProjectManager.Api.Services;
 using Serilog;
 using Skarabeus_Api.BackgroundServices;
 using Skarabeus_Api.Settings;
+using Skarabeus_Api.Utils;
 using Skarabeus_Data;
 using Skarabeus_Data.Entities;
 using System.Security.Claims;
@@ -17,7 +19,7 @@ namespace Skarabeus_Api
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -56,14 +58,14 @@ namespace Skarabeus_Api
                 .AddDefaultTokenProviders();
 
 
-            //builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            //    .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme);
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme);
 
             builder.Services.AddAuthorization(options =>
              {
                  options.AddPolicy("UserManager", policy => policy.RequireClaim(ClaimTypes.Role, ["UserManager", "Admin"]));
              });
-
+            /*
             builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection(nameof(JwtSettings)));
 
             var jwtSettings = builder.Configuration.GetRequiredSection(nameof(JwtSettings)).Get<JwtSettings>();
@@ -85,7 +87,7 @@ namespace Skarabeus_Api
                     ValidAudience = jwtSettings.Audience
                 };
             });
-
+            */
             builder.Services.AddSingleton<IClock>(SystemClock.Instance);
             builder.Services.AddScoped<EmailSenderService>();
             builder.Services.AddHostedService<EmailSenderBackgroundService>();
@@ -126,7 +128,18 @@ namespace Skarabeus_Api
                 });
             });
 
+            builder.Services.AddTransient<SeedData>();
+
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+                // Call the SeedData.Initialize method
+                await SeedData.Initialize(userManager);
+            }
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -146,6 +159,8 @@ namespace Skarabeus_Api
             app.MapControllers();
 
             app.Run();
+
+            
         }
     }
 }

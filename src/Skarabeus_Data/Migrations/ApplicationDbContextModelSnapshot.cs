@@ -206,31 +206,7 @@ namespace Skarabeus_Data.Migrations
 
                     b.HasIndex("PersonId");
 
-                    b.ToTable("AspNetUser", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("ceab6921-dfed-4b4d-b661-dc36b8749067"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "ba46c7df-e2cf-469d-a17d-b653c50a0147",
-                            CreatedAt = NodaTime.Instant.FromUnixTimeTicks(-3776735808000000000L),
-                            CreatedBy = "System",
-                            Email = "user@example.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = true,
-                            LockoutEnd = new DateTimeOffset(new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 0, 0, 0, 0)),
-                            ModifiedAt = NodaTime.Instant.FromUnixTimeTicks(-3776735808000000000L),
-                            ModifiedBy = "System",
-                            NormalizedEmail = "USER@EXAMPLE.COM",
-                            NormalizedUserName = "USER@EXAMPLE.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELKQmdGcfZbjxaz1GeqZ62mF7gEO9d49ofpdaQ+Mq0904MEIWvUnaMMfx9gJ27NmdQ==",
-                            PhoneNumber = "123456798",
-                            PhoneNumberConfirmed = true,
-                            SecurityStamp = "2MLDENGLJTQEITJVCJMIJJQOKXOUNSD6",
-                            TwoFactorEnabled = false,
-                            UserName = "user@example.com"
-                        });
+                    b.ToTable("ApsNetUser");
                 });
 
             modelBuilder.Entity("Skarabeus_Data.Entities.ConnectionTables.IngredientDish", b =>
