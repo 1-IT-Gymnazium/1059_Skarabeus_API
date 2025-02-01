@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using NodaTime;
 using ProjectManager.Api.Services;
 using Skarabeus_Api.Controllers.Models.Auth;
+using Skarabeus_Api.Controllers.Models.UserModels;
 using Skarabeus_Api.Utils;
 using Skarabeus_Data;
 using Skarabeus_Data.Entities;
@@ -41,7 +42,7 @@ public class UserControler : ControllerBase
     [HttpGet]
     public async Task<ActionResult> GetList()
     {
-        var list = await _userManager.Users.Include(x => x.Person).ToArrayAsync();
+        var list = await _userManager.Users.Include(x => x.Person).Select(x => x.ToModel()).ToArrayAsync();
 
         return Ok(list);
     }
@@ -101,6 +102,37 @@ public class UserControler : ControllerBase
         return Ok(new { Token = token, Modelstate = ModelState });
     }
 
+    [HttpDelete("SoftDelete/{id}")]
+    public async Task<ActionResult> SoftDeleteUser(Guid id)
+    {
+        var now = _clock.GetCurrentInstant();
+
+        var user = await _dbcontext.Users.FirstOrDefaultAsync(x => x.Id == id);
+        if (user == null) return NotFound();
+        
+        user.SetDeleteBy(User.GetName(), now);
+
+        await _dbcontext.SaveChangesAsync();
+
+        return Ok();
+    }
+
+    [HttpPost("UndeleteUser/{id}")]
+    public async Task<ActionResult> UndeleteUser(Guid id)
+    {
+        var now = _clock.GetCurrentInstant();
+
+        var user = await _dbcontext.Users.FirstOrDefaultAsync(x => x.Id == id);
+        if (user == null) return NotFound();
+
+        user.SetModifyBy(User.GetName(), now);
+        user.DeletedAt = null;
+
+        await _dbcontext.SaveChangesAsync();
+
+        return Ok();
+    }
+
     [HttpPost("AddClaim")]
     public async Task<ActionResult> AddClaim(
         Guid userId,
@@ -140,9 +172,7 @@ public class UserControler : ControllerBase
         user.SetModifyBy(User.GetName(), now);
 
         await _dbcontext.SaveChangesAsync();
-
-        await _dbcontext.SaveChangesAsync();
-        return Ok(user);
+        return Ok(user.ToModel());
     }
 
     [HttpPost("RemoveClaim")]
