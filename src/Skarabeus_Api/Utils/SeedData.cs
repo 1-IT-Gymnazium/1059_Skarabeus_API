@@ -12,6 +12,7 @@ namespace Skarabeus_Api.Utils
             UserManager<ApplicationUser> userManager
             )
         {
+            if (userManager.Users.Any()) return;
             var newUser = new ApplicationUser
             {
                 Id = Guid.NewGuid(),

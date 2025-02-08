@@ -61,6 +61,7 @@ public class UserControler : ControllerBase
             LogginName = model.Name,
             Email = model.Email,
             UserName = model.Email,
+            EmailConfirmed = true,
         };
 
         var checkPassword = await validator.ValidateAsync(_userManager, newUser, model.Password);
@@ -90,7 +91,10 @@ public class UserControler : ControllerBase
 
         await _userManager.CreateAsync(newUser);
         await _userManager.AddPasswordAsync(newUser, model.Password);
+        
+        /*
         var token = string.Empty;
+                
         token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
 
         await _emailService.AddEmailToSendAsync(
@@ -98,8 +102,8 @@ public class UserControler : ControllerBase
             "Potvrzení registrace",
             $"<a href=\"localhost:5000/api/v1/Auth/ValidateToken?token={Uri.EscapeDataString(token)}&email={(model.Email)}\">{token}</a>"
             );
-
-        return Ok(new { Token = token, Modelstate = ModelState });
+        */
+        return Ok(/*new { Token = token, Modelstate = ModelState }*/);
     }
 
     [HttpDelete("SoftDelete/{id}")]

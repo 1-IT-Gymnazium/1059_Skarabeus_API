@@ -19,7 +19,7 @@ public static class UserInfoModelExtensions
             Id = model.Id,
             UserName = model.UserName,
             Email = model.Email,
-            Person = model.Person.ToSmall(),
+            Person = model.Person == null ? null : model.Person.ToSmall(),
             PhoneNummber = model.PhoneNumber,
         };
 }

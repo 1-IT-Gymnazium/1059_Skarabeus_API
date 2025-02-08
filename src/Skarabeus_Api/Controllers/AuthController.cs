@@ -10,7 +10,9 @@ using Microsoft.IdentityModel.Tokens;
 using NodaTime;
 using ProjectManager.Api.Services;
 using Skarabeus_Api.Controllers.Models.Auth;
+using Skarabeus_Api.Controllers.Models.UserModels;
 using Skarabeus_Api.Settings;
+using Skarabeus_Api.Utils;
 using Skarabeus_Data.Entities;
 using Skarabeus_Data.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
@@ -23,21 +25,18 @@ namespace Skarabeus_Api.Controllers;
 [ApiController]
 public class AuthController : ControllerBase
 {
-    private readonly EmailSenderService _emailService;
     private readonly IClock _clock;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly JwtSettings _jwtSettings;
 
     public AuthController(
-        EmailSenderService emailService,
         IClock clock,
         UserManager<ApplicationUser> userManager,
         SignInManager<ApplicationUser> signInManager,
         IOptions<JwtSettings> options
         )
     {
-        _emailService = emailService;
         _clock = clock;
         _signInManager = signInManager;
         _userManager = userManager;
@@ -108,6 +107,15 @@ public class AuthController : ControllerBase
     {
         await HttpContext.SignOutAsync();
         return NoContent();
+    }
+    
+    [Authorize]
+    [HttpGet]
+    public async Task<ActionResult> UserInfo()
+    {
+        var name = User.GetName();
+        var model = (await _userManager.FindByEmailAsync(name));
+        return Ok(model.ToModel());
     }
 
     private string GenerateJwtToken(List<Claim> claims)
