@@ -182,7 +182,7 @@ public class EventController : ControllerBase
     /// <param name="id">id of the event</param>
     /// <param name="personIds">list of ids of persons</param>
     /// <returns>returns the event details</returns>
-    [HttpPost("AddPersonToEvent/{id}")]
+    [HttpPost("AddPersonsToEvent/{id}")]
     public async Task<ActionResult> AddPersonsToEvent(
         Guid id,
         Guid[] personIds
