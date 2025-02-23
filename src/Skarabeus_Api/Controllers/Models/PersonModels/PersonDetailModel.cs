@@ -1,4 +1,6 @@
-﻿using Skarabeus_Data.Entities;
+﻿using Skarabeus_Api.Utils;
+using Skarabeus_Data.Entities;
+using System.Text.Json.Serialization;
 
 namespace Skarabeus_Api.Controllers.Models.PersonModels
 {
@@ -6,8 +8,8 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
     {
         public string? EmailOfMother { get; set; }
         public string? EmailOfFather { get; set; }
-        public string? PhoneNummberOfMother { get; set; }
-        public string? PhoneNUmmberOfFather { get; set; }
+        public string? PhoneNumberOfMother { get; set; }
+        public string? PhoneNumberOfFather { get; set; }
         public string? FullNameOfMother { get; set; }
         public string? FullNameOfFather { get; set; }
     }
@@ -18,10 +20,12 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public bool Gender { get; set; }
-        public DateTime? DateOfBirth { get; set; }
+        public PersonStatus Status { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string? Email { get; set; }
-        public string? PhoneNummber { get; set; }
+        public string? PhoneNumber { get; set; }
         public bool Active { get; set; }
+        public bool Deleted { get; set; }
 
     }
 
@@ -40,12 +44,14 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
                 EmailOfFather = model.EmailOfFather,
                 EmailOfMother = model.EmailOfMother,
                 Email = model.Email,
-                PhoneNummber = model.PhoneNummber,
-                PhoneNUmmberOfFather = model.PhoneNUmmberOfFather,
-                PhoneNummberOfMother = model.PhoneNummberOfMother,
+                PhoneNumber = model.PhoneNumber,
+                PhoneNumberOfFather = model.PhoneNumberOfFather,
+                PhoneNumberOfMother = model.PhoneNumberOfMother,
                 FullNameOfFather = model.FullNameOfFather,
                 FullNameOfMother = model.FullNameOfMother,
-                Active = model.Active
+                Active = model.Active,
+                Status = model.Status,
+                Deleted = model.DeletedAt!=null
             };
         public static SmallPersonDetailModel ToSmall(this Person model)
             => new()
@@ -56,8 +62,10 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
                 DateOfBirth = model.DateOfBirth,
                 Gender = model.Gender,
                 Email = model.Email,
-                PhoneNummber = model.PhoneNummber,
-                Active = model.Active
+                PhoneNumber = model.PhoneNumber,
+                Active = model.Active,
+                Status = model.Status,
+                Deleted = model.DeletedAt != null
             };
 
     }

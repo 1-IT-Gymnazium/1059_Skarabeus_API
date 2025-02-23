@@ -10,12 +10,13 @@ public class Person : ITrackable
     public string? EmailOfMother { get; set; }
     public string? EmailOfFather { get; set; }
     public string? Email { get; set; }
-    public string? PhoneNummberOfMother { get; set; }
-    public string? PhoneNUmmberOfFather { get; set; }
-    public string? PhoneNummber { get; set; }
+    public string? PhoneNumberOfMother { get; set; }
+    public string? PhoneNumberOfFather { get; set; }
+    public string? PhoneNumber { get; set; }
     public string? FullNameOfMother { get; set; }
     public string? FullNameOfFather { get; set; }
     public bool Active { get; set; }
+    public PersonStatus Status { get; set; }
     public ICollection<Event> Events { get; set; } = new HashSet<Event>();
 
     public Instant CreatedAt { get; set; }
@@ -40,4 +41,12 @@ public static class PersonExtensions
     public static IQueryable<Person> Filter(this IQueryable<Person> query)
         => query.FilterActive().FilterDeleted()
         ;
+}
+
+public enum PersonStatus
+{
+    other,
+    child,
+    instruktor,
+    leader,
 }

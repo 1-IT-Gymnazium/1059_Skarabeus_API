@@ -8,7 +8,7 @@ public class UserInfoModel
     public string UserName { get; set; }
     public string Email { get; set; }
     public SmallPersonDetailModel Person { get; set; }
-    public string PhoneNummber { get; set; }
+    public string PhoneNumber { get; set; }
 }
 
 public static class UserInfoModelExtensions
@@ -20,6 +20,6 @@ public static class UserInfoModelExtensions
             UserName = model.UserName,
             Email = model.Email,
             Person = model.Person == null ? null : model.Person.ToSmall(),
-            PhoneNummber = model.PhoneNumber,
+            PhoneNumber = model.PhoneNumber,
         };
 }

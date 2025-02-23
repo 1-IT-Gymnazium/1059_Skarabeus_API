@@ -13,6 +13,7 @@ using Skarabeus_Data;
 using Skarabeus_Data.Entities;
 using Skarabeus_Data.Interfaces;
 using System;
+using System.ComponentModel;
 
 namespace Skarabeus_Api.Controllers;
 
@@ -55,16 +56,17 @@ public class PersonController : ControllerBase
             FirstName = createModel.FirstName,
             LastName = createModel.LastName,
             Gender = createModel.Gender,
-            DateOfBirth = createModel.DateOfBirth,
+            DateOfBirth = DateTime.Parse(createModel.DateOfBirth).ToUniversalTime(),
             EmailOfMother = createModel.EmailOfMother,
             EmailOfFather = createModel.EmailOfFather,
             Email = createModel.Email,
-            PhoneNummberOfMother = createModel.PhoneNummberOfMother,
-            PhoneNUmmberOfFather = createModel.PhoneNUmmberOfFather,
-            PhoneNummber = createModel.PhoneNummber,
+            PhoneNumberOfMother = createModel.PhoneNumberOfMother,
+            PhoneNumberOfFather = createModel.PhoneNumberOfFather,
+            PhoneNumber = createModel.PhoneNumber,
             FullNameOfMother = createModel.FullNameOfMother,
             FullNameOfFather = createModel.FullNameOfFather,
-            Active = createModel.Active
+            Active = createModel.Active,
+            Status = createModel.Status
         };
 
         if (User.Identity != null && User.Identity.IsAuthenticated) newPerson.SetCreateBy(User.GetName(), now);
@@ -128,13 +130,17 @@ public class PersonController : ControllerBase
 
         var person = await _dbContext.Persons.FirstOrDefaultAsync(x => x.Id == id);
         if (person == null) return NotFound();
-
-        if (User.Identity != null && User.Identity.IsAuthenticated) person.SetDeleteBy(User.GetName(), now);
-        else person.SetDeleteBySystem(now);
+        if(_dbContext.Users.Any(x=>x.Person == person))
+        {
+            person.SetDeleteBy(User.GetName(), now);
+            await _dbContext.SaveChangesAsync();
+            return Conflict(new { message = "Person is tied to a user, so it cannot be deleted. It has been marked as deleted instead." });
+        }
+        else _dbContext.Persons.Remove(person);
 
         await _dbContext.SaveChangesAsync();
 
-        return Ok(person.ToDetail());
+        return Ok();
     }
 
     /// <summary>
@@ -164,16 +170,17 @@ public class PersonController : ControllerBase
             FirstName = person.FirstName,
             LastName = person.LastName,
             Gender = person.Gender,
-            DateOfBirth = person.DateOfBirth,
+            DateOfBirth = person.DateOfBirth.ToString(),
             EmailOfMother = person.EmailOfMother,
             EmailOfFather = person.EmailOfFather,
             Email = person.Email,
-            PhoneNummberOfMother = person.PhoneNummberOfMother,
-            PhoneNUmmberOfFather = person.PhoneNUmmberOfFather,
-            PhoneNummber = person.PhoneNummber,
+            PhoneNumberOfMother = person.PhoneNumberOfMother,
+            PhoneNumberOfFather = person.PhoneNumberOfFather,
+            PhoneNumber = person.PhoneNumber,
             FullNameOfMother = person.FullNameOfMother,
             FullNameOfFather = person.FullNameOfFather,
-            Active = person.Active
+            Active = person.Active,
+            Status = person.Status
         };
 
         patch.ApplyTo(toUpdate);
@@ -186,16 +193,17 @@ public class PersonController : ControllerBase
         person.FirstName = toUpdate.FirstName;
         person.LastName = toUpdate.LastName;
         person.Gender = toUpdate.Gender;
-        person.DateOfBirth = toUpdate.DateOfBirth;
+        person.DateOfBirth = DateTime.Parse(toUpdate.DateOfBirth);
         person.EmailOfMother = toUpdate.EmailOfMother;
         person.EmailOfFather = toUpdate.EmailOfFather;
         person.Email = toUpdate.Email;
-        person.PhoneNummberOfMother = toUpdate.PhoneNummberOfMother;
-        person.PhoneNUmmberOfFather = toUpdate.PhoneNUmmberOfFather;
-        person.PhoneNummber = toUpdate.PhoneNummber;
+        person.PhoneNumberOfMother = toUpdate.PhoneNumberOfMother;
+        person.PhoneNumberOfFather = toUpdate.PhoneNumberOfFather;
+        person.PhoneNumber = toUpdate.PhoneNumber;
         person.FullNameOfMother = toUpdate.FullNameOfMother;
         person.FullNameOfFather = toUpdate.FullNameOfFather;
         person.Active = toUpdate.Active;
+        person.Status = toUpdate.Status;
 
 
         if (User.Identity != null && User.Identity.IsAuthenticated)

@@ -76,7 +76,7 @@ public class IngredientController : ControllerBase
         )
     {
         var list = await _dbContext.Set<Ingredient>().FilterDeleted().Select(x => x.ToDetail()).ToArrayAsync();
-        return Ok(list);
+        return Ok(list.OrderBy(x => x.Name));
     }
 
     [HttpGet("{id}")]
@@ -86,7 +86,7 @@ public class IngredientController : ControllerBase
 
         if (ingredient == null) return NotFound();
 
-        return Ok(ingredient);
+        return Ok(ingredient.ToDetail());
     }
 
 

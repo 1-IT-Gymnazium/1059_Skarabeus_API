@@ -14,6 +14,7 @@ using Skarabeus_Data;
 using Skarabeus_Data.Entities;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Skarabeus_Api
 {
@@ -31,7 +32,10 @@ namespace Skarabeus_Api
 
             // Add services to the container.
             builder.Services.AddControllers()
-            .AddNewtonsoftJson();
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+                });
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
@@ -100,8 +104,9 @@ namespace Skarabeus_Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
             {
+                /*
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "JWT API", Version = "v1" });
-
+                
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -126,6 +131,7 @@ namespace Skarabeus_Api
                         Array.Empty<string>()
                     }
                 });
+                */
             });
 
             builder.Services.AddTransient<SeedData>();
