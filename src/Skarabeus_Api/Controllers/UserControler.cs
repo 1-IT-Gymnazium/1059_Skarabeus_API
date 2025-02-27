@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 using NodaTime;
 using ProjectManager.Api.Services;
 using Skarabeus_Api.Controllers.Models.Auth;
+using Skarabeus_Api.Controllers.Models.PersonModels;
 using Skarabeus_Api.Controllers.Models.UserModels;
 using Skarabeus_Api.Utils;
 using Skarabeus_Data;
@@ -19,14 +21,14 @@ namespace Skarabeus_Api.Controllers;
 [Authorize(Policy = "UserManager")]
 [Route("api/v1/[controller]")]
 [ApiController]
-public class UserControler : ControllerBase
+public class UserController : ControllerBase
 {
     private readonly EmailSenderService _emailService;
     private readonly IClock _clock;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly ApplicationDbContext _dbcontext;
 
-    public UserControler(
+    public UserController(
         EmailSenderService emailService,
         IClock clock,
         UserManager<ApplicationUser> userManager,
@@ -42,8 +44,20 @@ public class UserControler : ControllerBase
     [HttpGet]
     public async Task<ActionResult> GetList()
     {
-        var list = await _userManager.Users.Include(x => x.Person).Select(x => x.ToModel()).ToArrayAsync();
+        var users =
+            (await _userManager.Users
+            .Include(x => x.Person)
+            .ToArrayAsync());
 
+        var list = new List<UserInfoModel>();
+        foreach (var user in users)
+        {
+            var roles = (await _userManager.GetClaimsAsync(user));
+            var role = roles.FirstOrDefault(x => x.Type == ClaimTypes.Role);
+            var us = user.ToModel();
+            us.Role = role == null ? "":role.Value;
+            list.Add(us);
+        }
         return Ok(list);
     }
 
@@ -205,5 +219,50 @@ public class UserControler : ControllerBase
         )
     {
         foreach (var c in (await _userManager.GetClaimsAsync(usr)).Where(x => x.ValueType == ClaimTypes.Role)) await _userManager.RemoveClaimAsync(usr, c);
+    }
+
+
+    [HttpPatch("{id}")]
+    public async Task<ActionResult> Update(
+        [FromRoute] Guid id,
+        [FromBody] JsonPatchDocument<UserPatchModel> patch
+        )
+    {
+        var user = await _dbcontext.Users.Include(x=>x.Person).FirstOrDefaultAsync(x => x.Id == id);
+
+
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        var now = _clock.GetCurrentInstant();
+
+        var toUpdate = new UserPatchModel
+        {
+            UserName = user.UserName,
+            Email = user.Email,
+        };
+        patch.ApplyTo(toUpdate);
+
+        if (!(ModelState.IsValid && TryValidateModel(toUpdate)))
+        {
+            return ValidationProblem(ModelState);
+        }
+
+        user.UserName = toUpdate.UserName;
+        user.Email = toUpdate.Email;
+
+        if (User.Identity != null && User.Identity.IsAuthenticated)
+        {
+            user.SetModifyBy(User.GetName(), now);
+        }
+        else
+        {
+            user.SetModifyBySystem(now);
+        }
+
+        await _dbcontext.SaveChangesAsync();
+        return Ok();
     }
 }

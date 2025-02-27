@@ -18,6 +18,7 @@ using Skarabeus_Data.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Web.Helpers;
 
 namespace Skarabeus_Api.Controllers;
 
@@ -108,14 +109,27 @@ public class AuthController : ControllerBase
         await HttpContext.SignOutAsync();
         return NoContent();
     }
-    
+
     [Authorize]
     [HttpGet]
     public async Task<ActionResult> UserInfo()
     {
         var name = User.GetName();
-        var model = (await _userManager.FindByEmailAsync(name));
-        return Ok(model.ToModel());
+        var user = (await _userManager.FindByEmailAsync(name));
+        var roles = (await _userManager.GetClaimsAsync(user));
+        var role = roles.FirstOrDefault(x => x.Type == ClaimTypes.Role);
+        var us = user.ToModel();
+        us.Role = role == null ? "" : role.Value;
+        return Ok(us);
+    }
+
+    [Authorize]
+    [HttpGet("GetRole")]
+    public async Task<ActionResult> GetRole()
+    {
+        var name = User.GetName();
+        var model = (await _userManager.GetClaimsAsync((await _userManager.FindByEmailAsync(name)))).FirstOrDefault(x => x.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role");
+        return Ok((model == null ? "none":model.Value).ToString());
     }
 
     private string GenerateJwtToken(List<Claim> claims)
