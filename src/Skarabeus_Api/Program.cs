@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -12,6 +13,8 @@ using Skarabeus_Api.Settings;
 using Skarabeus_Api.Utils;
 using Skarabeus_Data;
 using Skarabeus_Data.Entities;
+using System.Net;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -63,35 +66,23 @@ namespace Skarabeus_Api
 
 
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme);
-
-            builder.Services.AddAuthorization(options =>
-             {
-                 options.AddPolicy("UserManager", policy => policy.RequireClaim(ClaimTypes.Role, ["UserManager", "Admin"]));
-             });
-            /*
-            builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection(nameof(JwtSettings)));
-
-            var jwtSettings = builder.Configuration.GetRequiredSection(nameof(JwtSettings)).Get<JwtSettings>();
-
-            builder.Services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey)),
-                    ValidIssuer = jwtSettings.Issuer,
-                    ValidAudience = jwtSettings.Audience
-                };
-            });
-            */
+                    options.Events.OnRedirectToLogin = x =>
+                    {
+                        x.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                        return Task.CompletedTask;
+                    };
+                    options.Events.OnRedirectToAccessDenied = x =>
+                    {
+                        x.Response.StatusCode = StatusCodes.Status403Forbidden;
+                        return Task.CompletedTask;
+                    };
+                });
+
+            builder.Services.AddAuthorizationBuilder()
+                .AddPolicy("UserManager", policy => policy.RequireClaim(ClaimTypes.Role, ["UserManager", "Admin"]));
+
             builder.Services.AddSingleton<IClock>(SystemClock.Instance);
             builder.Services.AddScoped<EmailSenderService>();
             builder.Services.AddHostedService<EmailSenderBackgroundService>();
@@ -102,37 +93,7 @@ namespace Skarabeus_Api
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen(options =>
-            {
-                /*
-                options.SwaggerDoc("v1", new OpenApiInfo { Title = "JWT API", Version = "v1" });
-                
-                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                {
-                    Name = "Authorization",
-                    Type = SecuritySchemeType.Http,
-                    Scheme = "bearer",
-                    BearerFormat = "JWT",
-                    In = ParameterLocation.Header,
-                    Description = "Enter your JWT token without the 'Bearer' prefix.\n\nExample: abc123xyz"
-                });
-
-                options.AddSecurityRequirement(new OpenApiSecurityRequirement
-                {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            }
-                        },
-                        Array.Empty<string>()
-                    }
-                });
-                */
-            });
+            builder.Services.AddSwaggerGen();
 
             builder.Services.AddTransient<SeedData>();
 
@@ -158,9 +119,9 @@ namespace Skarabeus_Api
 
             //app.UseHttpsRedirection();
 
+
             app.UseAuthentication();
             app.UseAuthorization();
-
 
             app.MapControllers();
 

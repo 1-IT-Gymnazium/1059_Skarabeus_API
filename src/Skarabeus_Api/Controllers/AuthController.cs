@@ -116,6 +116,7 @@ public class AuthController : ControllerBase
     {
         var name = User.GetName();
         var user = (await _userManager.FindByEmailAsync(name));
+        if (user == null) return NoContent();
         var roles = (await _userManager.GetClaimsAsync(user));
         var role = roles.FirstOrDefault(x => x.Type == ClaimTypes.Role);
         var us = user.ToModel();

@@ -7,7 +7,7 @@ public class EventCreateModel
     public string Name { get; set; }
     public string? Description { get; set; }
     public Guid? ResponsiblePersonId { get; set; }
-    public DateTime Start { get; set; }
-    public DateTime End { get; set; }
+    public string Start { get; set; }
+    public string End { get; set; }
     public string? Place { get; set; }
 }

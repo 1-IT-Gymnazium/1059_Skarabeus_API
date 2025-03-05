@@ -48,8 +48,8 @@ public class EventController : ControllerBase
             Name = createModel.Name,
             Description = createModel.Description,
             ResponsiblePersonId = createModel.ResponsiblePersonId,
-            Start = createModel.Start,
-            End = createModel.End,
+            Start = DateTime.Parse(createModel.Start).ToUniversalTime(),
+            End = DateTime.Parse(createModel.End).ToUniversalTime(),
             Place = createModel.Place
         };
 
@@ -127,8 +127,8 @@ public class EventController : ControllerBase
             Name = eventItem.Name,
             Description = eventItem.Description,
             ResponsiblePersonId = eventItem.ResponsiblePersonId,
-            Start = eventItem.Start,
-            End = eventItem.End,
+            Start = eventItem.Start.ToString(),
+            End = eventItem.End.ToString(),
             Place = eventItem.Place,
         };
 
@@ -142,8 +142,8 @@ public class EventController : ControllerBase
         eventItem.Name = toUpdate.Name;
         eventItem.Description = toUpdate.Description;
         eventItem.ResponsiblePersonId = toUpdate.ResponsiblePersonId;
-        eventItem.Start = toUpdate.Start;
-        eventItem.End = toUpdate.End;
+        eventItem.Start = DateTime.Parse(toUpdate.Start).ToUniversalTime();
+        eventItem.End = DateTime.Parse(toUpdate.Start).ToUniversalTime();
         eventItem.Place = toUpdate.Place;
 
         if (User.Identity != null && User.Identity.IsAuthenticated)
@@ -175,113 +175,97 @@ public class EventController : ControllerBase
 
         return Ok();
     }
-
     /// <summary>
-    /// adds persons to event by Ids
+    /// Adds a person to an event by their ID.
     /// </summary>
-    /// <param name="id">id of the event</param>
-    /// <param name="personIds">list of ids of persons</param>
-    /// <returns>returns the event details</returns>
-    [HttpPost("AddPersonsToEvent/{id}")]
-    public async Task<ActionResult> AddPersonsToEvent(
-        Guid id,
-        Guid[] personIds
-        )
-    {
-        var eventItem =await  _dbContext.Events
-            .Include(x=>x.Participants)
-            .FirstOrDefaultAsync(x => x.Id == id);
-
-        if (eventItem == null) return NotFound("event was not found");
-
-        var persons = _dbContext.Persons.Where(x=>personIds.Contains(x.Id));
-
-        foreach(var per in persons) eventItem.Participants.Add(per);
-
-        await _dbContext.SaveChangesAsync();
-
-        return Ok(eventItem.ToDetail(true));
-    }
-
-    /// <summary>
-    /// removes persons from event by Ids
-    /// </summary>
-    /// <param name="id">id of the event</param>
-    /// <param name="personIds">list of ids of persons</param>
-    /// <returns>returns the event details</returns>
-    [HttpDelete("RemovePersonsFromEvent/{id}")]
-    public async Task<ActionResult> RemovePersonsFromEvent(
-        Guid id,
-        Guid[] personIds
-        )
+    /// <param name="id">ID of the event</param>
+    /// <param name="personId">ID of the person</param>
+    /// <returns>Returns the updated event details</returns>
+    [HttpGet("AddPersonToEvent/{id}/{personId}")]
+    public async Task<ActionResult> AddPersonToEvent(Guid id, Guid personId)
     {
         var eventItem = await _dbContext.Events
             .Include(x => x.Participants)
             .FirstOrDefaultAsync(x => x.Id == id);
 
-        if (eventItem == null) return NotFound("event was not found");
+        var person = await _dbContext.Persons.FirstOrDefaultAsync(x => x.Id == personId);
 
-        var persons = eventItem.Participants.Where(x => personIds.Contains(x.Id));
+        if (eventItem == null || person == null) return NotFound("Event or person was not found");
 
-        foreach (var per in persons) eventItem.Participants.Remove(per);
-
+        eventItem.Participants.Add(person);
         await _dbContext.SaveChangesAsync();
 
         return Ok(eventItem.ToDetail(true));
     }
 
     /// <summary>
-    /// adds dishes to event by Ids
+    /// Removes a person from an event by their ID.
     /// </summary>
-    /// <param name="id">id of the event</param>
-    /// <param name="dishesIds">list of ids of dishes</param>
-    /// <returns>returns the event details</returns>
-    [HttpPost("AddDishesToEvent/{id}")]
-    public async Task<ActionResult> AddDishesToEvent(
-        Guid id,
-        Guid[] dishesIds
-        )
+    /// <param name="id">ID of the event</param>
+    /// <param name="personId">ID of the person</param>
+    /// <returns>Returns the updated event details</returns>
+    [HttpDelete("RemovePersonFromEvent/{id}/{personId}")]
+    public async Task<ActionResult> RemovePersonFromEvent(Guid id, Guid personId)
     {
         var eventItem = await _dbContext.Events
-            .Include(x => x.Dishes)
+            .Include(x => x.Participants)
             .FirstOrDefaultAsync(x => x.Id == id);
 
-        if (eventItem == null) return NotFound("event was not found");
+        var person = eventItem?.Participants.FirstOrDefault(x => x.Id == personId);
 
-        var dishes = _dbContext.Dishes.Where(x => dishesIds.Contains(x.Id));
+        if (eventItem == null || person == null) return NotFound("Event or person was not found");
 
-        foreach (var d in dishes) eventItem.Dishes.Add(d);
-
+        eventItem.Participants.Remove(person);
         await _dbContext.SaveChangesAsync();
 
         return Ok(eventItem.ToDetail(true));
     }
 
     /// <summary>
-    /// removes dishes from event by Ids
+    /// Adds a dish to an event by its ID.
     /// </summary>
-    /// <param name="id">id of the event</param>
-    /// <param name="dishesIds">list of ids of dishes</param>
-    /// <returns>returns the event details</returns>
-    [HttpDelete("RemoveDishesFromEvent/{id}")]
-    public async Task<ActionResult> RemoveDishesFromEvent(
-        Guid id,
-        Guid[] dishesIds
-        )
+    /// <param name="id">ID of the event</param>
+    /// <param name="dishId">ID of the dish</param>
+    /// <returns>Returns the updated event details</returns>
+    [HttpGet("AddDishToEvent/{id}/{dishId}")]
+    public async Task<ActionResult> AddDishToEvent(Guid id, Guid dishId)
     {
         var eventItem = await _dbContext.Events
             .Include(x => x.Dishes)
             .FirstOrDefaultAsync(x => x.Id == id);
 
-        if (eventItem == null) return NotFound("event was not found");
+        var dish = await _dbContext.Dishes.FirstOrDefaultAsync(x => x.Id == dishId);
 
-        var dishes = _dbContext.Dishes.Where(x => dishesIds.Contains(x.Id));
+        if (eventItem == null || dish == null) return NotFound("Event or dish was not found");
 
-        foreach (var d in dishes) eventItem.Dishes.Remove(d);
-
+        eventItem.Dishes.Add(dish);
         await _dbContext.SaveChangesAsync();
 
         return Ok(eventItem.ToDetail(true));
     }
+
+    /// <summary>
+    /// Removes a dish from an event by its ID.
+    /// </summary>
+    /// <param name="id">ID of the event</param>
+    /// <param name="dishId">ID of the dish</param>
+    /// <returns>Returns the updated event details</returns>
+    [HttpDelete("RemoveDishFromEvent/{id}/{dishId}")]
+    public async Task<ActionResult> RemoveDishFromEvent(Guid id, Guid dishId)
+    {
+        var eventItem = await _dbContext.Events
+            .Include(x => x.Dishes)
+            .FirstOrDefaultAsync(x => x.Id == id);
+
+        var dish = eventItem?.Dishes.FirstOrDefault(x => x.Id == dishId);
+
+        if (eventItem == null || dish == null) return NotFound("Event or dish was not found");
+
+        eventItem.Dishes.Remove(dish);
+        await _dbContext.SaveChangesAsync();
+
+        return Ok(eventItem.ToDetail(true));
+    }
+
 
 }
