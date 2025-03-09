@@ -78,7 +78,7 @@ public class EventController : ControllerBase
             .Include(x => x.ResponsiblePerson)
             .Include(x => x.Participants)
             .Include(x => x.Dishes)
-            .Select(x => x.ToDetail(false))
+            .Select(x => x.ToDetail(true))
             .ToArrayAsync();
         return Ok(list);
     }

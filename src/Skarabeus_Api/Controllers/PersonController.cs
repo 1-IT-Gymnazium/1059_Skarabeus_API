@@ -193,7 +193,7 @@ public class PersonController : ControllerBase
         person.FirstName = toUpdate.FirstName;
         person.LastName = toUpdate.LastName;
         person.Gender = toUpdate.Gender;
-        person.DateOfBirth = DateTime.Parse(toUpdate.DateOfBirth);
+        person.DateOfBirth = DateTime.Parse(toUpdate.DateOfBirth).AddHours(1).ToUniversalTime();
         person.EmailOfMother = toUpdate.EmailOfMother;
         person.EmailOfFather = toUpdate.EmailOfFather;
         person.Email = toUpdate.Email;

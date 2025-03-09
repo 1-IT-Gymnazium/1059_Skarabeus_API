@@ -115,7 +115,7 @@ public class AuthController : ControllerBase
     public async Task<ActionResult> UserInfo()
     {
         var name = User.GetName();
-        var user = (await _userManager.FindByEmailAsync(name));
+        var user = (await _userManager.Users.Include(x=>x.Person).FirstOrDefaultAsync(x=>x.Email == name));
         if (user == null) return NoContent();
         var roles = (await _userManager.GetClaimsAsync(user));
         var role = roles.FirstOrDefault(x => x.Type == ClaimTypes.Role);

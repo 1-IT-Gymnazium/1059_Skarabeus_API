@@ -18,7 +18,6 @@ using System.Security.Claims;
 namespace Skarabeus_Api.Controllers;
 
 
-[Authorize(Policy = "UserManager")]
 [Route("api/v1/[controller]")]
 [ApiController]
 public class UserController : ControllerBase
@@ -61,6 +60,7 @@ public class UserController : ControllerBase
         return Ok(list);
     }
 
+    [Authorize(Policy = "UserManager")]
     [HttpPost("CreateUser")]
     public async Task<ActionResult> CreateUser(
        [FromBody] RegisterModel model
@@ -74,7 +74,7 @@ public class UserController : ControllerBase
             Id = Guid.NewGuid(),
             LogginName = model.Name,
             Email = model.Email,
-            UserName = model.Email,
+            UserName = model.Name,
             EmailConfirmed = true,
         };
 
@@ -120,6 +120,7 @@ public class UserController : ControllerBase
         return Ok(/*new { Token = token, Modelstate = ModelState }*/);
     }
 
+    [Authorize(Policy = "UserManager")]
     [HttpDelete("SoftDelete/{id}")]
     public async Task<ActionResult> SoftDeleteUser(Guid id)
     {
@@ -135,7 +136,8 @@ public class UserController : ControllerBase
         return Ok();
     }
 
-    [HttpPost("UndeleteUser/{id}")]
+    [Authorize(Policy = "UserManager")]
+    [HttpGet("UndeleteUser/{id}")]
     public async Task<ActionResult> UndeleteUser(Guid id)
     {
         var now = _clock.GetCurrentInstant();
@@ -151,10 +153,11 @@ public class UserController : ControllerBase
         return Ok();
     }
 
-    [HttpPost("AddClaim")]
-    public async Task<ActionResult> AddClaim(
+    [Authorize(Policy = "UserManager")]
+    [HttpGet("AddRole")]
+    public async Task<ActionResult> AddRole(
         Guid userId,
-        string claim
+        string role
         )
     {
         var now = _clock.GetCurrentInstant();
@@ -162,9 +165,9 @@ public class UserController : ControllerBase
 
         if (user == null) return NotFound();
 
-        RemoveRole(user);
+        await RemoveRole(user);
 
-        var res = await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, claim));
+        var res = await _userManager.AddClaimAsync(user, new Claim(ClaimTypes.Role, role));
 
         user.SetModifyBy(User.GetName(), now);
 
@@ -173,6 +176,7 @@ public class UserController : ControllerBase
         return Ok(res);
     }
 
+    [Authorize(Policy = "UserManager")]
     [HttpPost("AddPerson")]
     public async Task<ActionResult> AddPerson(
         Guid userId,
@@ -193,10 +197,10 @@ public class UserController : ControllerBase
         return Ok(user.ToModel());
     }
 
-    [HttpPost("RemoveClaim")]
-    public async Task<ActionResult> RemoveClaim(
-        Guid userId,
-        string claim
+    [Authorize(Policy = "UserManager")]
+    [HttpGet("RemoveRole")]
+    public async Task<ActionResult> RemoveUserRole(
+        Guid userId
         )
     {
         var now = _clock.GetCurrentInstant();
@@ -204,65 +208,71 @@ public class UserController : ControllerBase
 
         if (user == null) return NotFound();
 
-        var res = await _userManager.RemoveClaimAsync(user, new Claim(ClaimTypes.Role, claim));
+        await RemoveRole(user);
 
         user.SetModifyBy(User.GetName(), now);
 
         await _dbcontext.SaveChangesAsync();
 
-        return Ok(res);
+        return Ok();
     }
 
 
-    private async void RemoveRole(
+    private async Task RemoveRole(
         ApplicationUser usr
         )
     {
-        foreach (var c in (await _userManager.GetClaimsAsync(usr)).Where(x => x.ValueType == ClaimTypes.Role)) await _userManager.RemoveClaimAsync(usr, c);
+        foreach (var c in (await _userManager.GetClaimsAsync(usr)).Where(x => x.Type == ClaimTypes.Role)) await _userManager.RemoveClaimAsync(usr, c);
     }
 
 
+    [Authorize]
     [HttpPatch("{id}")]
     public async Task<ActionResult> Update(
         [FromRoute] Guid id,
         [FromBody] JsonPatchDocument<UserPatchModel> patch
         )
     {
-        var user = await _dbcontext.Users.Include(x=>x.Person).FirstOrDefaultAsync(x => x.Id == id);
-
-
-        if (user == null)
+        var roles = new string[] { "UserManager", "Admin" };
+        if (id == User.GetUserId() || roles.Any(x => x == (User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Role)?.Value)))
         {
-            return NotFound();
+            var user = await _dbcontext.Users.Include(x => x.Person).FirstOrDefaultAsync(x => x.Id == id);
+
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var now = _clock.GetCurrentInstant();
+
+            var toUpdate = new UserPatchModel
+            {
+                UserName = user.UserName,
+                Email = user.Email,
+            };
+            patch.ApplyTo(toUpdate);
+
+            if (!(ModelState.IsValid && TryValidateModel(toUpdate)))
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            user.UserName = toUpdate.UserName;
+            user.Email = toUpdate.Email;
+
+            if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                user.SetModifyBy(User.GetName(), now);
+            }
+            else
+            {
+                user.SetModifyBySystem(now);
+            }
+
+            await _dbcontext.SaveChangesAsync();
+            return Ok();
         }
-
-        var now = _clock.GetCurrentInstant();
-
-        var toUpdate = new UserPatchModel
-        {
-            UserName = user.UserName,
-            Email = user.Email,
-        };
-        patch.ApplyTo(toUpdate);
-
-        if (!(ModelState.IsValid && TryValidateModel(toUpdate)))
-        {
-            return ValidationProblem(ModelState);
-        }
-
-        user.UserName = toUpdate.UserName;
-        user.Email = toUpdate.Email;
-
-        if (User.Identity != null && User.Identity.IsAuthenticated)
-        {
-            user.SetModifyBy(User.GetName(), now);
-        }
-        else
-        {
-            user.SetModifyBySystem(now);
-        }
-
-        await _dbcontext.SaveChangesAsync();
-        return Ok();
+        return Unauthorized();
     }
 }
