@@ -1,6 +1,4 @@
-﻿using NodaTime;
-
-namespace ProjectManager.Api.Services
+﻿namespace ProjectManager.Api.Services
 {
     public class Email : ITrackable
     {
@@ -9,6 +7,8 @@ namespace ProjectManager.Api.Services
         public string Subject { get; set; }
         public string Receiver { get; set; }
         public string Sender { get; set; }
+
+
         public Instant ScheduledAt { get; set; }
         public Instant? SentAt { get; set; }
         public Instant CreatedAt { get; set; }

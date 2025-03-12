@@ -10,6 +10,7 @@ using Skarabeus_Api.Controllers.Models.Auth;
 using Skarabeus_Api.Controllers.Models.PersonModels;
 using Skarabeus_Api.Controllers.Models.UserModels;
 using Skarabeus_Api.Utils;
+using Skarabeus_Api.Utils.EmaillTemplates;
 using Skarabeus_Data;
 using Skarabeus_Data.Entities;
 using Skarabeus_Data.Interfaces;
@@ -63,7 +64,8 @@ public class UserController : ControllerBase
     [Authorize(Policy = "UserManager")]
     [HttpPost("CreateUser")]
     public async Task<ActionResult> CreateUser(
-       [FromBody] RegisterModel model
+       [FromBody] RegisterModel model,
+       [FromServices] EmailHelper emailHelper
        )
     {
         var validator = new PasswordValidator<ApplicationUser>();
@@ -75,7 +77,6 @@ public class UserController : ControllerBase
             LogginName = model.Name,
             Email = model.Email,
             UserName = model.Name,
-            EmailConfirmed = true,
         };
 
         var checkPassword = await validator.ValidateAsync(_userManager, newUser, model.Password);
@@ -105,7 +106,9 @@ public class UserController : ControllerBase
 
         await _userManager.CreateAsync(newUser);
         await _userManager.AddPasswordAsync(newUser, model.Password);
-        
+
+        await _emailService.AddEmailToSendAsync(newUser.Email, "Email confirm account creation",await emailHelper.GetEmailConfirmationTemplate(newUser));
+
         /*
         var token = string.Empty;
                 
@@ -117,7 +120,7 @@ public class UserController : ControllerBase
             $"<a href=\"localhost:5000/api/v1/Auth/ValidateToken?token={Uri.EscapeDataString(token)}&email={(model.Email)}\">{token}</a>"
             );
         */
-        return Ok(/*new { Token = token, Modelstate = ModelState }*/);
+        return Ok(ModelState);
     }
 
     [Authorize(Policy = "UserManager")]
@@ -258,8 +261,15 @@ public class UserController : ControllerBase
                 return ValidationProblem(ModelState);
             }
 
+            if(user.Email != toUpdate.Email)
+            {
+                user.EmailConfirmed = false;
+            }
+
             user.UserName = toUpdate.UserName;
+            user.NormalizedUserName = toUpdate.UserName.ToUpperInvariant();
             user.Email = toUpdate.Email;
+            user.NormalizedEmail = toUpdate.Email.ToUpperInvariant();
 
             if (User.Identity != null && User.Identity.IsAuthenticated)
             {

@@ -10,6 +10,7 @@ public class UserInfoModel
     public SmallPersonDetailModel Person { get; set; }
     public bool Deleted { get; set; }
     public string Role { get; set; }
+    public bool EmailConfirmed { get; set; }
 }
 
 public static class UserInfoModelExtensions
@@ -21,6 +22,7 @@ public static class UserInfoModelExtensions
             UserName = model.UserName,
             Email = model.Email,
             Person = model.Person == null ? null : model.Person.ToSmall(),
-            Deleted = model.DeletedAt != null
+            Deleted = model.DeletedAt != null,
+            EmailConfirmed = model.EmailConfirmed,
         };
 }

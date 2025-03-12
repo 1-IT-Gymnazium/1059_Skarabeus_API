@@ -56,7 +56,7 @@ public class EmailSenderService
             {
                 Subject = mail.Subject,
                 Body = mail.Body,
-                IsBodyHtml = false,
+                IsBodyHtml = true,
                 From = new MailAddress(mail.Sender),
             };
             notif.To.Add(new MailAddress(mail.Receiver));

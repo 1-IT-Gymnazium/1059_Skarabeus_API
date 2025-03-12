@@ -11,6 +11,7 @@ using Serilog;
 using Skarabeus_Api.BackgroundServices;
 using Skarabeus_Api.Settings;
 using Skarabeus_Api.Utils;
+using Skarabeus_Api.Utils.EmaillTemplates;
 using Skarabeus_Data;
 using Skarabeus_Data.Entities;
 using System.Net;
@@ -85,10 +86,12 @@ namespace Skarabeus_Api
 
             builder.Services.AddSingleton<IClock>(SystemClock.Instance);
             builder.Services.AddScoped<EmailSenderService>();
+            builder.Services.AddScoped<EmailHelper>();
             builder.Services.AddHostedService<EmailSenderBackgroundService>();
 
 
             builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
+            builder.Services.Configure<EnvironmentSettings>(builder.Configuration.GetSection("EnvironmentSettings"));
 
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

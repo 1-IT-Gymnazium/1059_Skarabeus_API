@@ -76,23 +76,25 @@ public class AuthController : ControllerBase
     }
 
 
-    [HttpGet("ValidateToken")]
+    [HttpGet("ValidateEmail")]
     public async Task<ActionResult> ValidateToken(
-        [FromQuery] TokenModel model
+        [FromRoute] TokenModel model
         )
     {
         var normalizedMail = model.Email.ToUpperInvariant();
         var user = await _userManager
             .Users
-            .SingleOrDefaultAsync(x => !x.EmailConfirmed && x.NormalizedEmail == normalizedMail);
+            .SingleOrDefaultAsync(x =>x.NormalizedEmail == normalizedMail);
 
         if (user == null)
         {
-            ModelState.AddModelError<TokenModel>(x => x.Token, "INVALID_TOKEN");
-            return ValidationProblem(ModelState);
+            ModelState.AddModelError<TokenModel>(x => x.Token, "USER_NOT_FOUND");
+            return NotFound(ModelState);
         }
 
-        var check = await _userManager.ConfirmEmailAsync(user, model.Token);
+        var token = Uri.UnescapeDataString(model.Token);
+
+        var check = await _userManager.ConfirmEmailAsync(user,token);
         if (!check.Succeeded)
         {
             ModelState.AddModelError<TokenModel>(x => x.Token, "INVALID_TOKEN");
