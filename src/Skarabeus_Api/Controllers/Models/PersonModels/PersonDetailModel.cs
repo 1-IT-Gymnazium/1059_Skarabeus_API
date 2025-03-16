@@ -18,6 +18,7 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; } = null!;
+        public string Nickname { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public bool Gender { get; set; }
         public PersonStatus Status { get; set; }
@@ -51,7 +52,8 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
                 FullNameOfMother = model.FullNameOfMother,
                 Active = model.Active,
                 Status = model.Status,
-                Deleted = model.DeletedAt!=null
+                Deleted = model.DeletedAt!=null,
+                Nickname = model.Nickname
             };
         public static SmallPersonDetailModel ToSmall(this Person model)
             => new()
@@ -65,7 +67,8 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
                 PhoneNumber = model.PhoneNumber,
                 Active = model.Active,
                 Status = model.Status,
-                Deleted = model.DeletedAt != null
+                Deleted = model.DeletedAt != null,
+                Nickname = model.Nickname
             };
 
     }

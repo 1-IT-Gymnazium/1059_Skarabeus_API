@@ -180,7 +180,8 @@ public class PersonController : ControllerBase
             FullNameOfMother = person.FullNameOfMother,
             FullNameOfFather = person.FullNameOfFather,
             Active = person.Active,
-            Status = person.Status
+            Status = person.Status,
+            Nickname = person.Nickname
         };
 
         patch.ApplyTo(toUpdate);
@@ -204,6 +205,7 @@ public class PersonController : ControllerBase
         person.FullNameOfFather = toUpdate.FullNameOfFather;
         person.Active = toUpdate.Active;
         person.Status = toUpdate.Status;
+        person.Nickname = toUpdate.Nickname;
 
 
         if (User.Identity != null && User.Identity.IsAuthenticated)

@@ -120,7 +120,7 @@ namespace Skarabeus_Api
 
             app.UseSerilogRequestLogging();
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
 
             app.UseAuthentication();
