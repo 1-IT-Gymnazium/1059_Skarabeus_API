@@ -15,6 +15,7 @@ using Skarabeus_Data;
 using Skarabeus_Data.Entities;
 using Skarabeus_Data.Interfaces;
 using System.Security.Claims;
+using System.Text;
 
 namespace Skarabeus_Api.Controllers;
 
@@ -26,7 +27,7 @@ public class UserController : ControllerBase
     private readonly EmailSenderService _emailService;
     private readonly IClock _clock;
     private readonly UserManager<ApplicationUser> _userManager;
-    private readonly ApplicationDbContext _dbcontext;
+    private readonly ApplicationDbContext _dbcontext; ///skibidi
 
     public UserController(
         EmailSenderService emailService,
@@ -55,7 +56,7 @@ public class UserController : ControllerBase
             var roles = (await _userManager.GetClaimsAsync(user));
             var role = roles.FirstOrDefault(x => x.Type == ClaimTypes.Role);
             var us = user.ToModel();
-            us.Role = role == null ? "":role.Value;
+            us.Role = role == null ? "" : role.Value;
             list.Add(us);
         }
         return Ok(list);
@@ -68,7 +69,6 @@ public class UserController : ControllerBase
        [FromServices] EmailHelper emailHelper
        )
     {
-        var validator = new PasswordValidator<ApplicationUser>();
         var now = _clock.GetCurrentInstant();
 
         var newUser = new ApplicationUser
@@ -78,15 +78,6 @@ public class UserController : ControllerBase
             Email = model.Email,
             UserName = model.Name,
         };
-
-        var checkPassword = await validator.ValidateAsync(_userManager, newUser, model.Password);
-
-        if (!checkPassword.Succeeded)
-        {
-            ModelState.AddModelError<RegisterModel>(
-                x => x.Password, string.Join("\n", checkPassword.Errors.Select(x => x.Description)));
-            return ValidationProblem(ModelState);
-        }
 
         if (model.PersonId != null)
         {
@@ -105,9 +96,9 @@ public class UserController : ControllerBase
         else newUser.SetCreateBySystem(now);
 
         await _userManager.CreateAsync(newUser);
-        await _userManager.AddPasswordAsync(newUser, model.Password);
+        await _userManager.AddPasswordAsync(newUser, GenerateRandomPassword(12));
 
-        await _emailService.AddEmailToSendAsync(newUser.Email, "Email confirm account creation",await emailHelper.GetEmailConfirmationTemplate(newUser));
+        await _emailService.AddEmailToSendAsync(newUser.Email, "Email confirm account creation", await emailHelper.GetAccountCreationTemplate(newUser));
 
         /*
         var token = string.Empty;
@@ -131,7 +122,7 @@ public class UserController : ControllerBase
 
         var user = await _dbcontext.Users.FirstOrDefaultAsync(x => x.Id == id);
         if (user == null) return NotFound();
-        
+
         user.SetDeleteBy(User.GetName(), now);
 
         await _dbcontext.SaveChangesAsync();
@@ -233,7 +224,8 @@ public class UserController : ControllerBase
     [HttpPatch("{id}")]
     public async Task<ActionResult> Update(
         [FromRoute] Guid id,
-        [FromBody] JsonPatchDocument<UserPatchModel> patch
+        [FromBody] JsonPatchDocument<UserPatchModel> patch,
+        [FromServices] EmailHelper emailHelper
         )
     {
         var roles = new string[] { "UserManager", "Admin" };
@@ -261,15 +253,21 @@ public class UserController : ControllerBase
                 return ValidationProblem(ModelState);
             }
 
-            if(user.Email != toUpdate.Email)
-            {
-                user.EmailConfirmed = false;
-            }
-
             user.UserName = toUpdate.UserName;
             user.NormalizedUserName = toUpdate.UserName.ToUpperInvariant();
-            user.Email = toUpdate.Email;
-            user.NormalizedEmail = toUpdate.Email.ToUpperInvariant();
+            if (user.Email != toUpdate.Email)
+            {
+                user.Email = toUpdate.Email;
+                user.NormalizedEmail = toUpdate.Email.ToUpperInvariant();
+                user.EmailConfirmed = false;
+                await _emailService.AddEmailToSendAsync(user.Email, "confirm modified email", await emailHelper.GetEmailConfirmationTemplate(user));
+            }
+            else
+            {
+                user.Email = toUpdate.Email;
+                user.NormalizedEmail = toUpdate.Email.ToUpperInvariant();
+            }
+
 
             if (User.Identity != null && User.Identity.IsAuthenticated)
             {
@@ -284,5 +282,54 @@ public class UserController : ControllerBase
             return Ok();
         }
         return Unauthorized();
+    }
+
+    [HttpGet("changePassword/{email}")]
+    public async Task<ActionResult> ChangePassword(
+            [FromRoute] string email,
+            [FromServices] EmailHelper emailHelper
+        )
+    {
+        var user = await _userManager.FindByEmailAsync(email);
+
+        if (user != null)
+        {
+            await _emailService.AddEmailToSendAsync(user.Email, "Reset password", await emailHelper.GetPasswordResetTemplate(user));
+        }
+
+        return NoContent();
+    }
+
+    /// <summary>
+    /// generates random password that meets requirements and is of set length
+    /// </summary>
+    /// <param name="length">length of the password</param>
+    /// <returns>generated password as a string</returns>
+    private static string GenerateRandomPassword(int length)
+    {
+
+        const string upper = "ABCDEFGHJKLMNOPQRSTUVWXYZ";
+        const string lower = "abcdefghijkmnopqrstuvwxyz";
+        const string digit = "0123456789";
+        const string special = "!@$?_-";
+        string allChars = upper + lower + digit + special;
+
+        Random rand = new Random();
+        StringBuilder password = new StringBuilder();
+
+        // Ensure password meets requirements
+        password.Append(upper[rand.Next(upper.Length)]);
+        password.Append(lower[rand.Next(lower.Length)]);
+        password.Append(digit[rand.Next(digit.Length)]);
+        password.Append(special[rand.Next(special.Length)]);
+
+        // Fill the rest of the password with random characters
+        for (int i = 4; i < length; i++)
+        {
+            password.Append(allChars[rand.Next(allChars.Length)]);
+        }
+
+        // Shuffle the password to avoid predictable patterns
+        return new string(password.ToString().OrderBy(x => rand.Next()).ToArray());
     }
 }

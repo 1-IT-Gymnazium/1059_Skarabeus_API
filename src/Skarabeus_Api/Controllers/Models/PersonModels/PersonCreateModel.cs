@@ -6,7 +6,7 @@ namespace Skarabeus_Api.Controllers.Models.PersonModels
     public class PersonCreateModel
     {
         public string FirstName { get; set; } = null!;
-        public string Nickname { get; set; } = null!;
+        public string? Nickname { get; set; } = null!;
         public string LastName { get; set; } = null!;
         public bool Gender { get; set; }
         public string DateOfBirth { get; set; }

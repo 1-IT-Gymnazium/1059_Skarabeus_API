@@ -273,7 +273,6 @@ namespace Skarabeus_Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<Instant>("ModifiedAt")

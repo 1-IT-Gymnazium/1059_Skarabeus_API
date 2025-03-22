@@ -53,14 +53,14 @@ public class AuthController : ControllerBase
 
         if ((user == null) || !user.EmailConfirmed || user.DeletedAt != null)
         {
-            ModelState.AddModelError(string.Empty, "LOGIN_FAILED");
+            ModelState.AddModelError("error", "LOGIN_FAILED");
             return ValidationProblem(ModelState);
         }
 
         var signInResult = await _signInManager.CheckPasswordSignInAsync(user, model.Password, lockoutOnFailure: true);
         if (!signInResult.Succeeded)
         {
-            ModelState.AddModelError(string.Empty, "LOGIN_FAILED");
+            ModelState.AddModelError("error", "LOGIN_FAILED");
             return ValidationProblem(ModelState);
         }
         var claims = (await _userManager.GetClaimsAsync(user));
@@ -75,10 +75,9 @@ public class AuthController : ControllerBase
         return Ok(/*new { Token = token }*/);
     }
 
-
-    [HttpGet("ValidateEmail")]
+    [HttpPost("ValidateEmail")]
     public async Task<ActionResult> ValidateToken(
-        [FromRoute] TokenModel model
+        [FromBody] TokenModel model
         )
     {
         var normalizedMail = model.Email.ToUpperInvariant();
@@ -88,7 +87,7 @@ public class AuthController : ControllerBase
 
         if (user == null)
         {
-            ModelState.AddModelError<TokenModel>(x => x.Token, "USER_NOT_FOUND");
+            ModelState.AddModelError("errorMessage", "There was no user found with this email. This email was probably a mistake");
             return NotFound(ModelState);
         }
 
@@ -97,12 +96,50 @@ public class AuthController : ControllerBase
         var check = await _userManager.ConfirmEmailAsync(user,token);
         if (!check.Succeeded)
         {
-            ModelState.AddModelError<TokenModel>(x => x.Token, "INVALID_TOKEN");
+            ModelState.AddModelError("errorMessage", "Token provided for this email was Invalid, it is possible that it has expired");
             return ValidationProblem(ModelState);
         }
 
         return NoContent();
     }
+
+    [HttpPost("ChangePassword")]
+    public async Task<ActionResult> ChangePassword(
+        [FromBody] PasswordResetModel model
+        )
+    {
+        var validator = new PasswordValidator<ApplicationUser>();
+        var normalizedMail = model.Email.ToUpperInvariant();
+        var user = await _userManager
+            .Users
+            .SingleOrDefaultAsync(x => x.NormalizedEmail == normalizedMail);
+
+        if (user == null)
+        {
+            ModelState.AddModelError("errorMessage", "There was no user found with this email. This email was probably a mistake");
+            return NotFound(ModelState);
+        }
+
+        var check = await validator.ValidateAsync(_userManager,user, model.Password);
+        if (!check.Succeeded)
+        {
+            ModelState.AddModelError<PasswordResetModel>(x=>x.Password, check.Errors.FirstOrDefault().Description);
+            return ValidationProblem(ModelState);
+        }
+
+        var token = Uri.UnescapeDataString(model.Token);
+
+        var result = await _userManager.ResetPasswordAsync(user,token,model.Password);
+
+        if (!result.Succeeded)
+        {
+            ModelState.AddModelError("errorMessage", result.Errors.FirstOrDefault().Description);
+            return ValidationProblem(ModelState);
+        }
+
+        return Ok(result);
+    }
+
 
     [Authorize]
     [HttpPost("Logout")]

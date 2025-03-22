@@ -56,7 +56,7 @@ public class PersonController : ControllerBase
             FirstName = createModel.FirstName,
             LastName = createModel.LastName,
             Gender = createModel.Gender,
-            DateOfBirth = DateTime.Parse(createModel.DateOfBirth).ToUniversalTime(),
+            DateOfBirth = DateTime.SpecifyKind(DateTime.Parse(createModel.DateOfBirth), DateTimeKind.Utc),
             EmailOfMother = createModel.EmailOfMother,
             EmailOfFather = createModel.EmailOfFather,
             Email = createModel.Email,
@@ -194,7 +194,7 @@ public class PersonController : ControllerBase
         person.FirstName = toUpdate.FirstName;
         person.LastName = toUpdate.LastName;
         person.Gender = toUpdate.Gender;
-        person.DateOfBirth = DateTime.Parse(toUpdate.DateOfBirth).AddHours(1).ToUniversalTime();
+        person.DateOfBirth = DateTime.SpecifyKind(DateTime.Parse(toUpdate.DateOfBirth), DateTimeKind.Utc);
         person.EmailOfMother = toUpdate.EmailOfMother;
         person.EmailOfFather = toUpdate.EmailOfFather;
         person.Email = toUpdate.Email;

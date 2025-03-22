@@ -13,7 +13,7 @@ using Skarabeus_Data;
 namespace Skarabeus_Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250201182157_init")]
+    [Migration("20250318140332_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -276,7 +276,6 @@ namespace Skarabeus_Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<Instant>("ModifiedAt")
@@ -443,14 +442,20 @@ namespace Skarabeus_Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("PhoneNUmmberOfFather")
+                    b.Property<string>("Nickname")
                         .HasColumnType("text");
 
-                    b.Property<string>("PhoneNummber")
+                    b.Property<string>("PhoneNumber")
                         .HasColumnType("text");
 
-                    b.Property<string>("PhoneNummberOfMother")
+                    b.Property<string>("PhoneNumberOfFather")
                         .HasColumnType("text");
+
+                    b.Property<string>("PhoneNumberOfMother")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

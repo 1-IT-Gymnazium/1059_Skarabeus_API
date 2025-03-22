@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.JsonPatch.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NodaTime;
@@ -48,8 +49,8 @@ public class EventController : ControllerBase
             Name = createModel.Name,
             Description = createModel.Description,
             ResponsiblePersonId = createModel.ResponsiblePersonId,
-            Start = DateTime.Parse(createModel.Start).ToUniversalTime(),
-            End = DateTime.Parse(createModel.End).ToUniversalTime(),
+            Start = DateTime.SpecifyKind(DateTime.Parse(createModel.Start), DateTimeKind.Utc),
+            End = DateTime.SpecifyKind(DateTime.Parse(createModel.End), DateTimeKind.Utc),
             Place = createModel.Place
         };
 
@@ -142,8 +143,10 @@ public class EventController : ControllerBase
         eventItem.Name = toUpdate.Name;
         eventItem.Description = toUpdate.Description;
         eventItem.ResponsiblePersonId = toUpdate.ResponsiblePersonId;
-        eventItem.Start = DateTime.Parse(toUpdate.Start).ToUniversalTime();
-        eventItem.End = DateTime.Parse(toUpdate.Start).ToUniversalTime();
+        var eventStart = DateTime.Parse(toUpdate.Start);
+        eventItem.Start = DateTime.SpecifyKind(eventStart, DateTimeKind.Utc);
+        var eventEnd = DateTime.Parse(toUpdate.End);
+        eventItem.End = DateTime.SpecifyKind(eventEnd, DateTimeKind.Utc);
         eventItem.Place = toUpdate.Place;
 
         if (User.Identity != null && User.Identity.IsAuthenticated)
