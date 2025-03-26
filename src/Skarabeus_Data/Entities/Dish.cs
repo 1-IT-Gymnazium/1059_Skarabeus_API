@@ -5,9 +5,9 @@ public class Dish : ITrackable
 {
     public Guid Id { get; set; }
     public string Name { get; set; }
-    public string Description { get; set; }
+    public string? Description { get; set; }
     public ICollection<IngredientDish> Ingredients { get; set; } = new HashSet<IngredientDish>();
-
+    public ICollection<Event> Events { get; set; } = new HashSet<Event>();
 
     public Instant CreatedAt { get; set; }
     public string CreatedBy { get; set; }

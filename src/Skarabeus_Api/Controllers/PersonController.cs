@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
@@ -12,9 +13,11 @@ using Skarabeus_Data;
 using Skarabeus_Data.Entities;
 using Skarabeus_Data.Interfaces;
 using System;
+using System.ComponentModel;
 
 namespace Skarabeus_Api.Controllers;
 
+[Authorize]
 [Route("api/v1/[controller]")]
 [ApiController]
 public class PersonController : ControllerBase
@@ -53,16 +56,17 @@ public class PersonController : ControllerBase
             FirstName = createModel.FirstName,
             LastName = createModel.LastName,
             Gender = createModel.Gender,
-            DateOfBirth = createModel.DateOfBirth,
+            DateOfBirth = DateTime.SpecifyKind(DateTime.Parse(createModel.DateOfBirth), DateTimeKind.Utc),
             EmailOfMother = createModel.EmailOfMother,
             EmailOfFather = createModel.EmailOfFather,
             Email = createModel.Email,
-            PhoneNummberOfMother = createModel.PhoneNummberOfMother,
-            PhoneNUmmberOfFather = createModel.PhoneNUmmberOfFather,
-            PhoneNummber = createModel.PhoneNummber,
+            PhoneNumberOfMother = createModel.PhoneNumberOfMother,
+            PhoneNumberOfFather = createModel.PhoneNumberOfFather,
+            PhoneNumber = createModel.PhoneNumber,
             FullNameOfMother = createModel.FullNameOfMother,
             FullNameOfFather = createModel.FullNameOfFather,
-            Active = createModel.Active
+            Active = createModel.Active,
+            Status = createModel.Status
         };
 
         if (User.Identity != null && User.Identity.IsAuthenticated) newPerson.SetCreateBy(User.GetName(), now);
@@ -126,13 +130,17 @@ public class PersonController : ControllerBase
 
         var person = await _dbContext.Persons.FirstOrDefaultAsync(x => x.Id == id);
         if (person == null) return NotFound();
-
-        if (User.Identity != null && User.Identity.IsAuthenticated) person.SetDeleteBy(User.GetName(), now);
-        else person.SetDeleteBySystem(now);
+        if(_dbContext.Users.Any(x=>x.Person == person))
+        {
+            person.SetDeleteBy(User.GetName(), now);
+            await _dbContext.SaveChangesAsync();
+            return Conflict(new { message = "Person is tied to a user, so it cannot be deleted. It has been marked as deleted instead." });
+        }
+        else _dbContext.Persons.Remove(person);
 
         await _dbContext.SaveChangesAsync();
 
-        return Ok(person.ToDetail());
+        return Ok();
     }
 
     /// <summary>
@@ -162,16 +170,18 @@ public class PersonController : ControllerBase
             FirstName = person.FirstName,
             LastName = person.LastName,
             Gender = person.Gender,
-            DateOfBirth = person.DateOfBirth,
+            DateOfBirth = person.DateOfBirth.ToString(),
             EmailOfMother = person.EmailOfMother,
             EmailOfFather = person.EmailOfFather,
             Email = person.Email,
-            PhoneNummberOfMother = person.PhoneNummberOfMother,
-            PhoneNUmmberOfFather = person.PhoneNUmmberOfFather,
-            PhoneNummber = person.PhoneNummber,
+            PhoneNumberOfMother = person.PhoneNumberOfMother,
+            PhoneNumberOfFather = person.PhoneNumberOfFather,
+            PhoneNumber = person.PhoneNumber,
             FullNameOfMother = person.FullNameOfMother,
             FullNameOfFather = person.FullNameOfFather,
-            Active = person.Active
+            Active = person.Active,
+            Status = person.Status,
+            Nickname = person.Nickname
         };
 
         patch.ApplyTo(toUpdate);
@@ -184,16 +194,18 @@ public class PersonController : ControllerBase
         person.FirstName = toUpdate.FirstName;
         person.LastName = toUpdate.LastName;
         person.Gender = toUpdate.Gender;
-        person.DateOfBirth = toUpdate.DateOfBirth;
+        person.DateOfBirth = DateTime.SpecifyKind(DateTime.Parse(toUpdate.DateOfBirth), DateTimeKind.Utc);
         person.EmailOfMother = toUpdate.EmailOfMother;
         person.EmailOfFather = toUpdate.EmailOfFather;
         person.Email = toUpdate.Email;
-        person.PhoneNummberOfMother = toUpdate.PhoneNummberOfMother;
-        person.PhoneNUmmberOfFather = toUpdate.PhoneNUmmberOfFather;
-        person.PhoneNummber = toUpdate.PhoneNummber;
+        person.PhoneNumberOfMother = toUpdate.PhoneNumberOfMother;
+        person.PhoneNumberOfFather = toUpdate.PhoneNumberOfFather;
+        person.PhoneNumber = toUpdate.PhoneNumber;
         person.FullNameOfMother = toUpdate.FullNameOfMother;
         person.FullNameOfFather = toUpdate.FullNameOfFather;
         person.Active = toUpdate.Active;
+        person.Status = toUpdate.Status;
+        person.Nickname = toUpdate.Nickname;
 
 
         if (User.Identity != null && User.Identity.IsAuthenticated)

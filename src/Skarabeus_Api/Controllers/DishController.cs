@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -11,10 +12,9 @@ using Skarabeus_Data.Entities;
 using Skarabeus_Data.Entities.ConnectionTables;
 using Skarabeus_Data.Interfaces;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Skarabeus_Api.Controllers;
 
+[Authorize]
 [Route("api/v1/[controller]")]
 [ApiController]
 public class DishController : ControllerBase
@@ -45,23 +45,9 @@ public class DishController : ControllerBase
             .Include(x => x.Ingredients)
             .ThenInclude(x => x.Ingredient)
             .FilterDeleted()
-            .Select(x => new DishDetailModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-                ingredients = (ICollection<IngredientDishDetailModel>)x.Ingredients.Select(y => new IngredientDishDetailModel()
-                {
-                    Id = y.Id,
-                    IngredientId = y.IngredientId,
-                    Name = y.Ingredient.Name,
-                    PriceForUnit = y.Ingredient.PriceForUnit,
-                    Amount = y.AmountInBaseUnits,
-                    Price = y.AmountInBaseUnits * y.Ingredient.PriceForUnit,
-                })
-
-            }).ToArrayAsync();
-        return Ok(list);
+            .Select(x => x.ToDetail(true))
+            .ToArrayAsync();
+        return Ok(list.OrderBy(x=>x.Name));
     }
 
 
@@ -87,7 +73,7 @@ public class DishController : ControllerBase
 
         if (User.Identity != null && User.Identity.IsAuthenticated) newDish.SetCreateBy(User.GetName(), now);
         else newDish.SetCreateBySystem(now);
-        
+
 
 
         var uniqueCheck = await _dbContext.Dishes.FilterDeleted().AnyAsync(x => x.Name == dishmodel.Name);
@@ -120,13 +106,21 @@ public class DishController : ControllerBase
     {
         var now = _clock.GetCurrentInstant();
 
-        var dish = await _dbContext.Dishes.FirstOrDefaultAsync(x => x.Id == addModel.DishId);
+        var dish = await _dbContext.Dishes.Include(x=>x.Ingredients).FirstOrDefaultAsync(x => x.Id == addModel.DishId);
         var ingredient = await _dbContext.Ingredients.FirstOrDefaultAsync(x => x.Id == addModel.IngredientId);
 
-        if ((dish == null) && (ingredient == null))
+        if ((dish == null) || (ingredient == null))
         {
             ModelState.AddModelError(string.Empty, "Dish or Ingredient does not exist");
             return ValidationProblem(ModelState);
+        }
+
+        var ingDish = dish.Ingredients.Any(x => x.Ingredient == ingredient);
+        if(ingDish)
+        {
+            ModelState.AddModelError(string.Empty, "Dish alrady has this Ingredient");
+            return ValidationProblem(ModelState);
+
         }
 
         var newIngredientDish = new IngredientDish()
@@ -152,6 +146,37 @@ public class DishController : ControllerBase
         return Ok();
     }
 
+    [HttpPost("AddIngredientsToDish")]
+    public async Task<ActionResult> AddIngredientsToDish(
+        [FromBody] DishAddIngredientsModel addModel
+        )
+    {
+        var now = _clock.GetCurrentInstant();
+
+        var dish = await _dbContext.Dishes.FirstOrDefaultAsync(x => x.Id == addModel.DishId);
+        var ingredients = _dbContext.Ingredients.ToArray().Where(x => addModel.Ingredients.FirstOrDefault(y=>y.IngredientId == x.Id)!=null);
+
+        if ((dish == null) || (ingredients.All(x => x == null)))
+        {
+            ModelState.AddModelError(string.Empty, "Dish or Ingredient does not exist");
+            return ValidationProblem(ModelState);
+        }
+
+        foreach (var ing in ingredients)
+        {
+            if (ing != null)
+            {
+                dish.Ingredients.Add(new IngredientDish
+                {
+                    IngredientId = ing.Id,
+                    AmountInBaseUnits = addModel.Ingredients.First(x => x.IngredientId == ing.Id).Amount
+                }.SetCreateBy(User.GetName(), now));
+            }
+        }
+        await _dbContext.SaveChangesAsync();
+
+        return Ok();
+    }
 
     /// <summary>
     /// Updates the amount of an ingredient associated with a dish.
@@ -167,7 +192,7 @@ public class DishController : ControllerBase
     {
         var ingredientDish = await _dbContext.IngredientDishes
             .FirstOrDefaultAsync(x => x.Id == id);
-        
+
 
         if (ingredientDish == null)
         {
@@ -208,7 +233,7 @@ public class DishController : ControllerBase
     /// </summary>
     /// <param name="removeModel">The model containing the dish ID and ingredient ID.</param>
     /// <returns>Success or validation errors if the relationship is not found.</returns>
-    [HttpDelete("RemoveIngredientFromDish")]
+    [HttpPost("RemoveIngredientFromDish")]
     public async Task<ActionResult> RemoveIngredientFromDish(
         [FromBody] DishIngredientModel removeModel
         )
@@ -216,12 +241,12 @@ public class DishController : ControllerBase
         var now = _clock.GetCurrentInstant();
 
         var ingredientDish = _dbContext.IngredientDishes
-            .FirstOrDefault(x => 
-            x.IngredientId == removeModel.IngredientId 
-            && 
+            .FirstOrDefault(x =>
+            x.IngredientId == removeModel.IngredientId
+            &&
             x.DishId == removeModel.DishId);
 
-        if(ingredientDish == null)
+        if (ingredientDish == null)
         {
             ModelState.AddModelError(string.Empty, "ingredient-dish not found");
             return ValidationProblem(ModelState);
@@ -245,21 +270,7 @@ public class DishController : ControllerBase
             .Include(x => x.Ingredients)
             .ThenInclude(x => x.Ingredient)
             .Where(x => x.Id == id)
-            .Select(x => new DishDetailModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
-                ingredients = (ICollection<IngredientDishDetailModel>)x.Ingredients.Select(y => new IngredientDishDetailModel()
-                {
-                    Id = y.Id,
-                    IngredientId = y.IngredientId,
-                    Name = y.Ingredient.Name,
-                    PriceForUnit = y.Ingredient.PriceForUnit,
-                    Amount = y.AmountInBaseUnits,
-                    Price = y.AmountInBaseUnits * y.Ingredient.PriceForUnit,
-                })
-            });
+            .Select(x => x.ToDetail(true));
 
         if (dish == null)
         {
@@ -279,7 +290,7 @@ public class DishController : ControllerBase
         var dish = _dbContext.Dishes
             .Include(x => x.Ingredients)
             .FirstOrDefault(x => x.Id == id);
-        if(dish == null)
+        if (dish == null)
         {
             return NotFound();
         }
@@ -302,7 +313,7 @@ public class DishController : ControllerBase
         [FromBody] JsonPatchDocument<DishCreateModel> patch
         )
     {
-        var dish = await _dbContext.Dishes.FirstOrDefaultAsync(x=>x.Id == id);
+        var dish = await _dbContext.Dishes.FirstOrDefaultAsync(x => x.Id == id);
 
 
         if (dish == null)

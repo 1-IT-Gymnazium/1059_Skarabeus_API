@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.JsonPatch;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,7 @@ using Skarabeus_Data.Interfaces;
 
 namespace Skarabeus_Api.Controllers;
 
+[Authorize]
 [Controller]
 [Route("api/v1/ingredient")]
 //[Authorize]
@@ -74,7 +76,7 @@ public class IngredientController : ControllerBase
         )
     {
         var list = await _dbContext.Set<Ingredient>().FilterDeleted().Select(x => x.ToDetail()).ToArrayAsync();
-        return Ok(list);
+        return Ok(list.OrderBy(x => x.Name));
     }
 
     [HttpGet("{id}")]
@@ -84,7 +86,7 @@ public class IngredientController : ControllerBase
 
         if (ingredient == null) return NotFound();
 
-        return Ok(ingredient);
+        return Ok(ingredient.ToDetail());
     }
 
 

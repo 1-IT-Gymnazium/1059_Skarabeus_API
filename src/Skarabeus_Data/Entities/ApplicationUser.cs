@@ -19,25 +19,28 @@ public class ApplicationUser : IdentityUser<Guid>, ITrackable
     public Instant? DeletedAt { get; set; }
     public string? DeletedBy { get; set; }
 
+    /*
     private class Configuration : IEntityTypeConfiguration<ApplicationUser>
     {
         public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
             builder.ToTable("AspNetUser");
-            builder.HasData(SeedData());
+            var usr = builder.HasData(SeedData());
+
         }
         private static IEnumerable<ApplicationUser> SeedData()
         {
-            yield return new ApplicationUser()
+            var user = new ApplicationUser()
             {
                 Id = new Guid("CEAB6921-DFED-4B4D-B661-DC36B8749067"),
+                LogginName = "user",
                 UserName = "user@example.com",
                 NormalizedUserName = "USER@EXAMPLE.COM",
                 Email = "user@example.com",
                 NormalizedEmail = "USER@EXAMPLE.COM",
                 EmailConfirmed = true,
-                // sTring123!
-                PasswordHash = "AQAAAAEAACcQAAAAELKQmdGcfZbjxaz1GeqZ62mF7gEO9d49ofpdaQ+Mq0904MEIWvUnaMMfx9gJ27NmdQ==",
+                // String!123
+                PasswordHash = "AQAAAAIAAYagAAAAEGre42BlI1ugMNo3k7S3SDhhM2vPkaLD23KjbnLowbOpvVK6HMGEjkW7L9p9ZDJHmg==",
                 SecurityStamp = "2MLDENGLJTQEITJVCJMIJJQOKXOUNSD6",
                 ConcurrencyStamp = "ba46c7df-e2cf-469d-a17d-b653c50a0147",
                 PhoneNumber = "123456798",
@@ -47,7 +50,11 @@ public class ApplicationUser : IdentityUser<Guid>, ITrackable
                 LockoutEnabled = true,
                 AccessFailedCount = 0,
             }.SetCreateBySystem(Instant.MinValue);
+            
+            yield return user;
+
         }
     }
+    */
 }
 

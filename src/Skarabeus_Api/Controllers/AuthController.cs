@@ -5,162 +5,185 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using NodaTime;
 using ProjectManager.Api.Services;
 using Skarabeus_Api.Controllers.Models.Auth;
+using Skarabeus_Api.Controllers.Models.UserModels;
+using Skarabeus_Api.Settings;
+using Skarabeus_Api.Utils;
 using Skarabeus_Data.Entities;
 using Skarabeus_Data.Interfaces;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
+using System.Web.Helpers;
 
 namespace Skarabeus_Api.Controllers;
+
+[Route("api/v1/Auth")]
 [ApiController]
 public class AuthController : ControllerBase
 {
-    private readonly EmailSenderService _emailService;
     private readonly IClock _clock;
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
+    private readonly JwtSettings _jwtSettings;
 
     public AuthController(
-        EmailSenderService emailService,
         IClock clock,
         UserManager<ApplicationUser> userManager,
-        SignInManager<ApplicationUser> signInManager
+        SignInManager<ApplicationUser> signInManager,
+        IOptions<JwtSettings> options
         )
     {
-        _emailService = emailService;
         _clock = clock;
         _signInManager = signInManager;
         _userManager = userManager;
+        _jwtSettings = options.Value;
     }
 
-    [HttpPost("api/v1/Auth/Register")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult> Register(
-       [FromBody] RegisterModel model
-       )
+    [HttpPost("Login")]
+    public async Task<ActionResult> Login(
+        [FromBody] LoginModel model
+        )
     {
-        var validator = new PasswordValidator<ApplicationUser>();
-        var now = _clock.GetCurrentInstant();
+        var user = await _userManager.FindByEmailAsync(model.Email);
 
-        var newUser = new ApplicationUser
+        if ((user == null) || !user.EmailConfirmed || user.DeletedAt != null)
         {
-            Id = Guid.NewGuid(),
-            LogginName = model.Name,
-            Email = model.Email,
-            UserName = model.Email,
-        }.SetCreateBySystem(now);
-
-        var checkPassword = await validator.ValidateAsync(_userManager, newUser, model.Password);
-
-        if (!checkPassword.Succeeded)
-        {
-            ModelState.AddModelError<RegisterModel>(
-                x => x.Password, string.Join("\n", checkPassword.Errors.Select(x => x.Description)));
-            return ValidationProblem(ModelState);
-        }
-
-        await _userManager.CreateAsync(newUser);
-        await _userManager.AddPasswordAsync(newUser, model.Password);
-        var token = string.Empty;
-        token = await _userManager.GenerateEmailConfirmationTokenAsync(newUser);
-
-        await _emailService.AddEmailToSendAsync(
-            model.Email,
-            "Potvrzení registrace",
-            $"<a href=\"localhost:5000/api/v1/Auth/ValidateToken?token={Uri.EscapeDataString(token)}&email={(model.Email)}\">{token}</a>"
-            );
-
-        return Ok(token);
-    }
-
-    [HttpPost("api/v1/Auth/Login")]
-    public async Task<ActionResult> Login([FromBody] LoginModel model)
-    {
-        var normalizedEmail = model.Email.ToUpperInvariant();
-        var user = await _userManager
-            .Users
-            .SingleOrDefaultAsync(x => x.EmailConfirmed && x.NormalizedEmail == normalizedEmail)
-            ;
-
-        if (user == null)
-        {
-            ModelState.AddModelError(string.Empty, "LOGIN_FAILED");
+            ModelState.AddModelError("error", "LOGIN_FAILED");
             return ValidationProblem(ModelState);
         }
 
         var signInResult = await _signInManager.CheckPasswordSignInAsync(user, model.Password, lockoutOnFailure: true);
         if (!signInResult.Succeeded)
         {
-            ModelState.AddModelError(string.Empty, "LOGIN_FAILED");
+            ModelState.AddModelError("error", "LOGIN_FAILED");
             return ValidationProblem(ModelState);
         }
+        var claims = (await _userManager.GetClaimsAsync(user));
+
+        //claims.Add(new Claim(ClaimTypes.Name, user.LogginName));
+        //claims.Add(new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()));
 
         var userPrincipal = await _signInManager.CreateUserPrincipalAsync(user);
         await HttpContext.SignInAsync(userPrincipal);
 
-        return Ok();
+        //var token = GenerateJwtToken(claims.ToList());
+        return Ok(/*new { Token = token }*/);
     }
 
-
-    [HttpGet("api/v1/Auth/ValidateToken")]
+    [HttpPost("ValidateEmail")]
     public async Task<ActionResult> ValidateToken(
-        [FromQuery] TokenModel model
+        [FromBody] TokenModel model
         )
     {
-        var normalizedMail =model.Email.ToUpperInvariant();
+        var normalizedMail = model.Email.ToUpperInvariant();
         var user = await _userManager
             .Users
-            .SingleOrDefaultAsync(x => !x.EmailConfirmed && x.NormalizedEmail == normalizedMail);
+            .SingleOrDefaultAsync(x =>x.NormalizedEmail == normalizedMail);
 
         if (user == null)
         {
-            ModelState.AddModelError<TokenModel>(x => x.Token, "INVALID_TOKEN");
-            return ValidationProblem(ModelState);
+            ModelState.AddModelError("errorMessage", "There was no user found with this email. This email was probably a mistake");
+            return NotFound(ModelState);
         }
 
-        var check = await _userManager.ConfirmEmailAsync(user,model.Token);
+        var token = Uri.UnescapeDataString(model.Token);
+
+        var check = await _userManager.ConfirmEmailAsync(user,token);
         if (!check.Succeeded)
         {
-            ModelState.AddModelError<TokenModel>(x => x.Token, "INVALID_TOKEN");
+            ModelState.AddModelError("errorMessage", "Token provided for this email was Invalid, it is possible that it has expired");
             return ValidationProblem(ModelState);
         }
 
         return NoContent();
     }
 
-    [HttpGet("api/v1/Auth/UserInfo")]
-    public async Task<ActionResult<UserInfoModel>> UserInfo()
+    [HttpPost("ChangePassword")]
+    public async Task<ActionResult> ChangePassword(
+        [FromBody] PasswordResetModel model
+        )
     {
-        if (User.Identity == null || !User.Identity.IsAuthenticated)
-        {
-            throw new InvalidOperationException("user not logged in");
-        }
-        var idString = User.Claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value;
+        var validator = new PasswordValidator<ApplicationUser>();
+        var normalizedMail = model.Email.ToUpperInvariant();
+        var user = await _userManager
+            .Users
+            .SingleOrDefaultAsync(x => x.NormalizedEmail == normalizedMail);
 
-        var usr = await _userManager
-                .Users
-                .SingleOrDefaultAsync(x => x.Id == Guid.Parse(idString))
-                ;
-        var usrModel = usr.ToModel();
-        return Ok(usrModel);
+        if (user == null)
+        {
+            ModelState.AddModelError("errorMessage", "There was no user found with this email. This email was probably a mistake");
+            return NotFound(ModelState);
+        }
+
+        var check = await validator.ValidateAsync(_userManager,user, model.Password);
+        if (!check.Succeeded)
+        {
+            ModelState.AddModelError<PasswordResetModel>(x=>x.Password, check.Errors.FirstOrDefault().Description);
+            return ValidationProblem(ModelState);
+        }
+
+        var token = Uri.UnescapeDataString(model.Token);
+
+        var result = await _userManager.ResetPasswordAsync(user,token,model.Password);
+
+        if (!result.Succeeded)
+        {
+            ModelState.AddModelError("errorMessage", result.Errors.FirstOrDefault().Description);
+            return ValidationProblem(ModelState);
+        }
+
+        return Ok(result);
     }
 
+
     [Authorize]
-    [HttpPost("api/v1/Auth/Logout")]
+    [HttpPost("Logout")]
     public async Task<ActionResult> Logout()
     {
         await HttpContext.SignOutAsync();
         return NoContent();
     }
 
-    [HttpGet("api/v1/Auth/TestMail")]
-    public async Task<ActionResult> Test(
-        [FromServices] EmailSenderService service
-        )
+    [Authorize]
+    [HttpGet]
+    public async Task<ActionResult> UserInfo()
     {
-        await service.AddEmailToSendAsync("test@test.cz", "Suuuubject", "<h1>Aaaaaaaaaaa</h1>");
-        return Ok();
+        var name = User.GetName();
+        var user = (await _userManager.Users.Include(x=>x.Person).FirstOrDefaultAsync(x=>x.Email == name));
+        if (user == null) return NoContent();
+        var roles = (await _userManager.GetClaimsAsync(user));
+        var role = roles.FirstOrDefault(x => x.Type == ClaimTypes.Role);
+        var us = user.ToModel();
+        us.Role = role == null ? "" : role.Value;
+        return Ok(us);
+    }
+
+    [Authorize]
+    [HttpGet("GetRole")]
+    public async Task<ActionResult> GetRole()
+    {
+        var name = User.GetName();
+        var model = (await _userManager.GetClaimsAsync((await _userManager.FindByEmailAsync(name)))).FirstOrDefault(x => x.Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/role");
+        return Ok((model == null ? "none":model.Value).ToString());
+    }
+
+    private string GenerateJwtToken(List<Claim> claims)
+    {
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.SecretKey));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        var token = new JwtSecurityToken(
+            issuer: _jwtSettings.Issuer,
+            audience: _jwtSettings.Audience,
+            claims: claims,
+            expires: DateTime.Now.AddMinutes(30),
+            signingCredentials: creds
+            );
+
+        return new JwtSecurityTokenHandler().WriteToken(token);
     }
 }

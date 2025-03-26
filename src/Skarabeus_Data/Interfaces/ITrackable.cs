@@ -45,6 +45,7 @@ public static class ITrackableExtensions
     public static T SetDeleteBy<T>(this T trackable, string author, Instant now)
         where T : class, ITrackable
     {
+        SetModifyBy(trackable, author, now);
         trackable.DeletedAt = now;
         trackable.DeletedBy = author;
 

@@ -9,7 +9,7 @@ public static class ClaimsPrincipalExtensions
         {
             throw new InvalidOperationException("user not logged in");
         }
-        var name = user.Claims.First(x => x.Type == ClaimTypes.Name).Value;
+        var name = user.Claims.First(x => x.Type == ClaimTypes.Email).Value;
         return name;
     }
 

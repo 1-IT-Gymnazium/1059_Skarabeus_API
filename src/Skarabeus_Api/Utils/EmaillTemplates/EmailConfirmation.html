@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Confirmation</title>
+    <style>
+      :root {
+        --primary-white: #ffffff;
+        --primary-gray: #f2f2f2;
+
+        --accent-orange: #f5a623;
+        --gold: #d4a537;
+        --sandstone-beige: #e5c99d;
+        --light-parchment: #f8f5e4;
+
+        --accent-green: #7ed321;
+        --action-green: #2a932d;
+        --dark-green: #1c4e1e;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: var(--light-parchment);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        background-color: var(--dark-green);
+        color: var(--light-parchment);
+        padding: 20px;
+        text-align: center;
+      }
+
+      .header h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .content {
+        padding: 20px;
+        color: black;
+        line-height: 1.6;
+      }
+
+      .content p {
+        margin: 10px 0;
+      }
+
+      .button {
+        display: block;
+        width: fit-content;
+        margin: 20px auto;
+        padding: 12px 20px;
+        text-align: center;
+        color: var(--light-parchment);
+        background-color: var(--action-green);
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      .button:hover{
+        background-color: var(--accent-green);
+      }
+
+      .footer {
+        text-align: center;
+        padding: 10px;
+        background: var(--sandstone-beige);
+        color: var(--dark-green);
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Welcome to Skarabeus</h1>
+      </div>
+      <div class="content">
+        <p>Hi [UserName],</p>
+        <p
+          >There has been an account that changed its email to this one, please confirm
+          your email address to start using your account again and access all
+          features.</p
+        >
+        <p>Click the button below to verify your email address:</p>
+        <a href="[ConfirmationLink]" class="button">Confirm Email</a>
+        <p
+          >If you did not expect to get this email, you can
+          safely ignore it.</p
+        >
+      </div>
+      <div class="footer">
+        <p>&copy; 2025 Skarabeus. All rights reserved.</p>
+        <p>Need help? <a href="">Contact Support</a></p>
+      </div>
+    </div>
+  </body>
+</html>
