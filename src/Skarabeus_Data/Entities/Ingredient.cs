@@ -21,4 +21,6 @@ public static class IngredientExtensions
         => query
         .Where(x => x.DeletedAt == null)
         ;
+    public static bool IsDatabaseValid(this Ingredient ingredient)
+        => ingredient.Id != Guid.Parse("00000000-0000-0000-0000-000000000000") && ingredient.Name != null;
 }
