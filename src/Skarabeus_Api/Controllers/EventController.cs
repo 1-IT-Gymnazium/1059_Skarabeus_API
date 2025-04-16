@@ -79,6 +79,8 @@ public class EventController : ControllerBase
             .Include(x => x.ResponsiblePerson)
             .Include(x => x.Participants)
             .Include(x => x.Dishes)
+            .ThenInclude(x => x.Ingredients)
+            .ThenInclude(x=>x.Ingredient)
             .Select(x => x.ToDetail(true))
             .ToArrayAsync();
         return Ok(list);
@@ -96,6 +98,7 @@ public class EventController : ControllerBase
             .Include(e => e.ResponsiblePerson)
             .Include(x => x.Participants)
             .Include(x=>x.Dishes)
+            .ThenInclude(x=>x.Ingredients)
             .FirstOrDefaultAsync(x => x.Id == id);
 
         if (eventItem == null) return NotFound();
