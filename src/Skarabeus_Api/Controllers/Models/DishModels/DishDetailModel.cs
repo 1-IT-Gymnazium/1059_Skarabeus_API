@@ -8,6 +8,7 @@ namespace Skarabeus_Api.Controllers.Models.DishModels
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public decimal Price { get;set; }
         public ICollection<IngredientDishDetailModel> Ingredients { get; set; }
     }
 
@@ -29,6 +30,7 @@ namespace Skarabeus_Api.Controllers.Models.DishModels
                     Amount = y.AmountInBaseUnits,
                     Price = y.AmountInBaseUnits * y.Ingredient.PriceForUnit,
                 }).ToArray() : Array.Empty<IngredientDishDetailModel>(),
+                Price = model.Ingredients.Select(x=>x.AmountInBaseUnits * x.Ingredient.PriceForUnit).Sum(),
             };
 
     }
