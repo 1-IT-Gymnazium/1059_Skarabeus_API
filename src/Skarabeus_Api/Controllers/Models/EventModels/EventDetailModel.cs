@@ -29,7 +29,7 @@ namespace Skarabeus_Api.Controllers.Models.EventModels
                 Place = model.Place,
                 ResponsiblePerson = model.ResponsiblePerson?.ToSmall(),
                 Participants = deep ? model.Participants.Select(x => x.ToSmall()).ToArray() : Array.Empty<SmallPersonDetailModel>(),
-                Dishes = deep ? model.Dishes.Select(x => x.ToDetail(false)).ToArray() : Array.Empty<DishDetailModel>(),
+                Dishes = deep ? model.Dishes.Select(x => x.ToDetail(true)).ToArray() : Array.Empty<DishDetailModel>(),
                 Start = model.Start,
                 End = model.End
             };

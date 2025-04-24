@@ -54,6 +54,7 @@ public class PersonController : ControllerBase
         var newPerson = new Person
         {
             FirstName = createModel.FirstName,
+            Nickname = createModel.Nickname,
             LastName = createModel.LastName,
             Gender = createModel.Gender,
             DateOfBirth = DateTime.SpecifyKind(DateTime.Parse(createModel.DateOfBirth), DateTimeKind.Utc),
